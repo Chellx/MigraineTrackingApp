@@ -31,7 +31,7 @@ namespace MigraineTrackingApp
             }
             else
             {
-                //auth
+                //authenticated user
 
                 //navigate to home page
                 Navigation.PushAsync(new HomePage());
