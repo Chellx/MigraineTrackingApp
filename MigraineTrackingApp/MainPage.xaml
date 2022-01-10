@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MigraineTrackingApp.MainPage">
+
+    <StackLayout 
+        BackgroundColor="#003366"
+                 >
+        <Image x:Name="logoImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               HeightRequest="250"
+               Margin="20,0,30,50"/>
+
+        <Entry x:Name="loginEmail"
+               Placeholder="Email"
+               PlaceholderColor="White"
+               
+               TextColor="White"
+               Keyboard="Email"
+               VerticalOptions="Center"/>
+
+        <Entry x:Name="loginPassWord"
+               Placeholder="Password" 
+               PlaceholderColor="White"
+               
+               TextColor="White"
+               IsPassword="True"
+               VerticalOptions="Center"/>
+        
+        
+        <Button x:Name="loginButton"
+                Text="LOGIN" 
+                BackgroundColor="#FF8E00"
+                Margin="70,70,70,20"
+                TextColor="White"
+                VerticalOptions="Center"
+                CornerRadius="10"
+                Clicked="loginButton_Clicked"/>
+
+
+        <Button x:Name="createAccountButton"
+                Text="CREATE ACCOUNT" 
+                BackgroundColor="#FF8E00"
+                Margin="70,20,70,70"
+                TextColor="White"
+                VerticalOptions="Center"
+                CornerRadius="10"
+                Clicked="createAccountButton_Clicked"/>
+
+
+
+    </StackLayout>
+
+</ContentPage>

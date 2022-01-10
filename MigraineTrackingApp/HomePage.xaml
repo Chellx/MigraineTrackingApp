@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:MigraineTrackingApp"
+             x:Class="MigraineTrackingApp.HomePage"
+            BackgroundColor="#002347"
+            BarBackgroundColor="#003F7D"
+            >
+
+
+
+    <local:MainFeedPage 
+        Title="Home Page"/>
+    <local:ProfilePage
+        Title="Profile Page"/>
+    <local:MigraineStatPage
+        Title="Migraine Statistics"/>
+
+
+</TabbedPage>

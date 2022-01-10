@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "632805104973",
+    "project_id": "migrainetrackapp",
+    "storage_bucket": "migrainetrackapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632805104973:android:249d0c71bfa59ea2422b04",
+        "android_client_info": {
+          "package_name": "com.companyname.migrainetrackingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632805104973-kl899abc7bin3bek180658nou0n7da1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuAU30j2B0BV42gbdYl2b6lYUE4U-jW6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632805104973-kl899abc7bin3bek180658nou0n7da1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "632805104973-6sicc8bfs820lvmpoiskmahv91iuam6a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.companyname.MigraineTrackingApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
