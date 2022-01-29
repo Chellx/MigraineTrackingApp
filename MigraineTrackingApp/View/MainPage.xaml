@@ -15,7 +15,6 @@
         <Entry x:Name="loginEmail"
                Placeholder="Email"
                PlaceholderColor="White"
-               
                TextColor="White"
                Keyboard="Email"
                VerticalOptions="Center"/>
@@ -32,11 +31,21 @@
         <Button x:Name="loginButton"
                 Text="LOGIN" 
                 BackgroundColor="#FF8E00"
-                Margin="70,70,70,20"
+                Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="loginButton_Clicked"/>
+
+
+        <Button x:Name="googleLoginButton"
+                Text="LOGIN WITH GOOGLE" 
+                BackgroundColor="#FF8E00"
+                Margin="70,20,70,20"
+                TextColor="White"
+                VerticalOptions="Center"
+                CornerRadius="10"
+                Clicked="googleLoginButton_Clicked"/>
 
 
         <Button x:Name="createAccountButton"

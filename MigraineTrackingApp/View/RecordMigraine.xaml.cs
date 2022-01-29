@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace MigraineTrackingApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage
+    public partial class RecordMigraine : ContentPage
     {
-        public ProfilePage()
+        public RecordMigraine()
         {
             InitializeComponent();
         }

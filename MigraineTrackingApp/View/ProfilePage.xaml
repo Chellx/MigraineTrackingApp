@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MigraineTrackingApp.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Profile Page"
+                   TextColor="White"/>
+
+
+            <Entry x:Name="memberEmail"
+               Placeholder="Email"
+               PlaceholderColor="Black"
+               TextColor="Black"
+               Keyboard="Email"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberFirstName"
+               Placeholder="First Name"
+               PlaceholderColor="Black"
+               TextColor="black"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberLastName"
+               Placeholder="Last Name"
+               PlaceholderColor="black"
+               TextColor="black"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberGender"
+               Placeholder="Gender"
+               PlaceholderColor="black"
+               TextColor="black"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberDob"
+               Placeholder="DOB"
+               PlaceholderColor="black"
+               TextColor="black"
+               VerticalOptions="Center"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

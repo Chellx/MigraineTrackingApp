@@ -6,6 +6,20 @@
         <StackLayout>
             <Label Text="Welcome to Home Page" 
                    TextColor="White"/>
+
+            <Button x:Name="recordMigraine"
+                Text="Record Migraine Attack" 
+                BackgroundColor="#FF8E00"
+                Margin="70,20,70,20"
+                TextColor="White"
+                VerticalOptions="Center"
+                CornerRadius="50"
+                Clicked="recordMigraineButton_Clicked"/>
+
+
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

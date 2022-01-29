@@ -16,5 +16,13 @@ namespace MigraineTrackingApp
         {
             InitializeComponent();
         }
+
+
+
+        private async void recordMigraineButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RecordMigraine());
+        }
+
     }
 }
