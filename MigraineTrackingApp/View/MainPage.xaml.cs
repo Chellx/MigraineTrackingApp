@@ -14,10 +14,11 @@ namespace MigraineTrackingApp
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
 
-          
 
-            Navigation.PushModalAsync(new ProfilePage());
+
+             Navigation.PushModalAsync(new RecordMigraine());
 
             var assemble = typeof(MainPage);
 

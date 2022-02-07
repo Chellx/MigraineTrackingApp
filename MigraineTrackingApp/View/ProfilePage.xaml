@@ -4,39 +4,39 @@
              x:Class="MigraineTrackingApp.ProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Profile Page"
+            <Label Text="PROFILE PAGE"
                    TextColor="White"/>
 
 
             <Entry x:Name="memberEmail"
                Placeholder="Email"
-               PlaceholderColor="Black"
-               TextColor="Black"
+               PlaceholderColor="White"
+               TextColor="White"
                Keyboard="Email"
                VerticalOptions="Center"/>
 
             <Entry x:Name="memberFirstName"
                Placeholder="First Name"
-               PlaceholderColor="Black"
-               TextColor="black"
+               PlaceholderColor="White"
+               TextColor="White"
                VerticalOptions="Center"/>
 
             <Entry x:Name="memberLastName"
                Placeholder="Last Name"
-               PlaceholderColor="black"
-               TextColor="black"
+               PlaceholderColor="White"
+               TextColor="White"
                VerticalOptions="Center"/>
 
             <Entry x:Name="memberGender"
                Placeholder="Gender"
-               PlaceholderColor="black"
-               TextColor="black"
+               PlaceholderColor="White"
+               TextColor="White"
                VerticalOptions="Center"/>
 
             <Entry x:Name="memberDob"
                Placeholder="DOB"
-               PlaceholderColor="black"
-               TextColor="black"
+               PlaceholderColor="White"
+               TextColor="White"
                VerticalOptions="Center"/>
 
         </StackLayout>

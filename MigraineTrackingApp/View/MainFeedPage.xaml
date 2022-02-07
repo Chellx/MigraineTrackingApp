@@ -4,7 +4,7 @@
              x:Class="MigraineTrackingApp.MainFeedPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Home Page" 
+            <Label Text="Welcome to Main Feed" 
                    TextColor="White"/>
 
             <Button x:Name="recordMigraine"

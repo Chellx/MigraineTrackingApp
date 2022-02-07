@@ -15,13 +15,14 @@ namespace MigraineTrackingApp
         public MainFeedPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false); //make fullscreen
         }
 
 
 
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RecordMigraine());
+            await Navigation.PushAsync(new RecordMigraine());
         }
 
     }

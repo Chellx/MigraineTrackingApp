@@ -1,12 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.RecordMigraine">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="MigraineTrackingApp.RecordMigraine"
+             BackgroundColor="#3E8CDA">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition  Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid RowSpacing="30" ColumnSpacing="30"></Grid>
+
+        <Button BackgroundColor="#003F7D" Grid.Row="0" Grid.Column="0" Text="Time" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="0" Grid.Column="1" Text="Date" TextColor="White" CornerRadius="10"  />
+        <Button BackgroundColor="#003F7D" Grid.Row="1" Grid.Column="0" Text="Migraine/Headache Type" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="1" Grid.Column="1" Text="Pain Intensity" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="2" Grid.Column="0" Text="Pain Location" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="2" Grid.Column="1" Text="Medication" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="3" Grid.Column="0" Text="Symptoms" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="3" Grid.Column="1" Text="Triggers" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="4" Grid.Column="0" Text="Food Eaten" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#003F7D" Grid.Row="4" Grid.Column="1" Text="Weather" TextColor="White" CornerRadius="10" />
+
+        <Button BackgroundColor="#FF8E00" Grid.Row="5" Grid.Column="0" Text="BACK" TextColor="White" CornerRadius="10" />
+        <Button BackgroundColor="#FF8E00" Grid.Row="5" Grid.Column="1" Text="SAVE" TextColor="White" CornerRadius="10" />
+
+
+
+
+
+
+    </Grid>
+
+    
 </ContentPage>
