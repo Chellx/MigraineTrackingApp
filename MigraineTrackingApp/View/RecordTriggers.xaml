@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MigraineTrackingApp.View.RecordTriggers" BackgroundColor="#003F7D">
+
+
+    <StackLayout>
+        <StackLayout>
+            <ListView x:Name="TriggersListView" ItemsSource="{Binding triggers}" Margin="20" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.50*" />
+                                    <ColumnDefinition Width="0.50*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                   TextColor="#FF8E00" 
+                                   FontSize="Medium" FontFamily="Arial"  
+                                   HorizontalTextAlignment="Center" 
+                                   Text="{Binding .}"/>
+                                <Button 
+                                Grid.Row="0" 
+                                Grid.Column="1"
+                                BackgroundColor="#FF8E00" 
+                                Text="Add" 
+                                TextColor="White" 
+                                CornerRadius="10"
+                                Clicked="addToList"
+                                CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <Entry x:Name="addTriggers"
+               Placeholder="Add Another Trigger"
+               PlaceholderColor="White"
+               TextColor="White"
+               VerticalOptions="Center"/>
+
+
+        <Button  
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="ADD" 
+                TextColor="White" 
+                CornerRadius="10"
+                Clicked="addToList"/>
+
+        <StackLayout>
+            <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedTriggers}" Margin="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.50*" />
+                                    <ColumnDefinition Width="0.50*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                   TextColor="#FF8E00" 
+                                   FontSize="Medium" FontFamily="Arial"  
+                                   HorizontalTextAlignment="Center" 
+                                   Text="{Binding .}"/>
+                                <Button 
+                                Grid.Row="0" 
+                                Grid.Column="1"
+                                BackgroundColor="#FF8E00" 
+                                Text="Remove" 
+                                TextColor="White" 
+                                CornerRadius="10"
+                                Clicked="removeFromList"
+                                CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <Button x:Name="backButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="BACK" 
+                TextColor="White" 
+                Clicked="returnToMenu"
+                CornerRadius="10" />
+
+        <Button x:Name="saveButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5"
+                Grid.Column="1" 
+                Text="SAVE" 
+                TextColor="White" 
+                Clicked="saveTypes"
+                CornerRadius="10" />
+
+    </StackLayout>
+</ContentPage>

@@ -22,7 +22,6 @@
         <Entry x:Name="loginPassWord"
                Placeholder="Password" 
                PlaceholderColor="White"
-               
                TextColor="White"
                IsPassword="True"
                VerticalOptions="Center"/>

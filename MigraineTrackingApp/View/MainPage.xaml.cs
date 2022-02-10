@@ -18,7 +18,7 @@ namespace MigraineTrackingApp
 
 
 
-             Navigation.PushModalAsync(new RecordMigraine());
+            //Navigation.PushModalAsync(new RecordMigraine());
 
             var assemble = typeof(MainPage);
 

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MigraineTrackingApp.View.RecordDate">
+    
+    
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <StackLayout Margin="10">
+        <Label Text="Choose Start and End Date of Migraine Attack"
+               Style="{DynamicResource TitleStyle}"
+               Margin="0, 20"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Start Date:" />
+
+        <DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+
+        <Label Text="End Date:" />
+
+        <DatePicker x:Name="endDatePicker"
+                    MinimumDate="{Binding Source={x:Reference startDatePicker},
+                                          Path=Date}"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+
+        <StackLayout Orientation="Horizontal"
+                     Margin="0, 0, 0, 30">
+            <Label Text="Length Of Migraine Attack: "
+                   VerticalOptions="Center" />
+            <Switch x:Name="includeSwitch"
+                    Toggled="OnSwitchToggled" />
+        </StackLayout>
+
+        <Label x:Name="resultLabel"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+
+        <Button x:Name="backButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="BACK" 
+                TextColor="White" 
+                Clicked="returnToMenu"
+                CornerRadius="10" />
+
+        <Button x:Name="saveButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5"
+                Grid.Column="1" 
+                Text="SAVE" 
+                TextColor="White" 
+                Clicked="saveDates"
+                CornerRadius="10" />
+
+
+    </StackLayout>
+    
+    
+</ContentPage>

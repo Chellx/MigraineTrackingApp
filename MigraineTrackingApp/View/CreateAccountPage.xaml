@@ -2,9 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.CreateAccountPage">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Create Account Page!" />
+        <StackLayout BackgroundColor="#003366">
+            
+            <Label Text="CREATE ACCOUNT"
+                   TextColor="White"/>
+
+
+            <Entry x:Name="memberEmail"
+               Placeholder="Email"
+               PlaceholderColor="White"
+               TextColor="White"
+               Keyboard="Email"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberFirstName"
+               Placeholder="First Name"
+               PlaceholderColor="White"
+               TextColor="White"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="createAccPassWord"
+               Placeholder="Password" 
+               PlaceholderColor="White"
+               TextColor="White"
+               IsPassword="True"
+               VerticalOptions="Center"/>
+
+
+            <Entry x:Name="confirmAccPassWord"
+               Placeholder="Password" 
+               PlaceholderColor="White"
+               TextColor="White"
+               IsPassword="True"
+               VerticalOptions="Center"/>
+
+            <Button x:Name="createAccButton"
+                Text="LOGIN" 
+                BackgroundColor="#FF8E00"
+                Margin="70,20,70,20"
+                TextColor="White"
+                VerticalOptions="Center"
+                CornerRadius="10"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

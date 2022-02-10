@@ -18,18 +18,48 @@
         <Grid RowSpacing="30" ColumnSpacing="30"></Grid>
 
         <Button BackgroundColor="#003F7D" Grid.Row="0" Grid.Column="0" Text="Time" TextColor="White" CornerRadius="10" />
-        <Button BackgroundColor="#003F7D" Grid.Row="0" Grid.Column="1" Text="Date" TextColor="White" CornerRadius="10"  />
-        <Button BackgroundColor="#003F7D" Grid.Row="1" Grid.Column="0" Text="Migraine/Headache Type" TextColor="White" CornerRadius="10" />
+        
+        
+        <Button x:Name="recordDateButton" BackgroundColor="#003F7D" Grid.Row="0" Grid.Column="1" Text="Date" TextColor="White" CornerRadius="10" Clicked="recordDateButton_Clicked" />
+
+
+        <Button x:Name="recordTypeButton" BackgroundColor="#003F7D" Grid.Row="1" Grid.Column="0" Text="Migraine/Headache Type" TextColor="White" CornerRadius="10" Clicked="recordTypeButton_Clicked" />
+        
+        
+        
         <Button BackgroundColor="#003F7D" Grid.Row="1" Grid.Column="1" Text="Pain Intensity" TextColor="White" CornerRadius="10" />
-        <Button BackgroundColor="#003F7D" Grid.Row="2" Grid.Column="0" Text="Pain Location" TextColor="White" CornerRadius="10" />
-        <Button BackgroundColor="#003F7D" Grid.Row="2" Grid.Column="1" Text="Medication" TextColor="White" CornerRadius="10" />
-        <Button BackgroundColor="#003F7D" Grid.Row="3" Grid.Column="0" Text="Symptoms" TextColor="White" CornerRadius="10" />
-        <Button BackgroundColor="#003F7D" Grid.Row="3" Grid.Column="1" Text="Triggers" TextColor="White" CornerRadius="10" />
+
+
+        <Button x:Name="recordPainLocationButton" BackgroundColor="#003F7D" Grid.Row="2" Grid.Column="0" Text="Pain Location" TextColor="White" CornerRadius="10" Clicked="recordpainLocationButton_Clicked"/>
+
+
+        <Button x:Name="recordMedTypes" BackgroundColor="#003F7D" Grid.Row="2" Grid.Column="1" Text="Medication" TextColor="White" CornerRadius="10" Clicked="recordMedTypeButton_Clicked" />
+
+        <Button x:Name="recordSymptoms"  BackgroundColor="#003F7D" Grid.Row="3" Grid.Column="0" Text="Symptoms" TextColor="White" CornerRadius="10" Clicked="recordSymptomsButton_Clicked" />
+
+
+        <Button x:Name="recordTriggers" BackgroundColor="#003F7D" Grid.Row="3" Grid.Column="1" Text="Triggers" TextColor="White" CornerRadius="10" Clicked="recordTriggersButton_Clicked"/>
+        
+        
         <Button BackgroundColor="#003F7D" Grid.Row="4" Grid.Column="0" Text="Food Eaten" TextColor="White" CornerRadius="10" />
         <Button BackgroundColor="#003F7D" Grid.Row="4" Grid.Column="1" Text="Weather" TextColor="White" CornerRadius="10" />
 
-        <Button BackgroundColor="#FF8E00" Grid.Row="5" Grid.Column="0" Text="BACK" TextColor="White" CornerRadius="10" />
-        <Button BackgroundColor="#FF8E00" Grid.Row="5" Grid.Column="1" Text="SAVE" TextColor="White" CornerRadius="10" />
+        <Button x:Name="backButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="BACK" 
+                TextColor="White" 
+                CornerRadius="10" 
+                Clicked="backButton_Clicked"/>
+        
+        <Button x:Name="saveButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5"
+                Grid.Column="1" 
+                Text="SAVE" 
+                TextColor="White" 
+                CornerRadius="10" />
 
 
 

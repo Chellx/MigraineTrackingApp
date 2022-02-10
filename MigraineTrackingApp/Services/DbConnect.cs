@@ -40,5 +40,31 @@ namespace MigraineTrackingApp.Services
                 return null;
             }
         }
+        /// <summary>
+        /// This method saves a record of a users migraine data
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="migraineT"></param>
+        /// <returns></returns>
+        public async Task<bool> createMigraineRecord(string uid,List<string> migraineT, List<string> painLocation)
+        {
+            try
+            {
+                await firebase
+                .Child("RecordMigraine").Child(uid)
+                .PutAsync(new SaveMigraine()
+                {
+                    migraineType = migraineT,
+                    painLocation=painLocation
+
+                });
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
     }
 }
