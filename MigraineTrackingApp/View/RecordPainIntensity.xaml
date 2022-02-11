@@ -4,9 +4,40 @@
              x:Class="MigraineTrackingApp.View.RecordPainIntensity">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid Margin="5,0,5,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.60*" />
+                    <ColumnDefinition Width="0.40*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Select Pain Intensity" FontSize="Large"/>
+                <Picker Grid.Row="0" Grid.Column="1" x:Name="Intensity" Title="Select">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>1 No Pain</x:String>
+                            <x:String>2 Mild Pain</x:String>
+                            <x:String>3 Uncomfortable Pain</x:String>
+                            <x:String>4 Moderate Pain</x:String>
+                            <x:String>5 Distracting Pain</x:String>
+                            <x:String>6 Distressing Pain</x:String>
+                            <x:String>7 Constant Pain</x:String>
+                            <x:String>8 Intense Pain</x:String>
+                            <x:String>9 Severe Pain</x:String>
+                            <x:String>10 Excruciating Pain</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>
+            <Button x:Name="saveButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5"
+                Grid.Column="1" 
+                Text="SAVE" 
+                TextColor="White" 
+                Clicked="saveIntensity"
+                CornerRadius="10" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

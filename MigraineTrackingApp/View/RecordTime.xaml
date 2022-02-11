@@ -2,11 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.RecordTime">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <StackLayout>
+        <Label Text="Select the time below to be reminded at." />
+        <TimePicker x:Name="start"
+                    Time="11:00:00"
+                    Format="HH:mm:ss" />
+        <TimePicker x:Name="end"
+                    Time="11:00:00"
+                    Format="HH:mm:ss"
+                     />
+        <Label Text="Length Of Migraine Attack: "
+                   VerticalOptions="Center" />
+        <Switch x:Name="includeSwitch"
+                    Toggled="OnSwitchToggled" />
+        <Label x:Name="resultLabel"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="saveButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5"
+                Grid.Column="1" 
+                Text="RECORD Time" 
+                TextColor="White" 
+                CornerRadius="10"
+                Clicked="recordButton_Clicked"/>
         </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

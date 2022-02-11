@@ -14,6 +14,20 @@ namespace MigraineTrackingApp.ViewModels
         List<string> medicationType = new List<string>();
         List<string> symptoms = new List<string>();
         List<string> triggers = new List<string>();
+
+
+        string location;
+        string humidity;
+        string temperature;
+
+        string startTime;
+        string endTime;
+
+        string startdate;
+        string enddate;
+        string migraineDuration;
+
+        string painIntensity;
         public RecordMigraneViewModel()
         {
 
@@ -109,6 +123,66 @@ namespace MigraineTrackingApp.ViewModels
         public List<string> getTriggers()
         {
             return triggers;
+        }
+
+        /////////////////////////////////////////////////////////////////////////
+        ///
+        public string Location
+        {
+            get => location;
+            set => location = value;
+        }
+
+        public string Humidity
+        {
+            get => humidity;
+            set => humidity = value;
+        }
+
+        public string Temperature
+        {
+            get => temperature;
+            set => temperature = value;
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// 
+        /// </summary>
+        public string StartTimeOfMigraine
+        {
+            get => startTime;
+            set => startTime = value;
+        }
+        public string EndTimeOfMigraine
+        {
+            get => endTime;
+            set => endTime = value;
+        }
+        public string LengthOfMigraineAttack
+        {
+            get => migraineDuration;
+            set => migraineDuration = value;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        public string StartDate
+        {
+            get => startdate;
+            set => startdate = value;
+        }
+        public string EndDate
+        {
+            get => enddate;
+            set => enddate = value;
+        }
+        /// <summary>
+        /// /////////////////////////////////////////////////////////////////////////
+        /// </summary>
+
+        public string PainIntensity
+        {
+            get => painIntensity;
+            set => painIntensity = value;
         }
     }
 }

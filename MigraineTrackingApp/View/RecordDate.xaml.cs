@@ -49,11 +49,9 @@ namespace MigraineTrackingApp.View
 
         private async void saveDates(object sender, EventArgs args)
         {
-            string startDate = startDatePicker.Date.ToString();
-            string endDate = endDatePicker.Date.ToString();
-
-
-
+            migraneVM.StartDate = startDatePicker.Date.ToString();
+            migraneVM.EndDate = endDatePicker.Date.ToString();
+            await Navigation.PopAsync();
         }
     }
 }

@@ -56,5 +56,26 @@ namespace MigraineTrackingApp
             await Navigation.PushAsync(new View.RecordTriggers(migraneVM));
         }
 
+        private async void recordWeatherButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new View.RecordWeather(migraneVM));
+        }
+
+        private async void recordTimeButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new View.RecordTime(migraneVM));
+        }
+
+        private async void recordFoodButton_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new View.RecordFood(migraneVM));
+        }
+
+        private async void recordPainIntensityButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new View.RecordPainIntensity(migraneVM));
+        }
+
+
     }
 }
