@@ -19,11 +19,29 @@ namespace MigraineTrackingApp.Models
 
         [JsonProperty("triggers")]
         public List<string> triggers { get; set; }
+        [JsonProperty("foods")]
+        public List<string> foods { get; set; }
 
         [JsonProperty("startDate")]
         public string startDate { get; set; }
 
         [JsonProperty("endDate")]
         public string endDate { get; set; }
+        [JsonProperty("startTime")]
+        public string startTime { get; set; }
+
+        [JsonProperty("endTime")]
+        public string endTime { get; set; }
+
+        [JsonProperty("location")]
+        public string location { get; set; }
+        [JsonProperty("humidity")]
+        public string humidity { get; set; }
+        [JsonProperty("temperature")]
+        public string temperature { get; set; }
+        [JsonProperty("migraineDuration")]
+        public string migraineDuration { get; set; }
+        [JsonProperty("painIntensity")]
+        public string painIntensity { get; set; }
     }
 }

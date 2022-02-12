@@ -2,11 +2,73 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.RecordFood">
-    <ContentPage.Content>
+    <StackLayout>
+        <Entry x:Name="addFood"
+               Placeholder="Add food"
+               PlaceholderColor="black"
+               TextColor="Black"
+               VerticalOptions="Center"/>
+
+
+        <Button  
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="ADD" 
+                TextColor="White" 
+                CornerRadius="10"
+                Clicked="addToList"/>
+
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedTriggers}" Margin="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.50*" />
+                                    <ColumnDefinition Width="0.50*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                   TextColor="#FF8E00" 
+                                   FontSize="Medium" FontFamily="Arial"  
+                                   HorizontalTextAlignment="Center" 
+                                   Text="{Binding .}"/>
+                                <Button 
+                                Grid.Row="0" 
+                                Grid.Column="1"
+                                BackgroundColor="#FF8E00" 
+                                Text="Remove" 
+                                TextColor="black" 
+                                CornerRadius="10"
+                                Clicked="removeFromList"
+                                CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-    </ContentPage.Content>
+        <Button x:Name="backButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="BACK" 
+                TextColor="White" 
+                Clicked="returnToMenu"
+                CornerRadius="10" />
+
+    <Button x:Name="saveButton" 
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5"
+                Grid.Column="1" 
+                Text="SAVE" 
+                TextColor="White" 
+                Clicked="saveFoodList"
+                CornerRadius="10" />
+
+    </StackLayout>
 </ContentPage>

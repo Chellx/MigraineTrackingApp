@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MigraineTrackingApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,7 @@ namespace MigraineTrackingApp.ViewModels
         List<string> medicationType = new List<string>();
         List<string> symptoms = new List<string>();
         List<string> triggers = new List<string>();
+        List<string> foods = new List<string>();
 
 
         string location;
@@ -28,9 +30,10 @@ namespace MigraineTrackingApp.ViewModels
         string migraineDuration;
 
         string painIntensity;
+        DbConnect db;
         public RecordMigraneViewModel()
         {
-
+            db = new DbConnect();
         }
         /// <summary>
         /// This menthod saves the migrane types list
@@ -183,6 +186,86 @@ namespace MigraineTrackingApp.ViewModels
         {
             get => painIntensity;
             set => painIntensity = value;
+        }
+        ////////////////////////////////////////////////////////////////////////////////
+        public void setFoodEaten(List<string> types)
+        {
+            foods.AddRange(types);
+        }
+        
+        public List<string> getFoodEaten()
+        {
+            return foods;
+        }
+        public async void sendRecordDetailsToDataase(string currentDate,string uid)
+        {
+            setValuesIfNotFilledIn();
+            bool value = await db.createMigraineRecord(uid, getMigraneTypes(), getPainLocation(), getMedicationTypes(), getSymptoms(), getTriggers(), getFoodEaten(), Location, Humidity, Temperature, StartTimeOfMigraine, EndTimeOfMigraine, StartDate, EndDate, LengthOfMigraineAttack, PainIntensity, currentDate);
+        }
+        public void setValuesIfNotFilledIn()
+        {
+            List<string> ifListEmpty = new List<string>();
+            ifListEmpty.Add(" ");
+            if (getMigraneTypes().Count == 0)
+            {
+                setMigraneTypes(ifListEmpty);
+            }
+            if (getPainLocation().Count == 0)
+            {
+                setPainLocation(ifListEmpty);
+            }
+            if (getMedicationTypes().Count == 0)
+            {
+                setMedicationTypes(ifListEmpty);
+            }
+            if (getSymptoms().Count == 0)
+            {
+                setSymptoms(ifListEmpty);
+            }
+            if (getTriggers().Count == 0)
+            {
+                setTriggers(ifListEmpty);
+            }
+            if (getFoodEaten().Count == 0)
+            {
+                setFoodEaten(ifListEmpty);
+            }
+            if (Location == null)
+            {
+                Location = " ";
+            }
+            if (Humidity == null)
+            {
+                Humidity = " ";
+            }
+            if (Temperature == null)
+            {
+                Temperature = " ";
+            }
+            if (StartTimeOfMigraine == null)
+            {
+                StartTimeOfMigraine = " ";
+            }
+            if (EndTimeOfMigraine == null)
+            {
+                EndTimeOfMigraine = " ";
+            }
+            if (StartDate == null)
+            {
+                StartDate = " ";
+            }
+            if (EndDate == null)
+            {
+                EndDate = " ";
+            }
+            if (PainIntensity == null)
+            {
+                PainIntensity = " ";
+            }
+            if (LengthOfMigraineAttack == null)
+            {
+                LengthOfMigraineAttack = " ";
+            }
         }
     }
 }

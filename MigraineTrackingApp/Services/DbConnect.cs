@@ -46,17 +46,29 @@ namespace MigraineTrackingApp.Services
         /// <param name="uid"></param>
         /// <param name="migraineT"></param>
         /// <returns></returns>
-        public async Task<bool> createMigraineRecord(string uid,List<string> migraineT, List<string> painLocation)
+        public async Task<bool> createMigraineRecord(string uid,List<string> migranetypes, List<string> painlocation, List<string> medicationtype, List<string> symm, List<string> trig, List<string> food,string loc,string hum,string temp,string sTime,string eTime,string sdate,string edate,string migDuration,string painInten,string todaysDate)
         {
             try
             {
                 await firebase
-                .Child("RecordMigraine").Child(uid)
+                .Child("RecordMigraine").Child(uid).Child(todaysDate)
                 .PutAsync(new SaveMigraine()
                 {
-                    migraineType = migraineT,
-                    painLocation=painLocation
-
+                    migraineType = migranetypes,
+                    painLocation = painlocation,
+                    medicationType = medicationtype,
+                    symptoms = symm,
+                    triggers = trig,
+                    foods = food,
+                    startDate = sdate,
+                    endDate = edate,
+                    startTime = sTime,
+                    endTime = eTime,
+                    temperature = temp,
+                    location = loc,
+                    humidity = hum,
+                    migraineDuration = migDuration,
+                    painIntensity = painInten
                 });
                 return true;
             }

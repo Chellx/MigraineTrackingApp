@@ -60,7 +60,8 @@
                 Grid.Column="1" 
                 Text="SAVE" 
                 TextColor="White" 
-                CornerRadius="10" />
+                CornerRadius="10" 
+                Clicked="savePlan"/>
 
 
 

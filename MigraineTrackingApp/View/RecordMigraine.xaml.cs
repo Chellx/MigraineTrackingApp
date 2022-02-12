@@ -14,12 +14,20 @@ namespace MigraineTrackingApp
     public partial class RecordMigraine : ContentPage
     {
         RecordMigraneViewModel migraneVM = new RecordMigraneViewModel();
+        DateTime currentDate;
         public RecordMigraine()
         {
             InitializeComponent();
+            DateTime now = DateTime.Now;
+            currentDate = now.Date;
         }
 
-
+        private void savePlan(object sender, EventArgs args)
+        {
+            string newDate = currentDate.ToString();
+            newDate = newDate.Replace("/", "-");
+            migraneVM.sendRecordDetailsToDataase(newDate,"adcvfhhsnsj");
+        }
 
         private async void backButton_Clicked(object sender, EventArgs e)
         {
@@ -68,7 +76,7 @@ namespace MigraineTrackingApp
 
         private async void recordFoodButton_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new View.RecordFood(migraneVM));
+            await Navigation.PushAsync(new View.RecordFood(migraneVM));
         }
 
         private async void recordPainIntensityButton_Clicked(object sender, EventArgs e)
