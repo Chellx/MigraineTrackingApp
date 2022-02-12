@@ -24,9 +24,10 @@ namespace MigraineTrackingApp
 
         private void savePlan(object sender, EventArgs args)
         {
-            string newDate = currentDate.ToString();
+            string newDate = currentDate.ToString("dd'/'MM'/'yyyy HH:mm:ss");
+
             newDate = newDate.Replace("/", "-");
-            migraneVM.sendRecordDetailsToDataase(newDate,"adcvfhhsnsj");
+            migraneVM.sendRecordDetailsToDataase(newDate,"adcvfhhsnsj"); //mock user ID
         }
 
         private async void backButton_Clicked(object sender, EventArgs e)
