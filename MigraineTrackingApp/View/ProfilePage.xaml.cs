@@ -15,9 +15,11 @@ namespace MigraineTrackingApp
     public partial class ProfilePage : ContentPage
     {
         MemberViewModel memberVm;
-        public ProfilePage()
+        string Id = "";
+        public ProfilePage(string userId)
         {
             InitializeComponent();
+            this.Id = userId;
         }
 
         protected async override void OnAppearing()
@@ -25,12 +27,12 @@ namespace MigraineTrackingApp
 
             base.OnAppearing();
             memberVm = new MemberViewModel();
-            List<Member> memberList = await memberVm.getListOfMembers(); //gets list back from viewModel
-            memberEmail.Text = memberList[0].Email;
-            memberFirstName.Text = memberList[0].FirstName;
-            memberLastName.Text = memberList[0].LastName;
-            memberGender.Text = memberList[0].Gender;
-            memberDob.Text = memberList[0].Dob;
+            var member = await memberVm.getMember(Id); //gets list back from viewModel
+            memberEmail.Text = member.Email;
+            memberFirstName.Text = member.FirstName;
+            memberLastName.Text = member.LastName;
+            memberGender.Text = member.Gender;
+            memberDob.Text = member.Dob;
         }
     }
 }

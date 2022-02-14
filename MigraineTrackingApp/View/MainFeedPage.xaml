@@ -1,20 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.MainFeedPage">
+             x:Class="MigraineTrackingApp.MainFeedPage"
+              BackgroundColor="#003366">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Main Feed" 
-                   TextColor="White"/>
+           
+
+            <Button x:Name="profileButton"
+                Text="PROFILE PAGE" 
+                BackgroundColor="#53A2F0"
+                Margin="70,20,70,20"
+                TextColor="Black"
+                VerticalOptions="Center"
+                CornerRadius="50"
+                Clicked="profileButton_Clicked"/>
+
+            <Button x:Name="statsButton"
+                Text="MIGRAINE STATS" 
+                BackgroundColor="#53A2F0"
+                Margin="70,20,70,20"
+                TextColor="black"
+                VerticalOptions="Center"
+                CornerRadius="50"
+                Clicked="statsButton_Clicked"/>
 
             <Button x:Name="recordMigraine"
                 Text="Record Migraine Attack" 
-                BackgroundColor="#FF8E00"
+                BackgroundColor="#53A2F0"
                 Margin="70,20,70,20"
-                TextColor="White"
+                TextColor="black"
                 VerticalOptions="Center"
                 CornerRadius="50"
                 Clicked="recordMigraineButton_Clicked"/>
+
+
+            <Button x:Name="prevMigraineRecords"
+                Text=" Migraine Records" 
+                BackgroundColor="#53A2F0"
+                Margin="70,20,70,20"
+                TextColor="black"
+                VerticalOptions="Center"
+                CornerRadius="50"
+                Clicked="recordsButton_Clicked"/>
 
 
 

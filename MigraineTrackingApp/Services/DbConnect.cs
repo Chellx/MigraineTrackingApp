@@ -13,32 +13,44 @@ namespace MigraineTrackingApp.Services
     {
         //private static FirebaseClient firebase = new FirebaseClient("https://migrainetrackapp-default-rtdb.europe-west1.firebasedatabase.app/");
         FirebaseClient firebase;
-        private static List<Member> memberList = new List<Member>();
+        private static Member member = new Member();
         public DbConnect()
         {
             firebase = new FirebaseClient("https://migrainetrackapp-default-rtdb.europe-west1.firebasedatabase.app/");
         }
-        public async Task<List<Member>> GetAllMembers() { 
+        public async Task<Member> GetMember(string userId)
+        { 
             try
             {
-                memberList = (await firebase
-                .Child("members")
-                .OnceAsync<Member>()).Select(item => new Member
-                {
-                    Email = item.Object.Email,
-                    FirstName = item.Object.FirstName,
-                    LastName = item.Object.LastName,
-                    Gender = item.Object.Gender,
-                    Dob = item.Object.Dob
-                }).ToList();
-                
-                return memberList;
+                return await firebase.Child("member").Child(userId).OnceSingleAsync<Member>();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return null;
             }
+        }
+        /// <summary>
+        /// Create member
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="dob"></param>
+        /// <param name="gender"></param>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public async Task<bool> createProfile(string firstName,string lastName,string dob,string gender,string userid)
+        {
+            await firebase
+                .Child("member").Child(userid)
+                .PutAsync(new Member()
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Dob = dob,
+                    Gender = gender
+                });
+            return true;
         }
         /// <summary>
         /// This method saves a record of a users migraine data

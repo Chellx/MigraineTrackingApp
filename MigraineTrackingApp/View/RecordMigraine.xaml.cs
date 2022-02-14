@@ -15,11 +15,13 @@ namespace MigraineTrackingApp
     {
         RecordMigraneViewModel migraneVM = new RecordMigraneViewModel();
         DateTime currentDate;
-        public RecordMigraine()
+        string id = "";
+        public RecordMigraine(string userId)
         {
             InitializeComponent();
             DateTime now = DateTime.Now;
             currentDate = now.Date;
+            id = userId;
         }
 
         private void savePlan(object sender, EventArgs args)
@@ -27,12 +29,12 @@ namespace MigraineTrackingApp
             string newDate = currentDate.ToString("dd'/'MM'/'yyyy HH:mm:ss");
 
             newDate = newDate.Replace("/", "-");
-            migraneVM.sendRecordDetailsToDataase(newDate,"adcvfhhsnsj"); //mock user ID
+            migraneVM.sendRecordDetailsToDataase(newDate,id); //mock user ID
         }
 
         private async void backButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HomePage());
+            //await Navigation.PushAsync(new HomePage(" "));
         }
 
         private async void recordDateButton_Clicked(object sender, EventArgs e)

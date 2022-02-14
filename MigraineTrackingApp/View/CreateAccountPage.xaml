@@ -12,7 +12,7 @@
                Aspect="AspectFit"
                HorizontalOptions="FillAndExpand"
                HeightRequest="250"
-               Margin="20,0,30,50"/>
+               Margin="20,0,30,10"/>
 
             
 
@@ -25,6 +25,24 @@
 
             <Entry x:Name="memberFirstName"
                Placeholder="First Name"
+               PlaceholderColor="White"
+               TextColor="White"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberLastName"
+               Placeholder="Last Name"
+               PlaceholderColor="White"
+               TextColor="White"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberGender"
+               Placeholder="Gender"
+               PlaceholderColor="White"
+               TextColor="White"
+               VerticalOptions="Center"/>
+
+            <Entry x:Name="memberDob"
+               Placeholder="DOB"
                PlaceholderColor="White"
                TextColor="White"
                VerticalOptions="Center"/>
@@ -50,7 +68,8 @@
                 Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"
-                CornerRadius="10"/>
+                CornerRadius="10"
+                Clicked="createAccount"/>
 
 
         </StackLayout>

@@ -29,9 +29,9 @@
         
         <Button x:Name="loginButton"
                 Text="LOGIN" 
-                BackgroundColor="#FF8E00"
+                BackgroundColor="#53A2F0"
                 Margin="70,20,70,20"
-                TextColor="White"
+                TextColor="black"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="loginButton_Clicked"/>
@@ -39,9 +39,9 @@
 
         <Button x:Name="googleLoginButton"
                 Text="LOGIN WITH GOOGLE" 
-                BackgroundColor="#FF8E00"
+                BackgroundColor="#53A2F0"
                 Margin="70,20,70,20"
-                TextColor="White"
+                TextColor="black"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="googleLoginButton_Clicked"/>
@@ -49,9 +49,9 @@
 
         <Button x:Name="createAccountButton"
                 Text="CREATE ACCOUNT" 
-                BackgroundColor="#FF8E00"
+                BackgroundColor="#53A2F0"
                 Margin="70,20,70,70"
-                TextColor="White"
+                TextColor="black"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="createAccountButton_Clicked"/>

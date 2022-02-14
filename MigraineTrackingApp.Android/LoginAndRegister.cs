@@ -17,7 +17,7 @@ namespace MigraineTrackingApp
                 //Reference: https://www.lindseybroos.be/2020/03/xamarin-forms-and-firebase-authentication/ 
 
                 var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
-                var token =  user.User.Uid;
+                var token = user.User.Uid;
                 string userId = token.ToString();
                 return userId;
             }
@@ -32,8 +32,10 @@ namespace MigraineTrackingApp
         {
             try
             {
-                var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPassword(email, password);
-                return "1";
+                var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email,password);
+                var token = user.User.Uid;
+                string userId = token.ToString();
+                return userId;
             }
             catch (FirebaseAuthInvalidUserException e)
             {

@@ -15,12 +15,28 @@ namespace MigraineTrackingApp.ViewModels
         {
             databaseConnection = new DbConnect(); //connection to DB
         }
-
-        public async Task <List<Member>> getListOfMembers()
+        /// <summary>
+        /// Get member
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<Member> getMember(string userId)
         {
-            var result =  await databaseConnection.GetAllMembers();
+            var result = await databaseConnection.GetMember(userId);
             return result;
            
+        }
+        /// <summary>
+        /// Send data to create a member
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="dob"></param>
+        /// <param name="gender"></param>
+        /// <param name="userid"></param>
+        public async void createProfile(string firstName,string lastName,string dob,string gender,string userid)
+        {
+            await databaseConnection.createProfile(firstName, lastName, dob, gender, userid);
         }
     }
 }

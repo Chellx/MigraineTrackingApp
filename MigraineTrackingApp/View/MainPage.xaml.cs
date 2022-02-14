@@ -35,11 +35,11 @@ namespace MigraineTrackingApp
 
             bool isEmailEmpty = string.IsNullOrEmpty(loginEmail.Text); //check if email input empty or null
             bool isPassEmpty = string.IsNullOrEmpty(loginPassWord.Text); //check if password field is empty
-            string Token = await auth.SignupWithEmailPassword(loginEmail.Text, loginPassWord.Text); //put in create user page
+            string userID = await auth.LoginWithEmailPassword(loginEmail.Text, loginPassWord.Text); //put in create user page
             //string Token = await auth.LoginWithEmailPassword(loginEmail.Text, loginPassWord.Text); stay here for login
-            if (Token != "")
+            if (userID != "")
             {
-                await Navigation.PushAsync(new HomePage());
+                await Navigation.PushAsync(new MainFeedPage(userID));
             }
             else
             {
@@ -68,12 +68,12 @@ namespace MigraineTrackingApp
 
         private async void googleLoginButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            Navigation.PushAsync(new MainFeedPage( " "));
         }
 
         private void createAccountButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CreateAccountPage());
+            Navigation.PushAsync(new CreateAccountPage(auth));
         }
     }
 }

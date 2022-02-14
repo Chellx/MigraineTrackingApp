@@ -12,17 +12,29 @@ namespace MigraineTrackingApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainFeedPage : ContentPage
     {
-        public MainFeedPage()
+        string userId = "";
+        public MainFeedPage(string userId)
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false); //make fullscreen
+            this.userId = userId;
+            
         }
-
-
 
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RecordMigraine());
+            await Navigation.PushAsync(new RecordMigraine(userId));
+        }
+        private async void profileButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilePage(userId));
+        }
+        private async void statsButton_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new MigraineStatPage());
+        }
+        private async void recordsButton_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new RecordMigraine());
         }
 
     }
