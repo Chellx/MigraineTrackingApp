@@ -1,31 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordTime">
+             x:Class="MigraineTrackingApp.View.RecordTime" BackgroundColor="#003366">
     <StackLayout>
-        <Label Text="Select the time below to be reminded at." />
+        <Label Text="Select the time your migraine started and finished." 
+               TextColor="White"
+               HorizontalTextAlignment="Center"/>
+       
         <TimePicker x:Name="start"
                     Time="11:00:00"
+                    TextColor="White"
                     Format="HH:mm:ss" />
+        
+        
         <TimePicker x:Name="end"
                     Time="11:00:00"
+                    TextColor="White"
                     Format="HH:mm:ss"
                      />
+        
         <Label Text="Length Of Migraine Attack: "
+               TextColor="White"
                    VerticalOptions="Center" />
+        
         <Switch x:Name="includeSwitch"
                     Toggled="OnSwitchToggled" />
+      
+        
         <Label x:Name="resultLabel"
                FontAttributes="Bold"
+               TextColor="White"
                HorizontalTextAlignment="Center" />
         <StackLayout Orientation="Horizontal">
+           
             <Button x:Name="saveButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="RECORD Time" 
-                TextColor="White" 
+                TextColor="Black" 
                 CornerRadius="10"
+                
                 Clicked="recordButton_Clicked"/>
         </StackLayout>
     </StackLayout>

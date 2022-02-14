@@ -15,6 +15,8 @@ namespace MigraineTrackingApp
         public CreateAccountPage()
         {
             InitializeComponent();
+            var assemble = typeof(CreateAccountPage);
+            logoImage.Source = ImageSource.FromResource("MigraineTrackingApp.Assets.Images.logo.png", assemble);
         }
     }
 }

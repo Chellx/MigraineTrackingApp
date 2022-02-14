@@ -6,9 +6,15 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#003366">
             
-            <Label Text="CREATE ACCOUNT"
-                   TextColor="White"/>
+         
 
+            <Image x:Name="logoImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               HeightRequest="250"
+               Margin="20,0,30,50"/>
+
+            
 
             <Entry x:Name="memberEmail"
                Placeholder="Email"
@@ -32,15 +38,15 @@
 
 
             <Entry x:Name="confirmAccPassWord"
-               Placeholder="Password" 
+               Placeholder="Confirm Password" 
                PlaceholderColor="White"
                TextColor="White"
                IsPassword="True"
                VerticalOptions="Center"/>
 
             <Button x:Name="createAccButton"
-                Text="LOGIN" 
-                BackgroundColor="#FF8E00"
+                Text="Create Account" 
+                BackgroundColor="#53A2F0"
                 Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"

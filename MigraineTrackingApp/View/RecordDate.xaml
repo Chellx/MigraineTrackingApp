@@ -1,15 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordDate">
+             x:Class="MigraineTrackingApp.View.RecordDate" BackgroundColor="#003366">
     
     
     
-    <ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness">
-            <On Platform="iOS" Value="0, 20, 0, 0" />
-        </OnPlatform>
-    </ContentPage.Padding>
+   
 
     <StackLayout Margin="10">
         <Label Text="Choose Start and End Date of Migraine Attack"
