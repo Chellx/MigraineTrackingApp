@@ -5,16 +5,11 @@
              BackgroundColor="#003366">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="PROFILE PAGE"
-                   TextColor="White"/>
-
-
-            <Entry x:Name="memberEmail"
-               Placeholder="Email"
-               PlaceholderColor="White"
-               TextColor="White"
-               Keyboard="Email"
-               VerticalOptions="Center"/>
+            <Image x:Name="logoImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               HeightRequest="250"
+               Margin="20,0,30,50"/>
 
             <Entry x:Name="memberFirstName"
                Placeholder="First Name"

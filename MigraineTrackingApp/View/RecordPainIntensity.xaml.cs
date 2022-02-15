@@ -9,7 +9,7 @@ namespace MigraineTrackingApp.View
     public partial class RecordPainIntensity : ContentPage
     {
         RecordMigraneViewModel mvm;
-        string painLevel = "";
+        //string painLevel = "";
         internal RecordPainIntensity(RecordMigraneViewModel migraneVM)
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace MigraineTrackingApp.View
             }
             else
             {
-                await DisplayAlert("Alert", "Pick A Level Of Pain Intensity", "OK");
+                await DisplayAlert("Alert", "Please Selecr A Level Of Pain Intensity", "OK");
             }
         }
     }

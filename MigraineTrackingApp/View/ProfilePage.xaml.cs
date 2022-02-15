@@ -20,6 +20,10 @@ namespace MigraineTrackingApp
         {
             InitializeComponent();
             this.Id = userId;
+
+            var assemble = typeof(ProfilePage);
+
+            logoImage.Source = ImageSource.FromResource("MigraineTrackingApp.Assets.Images.logo.png", assemble);
         }
 
         protected async override void OnAppearing()
@@ -28,7 +32,7 @@ namespace MigraineTrackingApp
             base.OnAppearing();
             memberVm = new MemberViewModel();
             var member = await memberVm.getMember(Id); //gets list back from viewModel
-            memberEmail.Text = member.Email;
+            //memberEmail.Text = member.Email;
             memberFirstName.Text = member.FirstName;
             memberLastName.Text = member.LastName;
             memberGender.Text = member.Gender;

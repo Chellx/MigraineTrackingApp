@@ -11,52 +11,61 @@
         <Label Text="Choose Start and End Date of Migraine Attack"
                Style="{DynamicResource TitleStyle}"
                Margin="0, 20"
+               TextColor="White"
                HorizontalTextAlignment="Center" />
 
-        <Label Text="Start Date:" />
+        <Label Text="Start Date:" 
+               TextColor="White"/>
 
         <DatePicker x:Name="startDatePicker"
                     Format="D"
                     Margin="30, 0, 0, 30"
-                    DateSelected="OnDateSelected" />
+                    DateSelected="OnDateSelected"
+                    TextColor="White"/>
 
-        <Label Text="End Date:" />
+        <Label Text="End Date:" 
+               TextColor="White"/>
 
         <DatePicker x:Name="endDatePicker"
                     MinimumDate="{Binding Source={x:Reference startDatePicker},
                                           Path=Date}"
                     Format="D"
                     Margin="30, 0, 0, 30"
-                    DateSelected="OnDateSelected" />
+                    DateSelected="OnDateSelected" 
+                    TextColor="White"/>
 
         <StackLayout Orientation="Horizontal"
                      Margin="0, 0, 0, 30">
-            <Label Text="Length Of Migraine Attack: "
-                   VerticalOptions="Center" />
+            <Label Text="Record Length Of Migraine Attack? "
+                   VerticalOptions="Center" 
+                   TextColor="White"/>
+            
             <Switch x:Name="includeSwitch"
-                    Toggled="OnSwitchToggled" />
+                    Toggled="OnSwitchToggled"
+                    />
         </StackLayout>
 
         <Label x:Name="resultLabel"
                FontAttributes="Bold"
-               HorizontalTextAlignment="Center" />
+               HorizontalTextAlignment="Center" 
+               TextColor="White"/>
 
 
         <Button x:Name="backButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="BACK" 
-                TextColor="White" 
+                TextColor="Black" 
                 Clicked="returnToMenu"
                 CornerRadius="10" />
 
         <Button x:Name="saveButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 
-                TextColor="White" 
+                TextColor="Black" 
                 Clicked="saveDates"
                 CornerRadius="10" />
 

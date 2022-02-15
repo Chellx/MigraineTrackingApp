@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordPainIntensity">
+             x:Class="MigraineTrackingApp.View.RecordPainIntensity" BackgroundColor="#003366">
     <ContentPage.Content>
         <StackLayout>
             <Grid Margin="5,0,5,20">
@@ -12,31 +12,32 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="Select Pain Intensity" FontSize="Large"/>
-                <Picker Grid.Row="0" Grid.Column="1" x:Name="Intensity" Title="Select">
+                <Label Grid.Row="0" Grid.Column="0" Text="Select Pain Intensity" FontSize="Large" TextColor="White"/>
+                <Picker Grid.Row="0" Grid.Column="1" x:Name="Intensity" Title="Select Pain Intensity" >
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
-                            <x:String>1 No Pain</x:String>
-                            <x:String>2 Mild Pain</x:String>
-                            <x:String>3 Uncomfortable Pain</x:String>
-                            <x:String>4 Moderate Pain</x:String>
-                            <x:String>5 Distracting Pain</x:String>
-                            <x:String>6 Distressing Pain</x:String>
-                            <x:String>7 Constant Pain</x:String>
-                            <x:String>8 Intense Pain</x:String>
-                            <x:String>9 Severe Pain</x:String>
-                            <x:String>10 Excruciating Pain</x:String>
+                            <x:String>1: No Pain</x:String>
+                            <x:String>2: Mild Pain</x:String>
+                            <x:String>3: Uncomfortable Pain</x:String>
+                            <x:String>4: Moderate Pain</x:String>
+                            <x:String>5: Distracting Pain</x:String>
+                            <x:String>6: Distressing Pain</x:String>
+                            <x:String>7: Constant Pain</x:String>
+                            <x:String>8: Intense Pain</x:String>
+                            <x:String>9: Severe Pain</x:String>
+                            <x:String>10: Excruciating Pain</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
             </Grid>
             <Button x:Name="saveButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 
-                TextColor="White" 
+                TextColor="black" 
                 Clicked="saveIntensity"
+                    Margin="70,5,70,5"
                 CornerRadius="10" />
         </StackLayout>
     </ContentPage.Content>
