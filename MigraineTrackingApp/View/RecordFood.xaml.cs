@@ -30,6 +30,13 @@ namespace MigraineTrackingApp.View
                 showListView.ItemsSource = food;
             }
         }
+
+        private async void goToScan(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new BarcodeScanner());
+        }
+
+
         private void removeFromList(object sender, EventArgs args)
         {
             Button button = (Button)sender;

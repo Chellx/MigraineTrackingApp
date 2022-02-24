@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.RecordFood">
     <StackLayout>
+
+        <Button  
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="SCAN FOOD ITEM" 
+                TextColor="White" 
+                CornerRadius="10"
+                Clicked="goToScan"/>
+
+
+
         <Entry x:Name="addFood"
                Placeholder="Add food"
                PlaceholderColor="black"
