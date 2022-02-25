@@ -9,6 +9,17 @@
             <Label Text="Barcode Scanner!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label x:Name="scanResultText"/>
+        <Button  
+                BackgroundColor="#FF8E00" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="Add to List" 
+                TextColor="White" 
+                CornerRadius="10"
+                Clicked="returnPrevious"
+                />
+        
+        
         <zxing:ZXingScannerView IsScanning="True"
                                 OnScanResult="ZXingScannerView_OnScanResult"/>
 

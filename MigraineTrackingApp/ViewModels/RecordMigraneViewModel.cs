@@ -197,11 +197,16 @@ namespace MigraineTrackingApp.ViewModels
         {
             return foods;
         }
+        public void resetFoodList()
+        {
+            foods.Clear();
+        }
         public async void sendRecordDetailsToDataase(string currentDate,string uid)
         {
             setValuesIfNotFilledIn();
             bool value = await db.createMigraineRecord(uid, getMigraneTypes(), getPainLocation(), getMedicationTypes(), getSymptoms(), getTriggers(), getFoodEaten(), Location, Humidity, Temperature, StartTimeOfMigraine, EndTimeOfMigraine, StartDate, EndDate, LengthOfMigraineAttack, PainIntensity, currentDate);
         }
+
         public void setValuesIfNotFilledIn()
         {
             List<string> ifListEmpty = new List<string>();

@@ -1,4 +1,5 @@
-﻿using MigraineTrackingApp.ViewModels;
+﻿using MigraineTrackingApp.Services;
+using MigraineTrackingApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,35 @@ namespace MigraineTrackingApp.View
     {
         List<string> food = new List<string>();
         RecordMigraneViewModel migraneVM;
+        OpenFoodFacts barcode = new OpenFoodFacts();
         internal RecordFood(RecordMigraneViewModel migraneVM)
         {
             InitializeComponent();
             this.migraneVM = migraneVM;
+        }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            List<string> scannedItems = migraneVM.getFoodEaten();
+            if (food.Count != 0)
+            {
+                if (scannedItems.Count != 0)
+                {
+                    food.AddRange(scannedItems);
+                    showListView.ItemsSource = null;
+                    showListView.ItemsSource = food;
+                }
+            }
+            else
+            {
+                if (scannedItems.Count != 0)
+                {
+                    food.AddRange(scannedItems);
+                    showListView.ItemsSource = null;
+                    showListView.ItemsSource = food;
+                }
+            }
+            migraneVM.resetFoodList();
         }
         private void addToList(object sender, EventArgs args)
         {
@@ -33,7 +59,7 @@ namespace MigraineTrackingApp.View
 
         private async void goToScan(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new BarcodeScanner());
+            await Navigation.PushAsync(new BarcodeScanner(migraneVM));
         }
 
 
