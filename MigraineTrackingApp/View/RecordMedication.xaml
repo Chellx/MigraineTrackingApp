@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordMedication"  BackgroundColor="#003F7D">
+             x:Class="MigraineTrackingApp.View.RecordMedication"  BackgroundColor="#003366">
 
 
     <StackLayout>
@@ -19,16 +19,16 @@
                                     <RowDefinition Height="40" />
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Grid.Column="0" 
-                                   TextColor="#FF8E00" 
+                                   TextColor="White" 
                                    FontSize="Medium" FontFamily="Arial"  
                                    HorizontalTextAlignment="Center" 
                                    Text="{Binding .}"/>
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#FF8E00" 
+                                BackgroundColor="#53A2F0" 
                                 Text="Add" 
-                                TextColor="White" 
+                                TextColor="Black" 
                                 CornerRadius="10"
                                 Clicked="addToList"
                                 CommandParameter="{Binding .}"/>
@@ -47,11 +47,11 @@
 
 
         <Button  
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="ADD" 
-                TextColor="White" 
+                TextColor="Black" 
                 CornerRadius="10"
                 Clicked="addToList"/>
 
@@ -69,16 +69,17 @@
                                     <RowDefinition Height="40" />
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Grid.Column="0" 
-                                   TextColor="#FF8E00" 
+                                   TextColor="
+                                       WHITE" 
                                    FontSize="Medium" FontFamily="Arial"  
                                    HorizontalTextAlignment="Center" 
                                    Text="{Binding .}"/>
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#FF8E00" 
+                                BackgroundColor="#53A2F0" 
                                 Text="Remove" 
-                                TextColor="White" 
+                                TextColor="Black" 
                                 CornerRadius="10"
                                 Clicked="removeFromList"
                                 CommandParameter="{Binding .}"/>
@@ -90,20 +91,20 @@
         </StackLayout>
 
         <Button x:Name="backButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="BACK" 
-                TextColor="White" 
+                TextColor="Black" 
                 Clicked="returnToMenu"
                 CornerRadius="10" />
 
         <Button x:Name="saveButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 
-                TextColor="White" 
+                TextColor="Black" 
                 Clicked="saveTypes"
                 CornerRadius="10" />
 

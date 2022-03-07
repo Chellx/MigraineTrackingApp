@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.RecordMigraineType"
-             BackgroundColor="#003F7D">
+             BackgroundColor="#003366">
 
 
         <StackLayout>
