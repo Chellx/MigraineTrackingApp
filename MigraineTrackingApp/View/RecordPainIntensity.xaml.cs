@@ -15,6 +15,12 @@ namespace MigraineTrackingApp.View
             InitializeComponent();
             mvm = migraneVM;
         }
+
+        private async void returnToMenu(object sender, EventArgs args)
+        {
+            await Navigation.PopAsync();
+        }
+
         private async void saveIntensity(object sender, EventArgs args)
         {
            

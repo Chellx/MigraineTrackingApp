@@ -3,17 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.RecordPainIntensity" BackgroundColor="#003366">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid Margin="5,0,5,20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.60*" />
-                    <ColumnDefinition Width="0.40*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="Select Pain Intensity" FontSize="Large" TextColor="White"/>
-                <Picker Grid.Row="0" Grid.Column="1" x:Name="Intensity" Title="Select Pain Intensity" >
+        <StackLayout  Margin="10" >
+           
+            
+            
+            
+             
+                
+                
+                <Label Grid.Row="0" 
+                       Grid.Column="0" 
+                       Text="Choose intensity of Migraine Attack" 
+                        Style="{DynamicResource TitleStyle}"
+                       Margin="0, 20"
+                     TextColor="White"
+                     HorizontalTextAlignment="Center"/>
+                
+                
+                
+                
+                <Picker Grid.Row="0" Grid.Column="1" x:Name="Intensity" Title="Select Pain Intensity" TitleColor="White" TextColor="White">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>1: No Pain</x:String>
@@ -29,7 +38,20 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-            </Grid>
+                
+                
+            
+
+            <Button x:Name="backButton" 
+                BackgroundColor="#53A2F0" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="BACK" 
+                TextColor="Black" 
+                Clicked="returnToMenu"
+                    Margin="70,5,70,5"
+                CornerRadius="10" />
+
             <Button x:Name="saveButton" 
                 BackgroundColor="#53A2F0" 
                 Grid.Row="5"
@@ -39,6 +61,9 @@
                 Clicked="saveIntensity"
                     Margin="70,5,70,5"
                 CornerRadius="10" />
-        </StackLayout>
+       
+    
+    
+    </StackLayout>
     </ContentPage.Content>
 </ContentPage>
