@@ -4,11 +4,15 @@
              x:Class="MigraineTrackingApp.View.BarcodeScanner"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
 
-    <StackLayout>
+    <StackLayout BackgroundColor="#003366">
+
         <Frame BackgroundColor="#003366" Padding="24" CornerRadius="0">
-            <Label Text="Barcode Scanner!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Label Text="Barcode Scanner!" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
         </Frame>
-        <Label x:Name="scanResultText"/>
+
+        <Label x:Name="scanResultText" TextColor="White" FontSize="25"/>
+      
+        
         <Button  
                 BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
@@ -16,12 +20,31 @@
                 Text="Add to FOOD List" 
                 TextColor="Black" 
                 CornerRadius="10"
-                Clicked="returnPrevious"
-                />
+                Margin="70,5,70,5"
+                Clicked="returnPrevious"/>
+
+
+
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+
+
+            <zxing:ZXingScannerView IsScanning="True"
+                                OnScanResult="ZXingScannerView_OnScanResult" />
+
+
+
+
+            <zxing:ZXingDefaultOverlay               
+            x:Name="scannerOverlay"                                                       
+            BottomText="Place the red line over the barcode." />
         
         
-        <zxing:ZXingScannerView IsScanning="True"
-                                OnScanResult="ZXingScannerView_OnScanResult"/>
+        
+        </Grid>
+        
+
+        
 
     </StackLayout>
 

@@ -35,7 +35,7 @@ namespace MigraineTrackingApp.Services
             }
             catch (Exception ex)
             {
-                return "Couldn't scan code try again or enter the product on previous screen";
+                return "Could Not Scan Item!, Please Try Again Or Enter Product Manually On Previous Screen";
             }
 
             //return weatherData;
