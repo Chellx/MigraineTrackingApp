@@ -1,33 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordFood">
-    <StackLayout>
+             x:Class="MigraineTrackingApp.View.RecordFood" BackgroundColor="#003366">
+    
+    <StackLayout Margin="10">
+        <Label Text="Scan Food Items You Have Eaten Today" 
+               Style="{DynamicResource TitleStyle}"
+               Margin="0, 20"
+               TextColor="White"
+               HorizontalTextAlignment="Center"/>
+
 
         <Button  
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="SCAN FOOD ITEM" 
-                TextColor="White" 
+                TextColor="Black" 
                 CornerRadius="10"
                 Clicked="goToScan"/>
 
 
 
         <Entry x:Name="addFood"
-               Placeholder="Add food"
-               PlaceholderColor="black"
-               TextColor="Black"
+               Placeholder="Enter Additional Food Items Here"
+               PlaceholderColor="White"
+               TextColor="White"
                VerticalOptions="Center"/>
 
 
         <Button  
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="ADD" 
-                TextColor="White" 
+                TextColor="Black" 
                 CornerRadius="10"
                 Clicked="addToList"/>
 
@@ -45,16 +52,16 @@
                                     <RowDefinition Height="40" />
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Grid.Column="0" 
-                                   TextColor="#FF8E00" 
+                                   TextColor="White" 
                                    FontSize="Medium" FontFamily="Arial"  
                                    HorizontalTextAlignment="Center" 
                                    Text="{Binding .}"/>
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#FF8E00" 
+                                BackgroundColor="#53A2F0" 
                                 Text="Remove" 
-                                TextColor="black" 
+                                TextColor="White" 
                                 CornerRadius="10"
                                 Clicked="removeFromList"
                                 CommandParameter="{Binding .}"/>
@@ -65,20 +72,20 @@
             </ListView>
         </StackLayout>
         <Button x:Name="backButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="BACK" 
-                TextColor="White" 
+                TextColor="black" 
                 Clicked="returnToMenu"
                 CornerRadius="10" />
 
     <Button x:Name="saveButton" 
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 
-                TextColor="White" 
+                TextColor="Black" 
                 Clicked="saveFoodList"
                 CornerRadius="10" />
 

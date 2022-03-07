@@ -95,7 +95,7 @@ namespace MigraineTrackingApp.View
             }
             else
             {
-                await DisplayAlert("Alert", "You Have Not Selected Any Triggers", "OK");
+                await DisplayAlert("Alert", "You Have Not Entered Any Food!", "OK");
             }
         }
     }

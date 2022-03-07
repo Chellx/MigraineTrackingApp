@@ -27,7 +27,7 @@ namespace MigraineTrackingApp.View
             Device.BeginInvokeOnMainThread(async () =>
             {
                 string value = await food.getFoodNameFromBarcode(result.Text);
-                if(value != "Couldn't scan code try again or enter the product on previous screen")
+                if(value != "Could Not Scan Item!, Please Try Again Or Enter Product Manually On Previous Screen")
                 {
                     if (foodNames.Contains(value))
                     {

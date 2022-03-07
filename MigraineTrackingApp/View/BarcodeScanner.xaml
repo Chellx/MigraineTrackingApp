@@ -5,16 +5,16 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+        <Frame BackgroundColor="#003366" Padding="24" CornerRadius="0">
             <Label Text="Barcode Scanner!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label x:Name="scanResultText"/>
         <Button  
-                BackgroundColor="#FF8E00" 
+                BackgroundColor="#53A2F0" 
                 Grid.Row="5" 
                 Grid.Column="0" 
-                Text="Add to List" 
-                TextColor="White" 
+                Text="Add to FOOD List" 
+                TextColor="Black" 
                 CornerRadius="10"
                 Clicked="returnPrevious"
                 />
