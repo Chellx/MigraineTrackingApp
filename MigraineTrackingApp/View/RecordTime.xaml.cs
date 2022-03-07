@@ -29,9 +29,16 @@ namespace MigraineTrackingApp.View
             {
                 timeDiff = timeDiff.Add(TimeSpan.FromHours(12));
             }
-            resultLabel.Text = String.Format("Length of migraine attack {0}hours {1}minutes {2} seconds", timeDiff.Hours,timeDiff.Minutes,timeDiff.Seconds );
+            resultLabel.Text = String.Format("Length Of Migraine Attack: {0} Hours {1} Minutes {2} Seconds", timeDiff.Hours,timeDiff.Minutes,timeDiff.Seconds );
             lengthOfAttack = timeDiff.Hours + ":" + timeDiff.Minutes + ":" + timeDiff.Seconds;
         }
+
+
+        private async void returnToMenu(object sender, EventArgs args)
+        {
+            await Navigation.PopAsync();
+        }
+
         private async void recordButton_Clicked(object sender, EventArgs e)
         {
             Recalculate();

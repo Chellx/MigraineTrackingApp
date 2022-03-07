@@ -2,46 +2,81 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.RecordTime" BackgroundColor="#003366">
-    <StackLayout>
-        <Label Text="Select the time your migraine started and finished." 
+   
+    
+    
+    <StackLayout Margin="10">
+        <Label Text="Choose start and end time of Migraine Attack" 
+               Style="{DynamicResource TitleStyle}"
+               Margin="0, 20"
                TextColor="White"
                HorizontalTextAlignment="Center"/>
-       
+
+        <Label Text="Start Time:" 
+               TextColor="White"
+               />
+
         <TimePicker x:Name="start"
                     Time="11:00:00"
+                    Margin="30, 0, 0, 30"
                     TextColor="White"
                     Format="HH:mm:ss" />
-        
-        
+
+        <Label Text="End Time:" 
+               TextColor="White"
+               />
+
         <TimePicker x:Name="end"
                     Time="11:00:00"
+                    Margin="30, 0, 0, 30"
                     TextColor="White"
                     Format="HH:mm:ss"
                      />
-        
-        <Label Text="Length Of Migraine Attack: "
-               TextColor="White"
-                   VerticalOptions="Center" />
-        
-        <Switch x:Name="includeSwitch"
-                    Toggled="OnSwitchToggled" />
+
+        <StackLayout Orientation="Horizontal"
+                     Margin="0, 0, 0, 30">
+            <Label Text="Record Length Of Migraine Attack? "
+                   VerticalOptions="Center" 
+                   TextColor="White"/>
+
+            <Switch x:Name="includeSwitch"
+                    Toggled="OnSwitchToggled"
+                    />
+        </StackLayout>
+
+
       
         
         <Label x:Name="resultLabel"
                FontAttributes="Bold"
                TextColor="White"
                HorizontalTextAlignment="Center" />
-        <StackLayout Orientation="Horizontal">
-           
-            <Button x:Name="saveButton" 
+
+
+
+
+        <Button x:Name="backButton" 
+                BackgroundColor="#53A2F0" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Text="BACK" 
+                TextColor="Black" 
+                Clicked="returnToMenu"
+                CornerRadius="10" />
+
+        <Button x:Name="saveButton" 
                 BackgroundColor="#53A2F0" 
                 Grid.Row="5"
                 Grid.Column="1" 
-                Text="RECORD Time" 
+                Text="SAVE" 
                 TextColor="Black" 
-                CornerRadius="10"
-                
-                Clicked="recordButton_Clicked"/>
-        </StackLayout>
+                Clicked="recordButton_Clicked"
+                CornerRadius="10" />
+
+
+
+
+
+
     </StackLayout>
 </ContentPage>
