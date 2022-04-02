@@ -281,9 +281,10 @@ namespace MigraineTrackingApp.ViewModels
             }
             if(allergensFound == " ")
             {
-                return "No allergens found";
+                return "This Food Item Has Not Caused A Previous Migraine";
+
             }
-            return "These allgens were found " + allergensFound;
+            return "This Food Item May Cause A Migraine\n Allergens Found: " + allergensFound + "\n";
         }
 
         public async void sendRecordDetailsToDataase(string currentDate,string uid)

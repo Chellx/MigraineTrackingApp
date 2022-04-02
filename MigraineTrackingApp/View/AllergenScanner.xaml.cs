@@ -26,7 +26,7 @@ namespace MigraineTrackingApp.View
             Device.BeginInvokeOnMainThread(async () =>
             {
                 foodDetails = await food.getFoodNameFromBarcode(result.Text);
-                bool isTrue = foodDetails[0].Equals("Could Not Scan Item!, Please Try Again Or Enter Product Manually On Previous Screen");
+                bool isTrue = foodDetails[0].Equals("Could Not Scan Item!");
                 if (isTrue == false)
                 {
                     scanResultText.Text = "scanned";
@@ -45,7 +45,9 @@ namespace MigraineTrackingApp.View
                 string newAllergen = allergen.Substring(3);
                 string[] allergens = newAllergen.Split(',');
                 allergenResult = await vm.checkScannedItem(id, allergens);
-                scanResultText.Text = allergenResult;
+                await DisplayAlert("Allergen Alert!", allergenResult, "OK");
+
+               scanResultText.Text = allergenResult;
                 allergen = " ";
             }
         }
