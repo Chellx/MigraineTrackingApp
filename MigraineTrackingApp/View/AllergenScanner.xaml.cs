@@ -1,23 +1,25 @@
 ﻿using MigraineTrackingApp.Services;
 using MigraineTrackingApp.ViewModels;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace MigraineTrackingApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BarcodeScanner : ContentPage
+    public partial class AllergenScanner : ContentPage
     {
         OpenFoodFacts food = new OpenFoodFacts();
         RecordMigraneViewModel vm;
-        List<string> foodNames = new List<string>();
         string[] foodDetails = new string[2];
-        internal BarcodeScanner(RecordMigraneViewModel migraneVM)
+        string id = " ";
+        string allergen = " ";
+        public AllergenScanner(string userid)
         {
             InitializeComponent();
-            vm = migraneVM;
+            id = userid;
+            vm = new RecordMigraneViewModel();
         }
         private void ZXingScannerView_OnScanResult(ZXing.Result result)
         {
@@ -27,26 +29,25 @@ namespace MigraineTrackingApp.View
                 bool isTrue = foodDetails[0].Equals("Could Not Scan Item!, Please Try Again Or Enter Product Manually On Previous Screen");
                 if (isTrue == false)
                 {
-                    if (foodNames.Contains(foodDetails[0]))
-                    {
-
-                    }
-                    else
-                    {
-                        foodNames.Add(foodDetails[0]);
-                    }
+                    scanResultText.Text = "scanned";
+                    allergen = foodDetails[1];
                 }
-                scanResultText.Text = foodDetails[0];
+                else{
+                    scanResultText.Text = foodDetails[0];
+                }
             });
         }
-        private async void returnPrevious(object sender, EventArgs args)
+        private async void checkAllergens(object sender, EventArgs e)
         {
-            vm.setFoodEaten(foodNames);
-            string allergen = foodDetails[1];
-            string newAllergen = allergen.Substring(3);
-            string[] allergens = newAllergen.Split(',');
-            vm.setAllAllergenypes(allergens);
-            await Navigation.PopAsync();
+            string allergenResult = "";
+            if (allergen != " ")
+            {
+                string newAllergen = allergen.Substring(3);
+                string[] allergens = newAllergen.Split(',');
+                allergenResult = await vm.checkScannedItem(id, allergens);
+                scanResultText.Text = allergenResult;
+                allergen = " ";
+            }
         }
     }
 }

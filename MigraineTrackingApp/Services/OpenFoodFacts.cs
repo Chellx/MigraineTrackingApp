@@ -13,12 +13,13 @@ namespace MigraineTrackingApp.Services
     {
         string url = "https://world.openfoodfacts.org/api/v0/product/";
         HttpClient _client;
+        string[] foodDetails = new string[2];
 
         public OpenFoodFacts()
         {
             _client = new HttpClient();
         }
-        public async Task<string> getFoodNameFromBarcode(string barcode)
+        public async Task<string[]> getFoodNameFromBarcode(string barcode)
         {
             try
             {
@@ -29,17 +30,21 @@ namespace MigraineTrackingApp.Services
                     var content = await response.Content.ReadAsStringAsync();
                     Product product = JsonConvert.DeserializeObject<Product>(content);
                     string productName = product.foodDetails.ProductName;
+                    string allergens = product.foodDetails.Allergens;
+                    foodDetails[0] = productName;
+                    foodDetails[1] = allergens;
                     query = "";
-                    return productName;
+                    return foodDetails;
                 }
             }
             catch (Exception ex)
             {
-                return "Could Not Scan Item!, Please Try Again Or Enter Product Manually On Previous Screen";
+                foodDetails[0] = "Could Not Scan Item!, Please Try Again Or Enter Product Manually On Previous Screen";
+                return foodDetails;
             }
 
-            //return weatherData;
-            return "";
+            //return foodData;
+            return null;
         }
     }
 }

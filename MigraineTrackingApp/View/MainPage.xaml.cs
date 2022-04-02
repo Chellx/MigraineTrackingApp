@@ -43,7 +43,7 @@ namespace MigraineTrackingApp
             }
             else
             {
-                await DisplayAlert("error", "invalid username and password", "ok");
+                await DisplayAlert("error", "Invalid Username or Password", "OK");
             }
 
 

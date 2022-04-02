@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MigraineTrackingApp.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,9 @@ namespace MigraineTrackingApp
         {
             await Navigation.PushAsync(new ProfilePage(userId));
         }
-        private async void statsButton_Clicked(object sender, EventArgs e)
+        private async void allergenButton_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new MigraineStatPage());
+            await Navigation.PushAsync(new AllergenScanner(userId));
         }
         private async void recordsButton_Clicked(object sender, EventArgs e)
         {

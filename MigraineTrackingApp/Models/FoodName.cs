@@ -9,5 +9,7 @@ namespace MigraineTrackingApp.Models
     {
         [JsonProperty("product_name")]
         public string ProductName { get; set; }
+        [JsonProperty("allergens_from_ingredients")]
+        public string Allergens { get; set; }
     }
 }

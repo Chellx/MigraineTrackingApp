@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MigraineTrackingApp.View.AllergenScanner"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+
+    <StackLayout BackgroundColor="#003366">
+
+        <Frame BackgroundColor="#003366" Padding="24" CornerRadius="0">
+            <Label Text="Allergen Checker - Scan a food item to check if the allergens affect your migraines!" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
+        </Frame>
+
+        <Label x:Name="scanResultText" TextColor="White" FontSize="25"/>
+
+
+
+
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <zxing:ZXingScannerView IsScanning="True"
+                                OnScanResult="ZXingScannerView_OnScanResult" />
+            <zxing:ZXingDefaultOverlay               
+            x:Name="scannerOverlay"                                                       
+            BottomText="Place the red line over the barcode." />
+        </Grid>
+        <Button x:Name="allergin"
+                Text="Check Allergin" 
+                BackgroundColor="#53A2F0"
+                Margin="70,20,70,20"
+                TextColor="black"
+                VerticalOptions="Center"
+                CornerRadius="10"
+                Clicked="checkAllergens"/>
+    </StackLayout>
+
+</ContentPage>

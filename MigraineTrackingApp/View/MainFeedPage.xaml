@@ -17,13 +17,13 @@
                 Clicked="profileButton_Clicked"/>
 
             <Button x:Name="statsButton"
-                Text="MIGRAINE STATS" 
+                Text="Allergen Checker" 
                 BackgroundColor="#53A2F0"
                 Margin="70,20,70,20"
                 TextColor="black"
                 VerticalOptions="Center"
                 CornerRadius="50"
-                Clicked="statsButton_Clicked"/>
+                Clicked="allergenButton_Clicked"/>
 
             <Button x:Name="recordMigraine"
                 Text="Record Migraine Attack" 

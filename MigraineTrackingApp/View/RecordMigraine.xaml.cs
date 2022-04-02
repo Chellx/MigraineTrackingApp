@@ -24,12 +24,14 @@ namespace MigraineTrackingApp
             id = userId;
         }
 
-        private void savePlan(object sender, EventArgs args)
+        private async void savePlan(object sender, EventArgs args)
         {
             string newDate = currentDate.ToString("dd'/'MM'/'yyyy HH:mm:ss");
 
             newDate = newDate.Replace("/", "-");
-            migraneVM.sendRecordDetailsToDataase(newDate,id); //mock user ID
+            migraneVM.checkIfAllergensAreInDB(id);
+            migraneVM.sendAllergenInfo(id);
+            migraneVM.sendRecordDetailsToDataase(newDate, id); //mock user ID
         }
 
         private async void backButton_Clicked(object sender, EventArgs e)

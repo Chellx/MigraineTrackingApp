@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MigraineTrackingApp.ViewModels
 {
@@ -16,7 +17,9 @@ namespace MigraineTrackingApp.ViewModels
         List<string> symptoms = new List<string>();
         List<string> triggers = new List<string>();
         List<string> foods = new List<string>();
+        List<string> allergens = new List<string>();
 
+        List<string> result = new List<string>();
 
         string location;
         string humidity;
@@ -201,6 +204,88 @@ namespace MigraineTrackingApp.ViewModels
         {
             foods.Clear();
         }
+        /// <summary>
+        /// This method sets all allergens for the food products scanned
+        /// </summary>
+        /// <param name="types"></param>
+        public void setAllAllergenypes(string []allergen)
+        {
+            for(int i = 0;i < allergen.Length; i++)
+            {
+                if (allergens.Contains(allergen[i]))
+                {
+
+                }
+                else
+                {
+                    allergens.Add(allergen[i]);
+                }
+            }
+        }
+        /// <summary>
+        /// This method returns all allergens for the food products entered
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getAllergenTypes()
+        {
+            return allergens;
+        }
+        /// <summary>
+        /// This method adds the current scanned allergen info into the user allergen list in the database
+        /// </summary>
+        /// <param name="uid"></param>
+        public async void sendAllergenInfo(string uid)
+        {
+            bool value = await db.addAllergens(uid, getAllergenTypes());
+        }
+        /// <summary>
+        /// This method returns a list of allergens from the databse for that user 
+        /// </summary>
+        /// <param name="uid"></param>
+        public async Task<List<string>> getAllergenList(string uid)
+        {
+           result = await db.getAllergenListFromDb(uid);
+           return result;
+        }
+        /// <summary>
+        /// This method checks if allergens for a product are already in the database if they are remove them
+        /// </summary>
+        /// <param name="uid"></param>
+        public async void checkIfAllergensAreInDB(string uid)
+        {
+            result = await getAllergenList(uid);
+
+            if (result != null)
+            {
+                foreach (var allergen in allergens)
+                {
+                    if (result.Contains(allergen))
+                    {
+                        allergens.Remove(allergen);
+                    }
+                }
+            }
+        }
+
+
+        public async Task<string> checkScannedItem(string uid,string[] scannedAllergens)
+        {
+            string allergensFound = " ";
+            result = await getAllergenList(uid);
+            foreach (var allergen in scannedAllergens)
+            {
+                if (result.Contains(allergen))
+                {
+                    allergensFound += allergen + " "; 
+                }
+            }
+            if(allergensFound == " ")
+            {
+                return "No allergens found";
+            }
+            return "These allgens were found " + allergensFound;
+        }
+
         public async void sendRecordDetailsToDataase(string currentDate,string uid)
         {
             setValuesIfNotFilledIn();

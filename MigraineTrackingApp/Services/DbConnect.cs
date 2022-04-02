@@ -90,5 +90,47 @@ namespace MigraineTrackingApp.Services
                 return false;
             }
         }
+        /// <summary>
+        /// This method adds allergens to a list of allergens in the data base
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <param name="migranetypes"></param>
+        /// <returns></returns>
+        public async Task<bool> addAllergens(string userid,List<string> migranetypes)
+        {
+            await firebase
+                .Child("allergyList").Child(userid)
+                .PutAsync(new Allergen()
+                {
+                    allergenList = migranetypes
+                });
+            return true;
+        }
+        /// <summary>
+        /// This method returns a list of allergens
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public async Task<List<string>> getAllergenListFromDb(string userid)
+        {
+            try
+            {
+               var allergens = (await firebase
+                   .Child("allergyList").Child(userid).OnceSingleAsync<Allergen>());
+                if(allergens != null)
+                {
+                    return allergens.allergenList;
+                }
+                else{
+                    return null;
+                }
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                return new List<string>();
+            }
+        }
     }
 }

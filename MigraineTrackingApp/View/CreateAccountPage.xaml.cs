@@ -26,6 +26,8 @@ namespace MigraineTrackingApp
         {
             string uid  = await auth.SignupWithEmailPassword(memberEmail.Text, confirmAccPassWord.Text);
             model.createProfile(memberFirstName.Text,memberLastName.Text,memberDob.Text,memberGender.Text,uid);
+
+            await Navigation.PushAsync(new MainFeedPage(uid));
         }
     }
 }

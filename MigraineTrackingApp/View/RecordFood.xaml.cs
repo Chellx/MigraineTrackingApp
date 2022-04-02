@@ -2,10 +2,6 @@
 using MigraineTrackingApp.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -82,7 +78,7 @@ namespace MigraineTrackingApp.View
             await Navigation.PopAsync();
         }
         /// <summary>
-        /// This method saves the pain locations list to a view model
+        /// This method saves the food list to a view model
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
