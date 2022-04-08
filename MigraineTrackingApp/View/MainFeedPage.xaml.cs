@@ -27,7 +27,7 @@ namespace MigraineTrackingApp
         }
         private async void profileButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProfilePage(userId));
+            await Navigation.PushAsync(new ProfilePage("y47GLJJZD4ReYJBoWttbi0WVrp62"));
         }
         private async void allergenButton_Clicked(object sender, EventArgs e)
         {
@@ -37,6 +37,5 @@ namespace MigraineTrackingApp
         {
             //await Navigation.PushAsync(new RecordMigraine());
         }
-
     }
 }

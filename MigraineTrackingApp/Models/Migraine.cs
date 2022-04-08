@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MigraineTrackingApp.Models
 {
-    public class SaveMigraine
+    public class Migraine
     {
         [JsonProperty("migraineType")]
         public List<string> migraineType { get; set; }

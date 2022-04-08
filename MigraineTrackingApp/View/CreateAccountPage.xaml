@@ -14,37 +14,11 @@
                HeightRequest="250"
                Margin="20,0,30,10"/>
 
-            
-
             <Entry x:Name="memberEmail"
                Placeholder="Email"
                PlaceholderColor="White"
                TextColor="White"
                Keyboard="Email"
-               VerticalOptions="Center"/>
-
-            <Entry x:Name="memberFirstName"
-               Placeholder="First Name"
-               PlaceholderColor="White"
-               TextColor="White"
-               VerticalOptions="Center"/>
-
-            <Entry x:Name="memberLastName"
-               Placeholder="Last Name"
-               PlaceholderColor="White"
-               TextColor="White"
-               VerticalOptions="Center"/>
-
-            <Entry x:Name="memberGender"
-               Placeholder="Gender"
-               PlaceholderColor="White"
-               TextColor="White"
-               VerticalOptions="Center"/>
-
-            <Entry x:Name="memberDob"
-               Placeholder="DOB"
-               PlaceholderColor="White"
-               TextColor="White"
                VerticalOptions="Center"/>
 
             <Entry x:Name="createAccPassWord"

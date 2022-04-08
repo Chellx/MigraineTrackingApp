@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using Firebase.Database;
 using Firebase.Database.Query;
+using Firebase.Storage;
 using MigraineTrackingApp.Models;
 
 namespace MigraineTrackingApp.Services
@@ -13,6 +13,7 @@ namespace MigraineTrackingApp.Services
     {
         //private static FirebaseClient firebase = new FirebaseClient("https://migrainetrackapp-default-rtdb.europe-west1.firebasedatabase.app/");
         FirebaseClient firebase;
+        private FirebaseStorage firebaseStorage = new FirebaseStorage("migrainetrackapp.appspot.com");
         private static Member member = new Member();
         public DbConnect()
         {
@@ -39,7 +40,7 @@ namespace MigraineTrackingApp.Services
         /// <param name="gender"></param>
         /// <param name="userid"></param>
         /// <returns></returns>
-        public async Task<bool> createProfile(string firstName,string lastName,string dob,string gender,string userid)
+        public async Task<bool> createProfile(string firstName,string lastName,string dob,string gender,string userid,string profilePicName)
         {
             await firebase
                 .Child("member").Child(userid)
@@ -48,7 +49,8 @@ namespace MigraineTrackingApp.Services
                     FirstName = firstName,
                     LastName = lastName,
                     Dob = dob,
-                    Gender = gender
+                    Gender = gender,
+                    Picture = profilePicName
                 });
             return true;
         }
@@ -64,7 +66,7 @@ namespace MigraineTrackingApp.Services
             {
                 await firebase
                 .Child("RecordMigraine").Child(uid).Child(todaysDate)
-                .PutAsync(new SaveMigraine()
+                .PutAsync(new Migraine()
                 {
                     migraineType = migranetypes,
                     painLocation = painlocation,
@@ -130,6 +132,33 @@ namespace MigraineTrackingApp.Services
             {
                 Console.WriteLine(e.StackTrace);
                 return new List<string>();
+            }
+        }
+        /*public async Task<string> GetPicFromStorage(bool isMocked, string picName)
+        {
+            try
+            {
+                var pic = await firebaseStorage.Child("pics").Child(picName).GetDownloadUrlAsync();
+
+                return "";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                return null;
+            }
+        }*/
+        public async Task<bool> savePicToStorage(Stream fileStream,string filename)
+        {
+            try
+            {
+                await firebaseStorage.Child("pics").Child(filename).PutAsync(fileStream);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                return false;
             }
         }
     }

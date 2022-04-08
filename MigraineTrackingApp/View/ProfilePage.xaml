@@ -9,8 +9,8 @@
                Aspect="AspectFit"
                HorizontalOptions="FillAndExpand"
                HeightRequest="250"
-               Margin="20,0,30,50"/>
-
+               Margin="20,0,10,50"/>
+            <Image x:Name="resultImage" HeightRequest="50" WidthRequest="50"/>
             <Entry x:Name="memberFirstName"
                Placeholder="First Name"
                PlaceholderColor="White"
@@ -34,6 +34,8 @@
                PlaceholderColor="White"
                TextColor="White"
                VerticalOptions="Center"/>
+            <Button Text="Pick Image" Clicked="Button_Clicked" />
+            <Button Text="Update Profile" Clicked="updateInfo" />
 
         </StackLayout>
     </ContentPage.Content>
