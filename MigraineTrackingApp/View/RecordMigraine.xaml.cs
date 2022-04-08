@@ -36,7 +36,7 @@ namespace MigraineTrackingApp
 
         private async void backButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainFeedPage(" "));
+            await Navigation.PushAsync(new MainFeedPage(" "," "));
         }
 
         private async void recordDateButton_Clicked(object sender, EventArgs e)

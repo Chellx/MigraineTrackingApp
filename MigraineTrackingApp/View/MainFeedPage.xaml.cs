@@ -14,16 +14,18 @@ namespace MigraineTrackingApp
     public partial class MainFeedPage : ContentPage
     {
         string userId = "";
-        public MainFeedPage(string userId)
+        string email = "";
+        public MainFeedPage(string userId,string email)
         {
             InitializeComponent();
             this.userId = userId;
+            this.email = email;
             
         }
 
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RecordMigraine(userId));
+            await Navigation.PushAsync(new RecordMigraine("y47GLJJZD4ReYJBoWttbi0WVrp62"));
         }
         private async void profileButton_Clicked(object sender, EventArgs e)
         {
@@ -35,7 +37,7 @@ namespace MigraineTrackingApp
         }
         private async void recordsButton_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new RecordMigraine());
+            await Navigation.PushAsync(new showPreviousRecords("y47GLJJZD4ReYJBoWttbi0WVrp62", "test@email.com"));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Firebase.Database;
 using Firebase.Database.Query;
@@ -15,6 +16,7 @@ namespace MigraineTrackingApp.Services
         FirebaseClient firebase;
         private FirebaseStorage firebaseStorage = new FirebaseStorage("migrainetrackapp.appspot.com");
         private static Member member = new Member();
+        private List<Migraine> migraines = new List<Migraine>();
         public DbConnect()
         {
             firebase = new FirebaseClient("https://migrainetrackapp-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -82,7 +84,8 @@ namespace MigraineTrackingApp.Services
                     location = loc,
                     humidity = hum,
                     migraineDuration = migDuration,
-                    painIntensity = painInten
+                    painIntensity = painInten,
+                    dateEntered = todaysDate
                 });
                 return true;
             }
@@ -90,6 +93,40 @@ namespace MigraineTrackingApp.Services
             {
                 Console.WriteLine(e.Message);
                 return false;
+            }
+        }
+        public async Task<List<Migraine>> getMigraineRecords(string uid)
+        {
+            try
+            {
+                   migraines = (await firebase
+                  .Child("RecordMigraine").Child(uid)
+                  .OnceAsync<Migraine>()).Select(item => new Migraine
+                  {
+                           endDate = item.Object.endDate,
+                           startDate = item.Object.startDate,
+                           foods = item.Object.foods,
+                           humidity = item.Object.humidity,
+                           migraineDuration = item.Object.migraineDuration,
+                           location = item.Object.location,
+                           medicationType = item.Object.medicationType,
+                           migraineType = item.Object.migraineType,
+                           painIntensity = item.Object.painIntensity,
+                           symptoms = item.Object.symptoms,
+                           triggers = item.Object.triggers,
+                           endTime = item.Object.endTime,
+                           painLocation = item.Object.painLocation,
+                           startTime = item.Object.startTime,
+                           temperature = item.Object.temperature,
+                           dateEntered = item.Object.dateEntered
+
+                  }).ToList();
+                return migraines;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
             }
         }
         /// <summary>

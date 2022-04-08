@@ -39,7 +39,7 @@ namespace MigraineTrackingApp
             //string Token = await auth.LoginWithEmailPassword(loginEmail.Text, loginPassWord.Text); stay here for login
             if (userID != "")
             {
-                await Navigation.PushAsync(new MainFeedPage(userID));
+                await Navigation.PushAsync(new MainFeedPage(userID, loginEmail.Text));
             }
             else
             {
@@ -68,7 +68,7 @@ namespace MigraineTrackingApp
 
         private async void googleLoginButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainFeedPage( " "));
+            Navigation.PushAsync(new MainFeedPage( " ",""));
         }
 
         private void createAccountButton_Clicked(object sender, EventArgs e)

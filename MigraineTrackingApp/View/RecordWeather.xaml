@@ -74,24 +74,24 @@
 
         <ScrollView>
             <StackLayout Padding="10">
-                <Label x:Name="Location" Text="Location" 
+                <Label Text="Location" 
                        TextColor="White"
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Title}" 
+                <Label x:Name="Location" Text="{Binding Title}" 
                        TextColor="White"
                        Style="{StaticResource labelResultStyle}" />
 
-                <Label x:Name="Temperature" Text="Temperature" 
+                <Label Text="Temperature" 
                        TextColor="White"
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Main.Temperature}" 
+                <Label x:Name="Temperature" Text="{Binding Main.Temperature}" 
                        TextColor="White"
                        Style="{StaticResource labelResultStyle}" />
 
-                <Label x:Name="Humidity" Text="Humidity" 
+                <Label Text="Humidity" 
                        TextColor="White"
                        Style="{StaticResource labelStyle}" />
-                <Label Text="{Binding Main.Humidity}" 
+                <Label x:Name="Humidity" Text="{Binding Main.Humidity}" 
                        TextColor="White"
                        Style="{StaticResource labelResultStyle}" />
 

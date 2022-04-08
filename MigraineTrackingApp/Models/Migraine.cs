@@ -43,5 +43,7 @@ namespace MigraineTrackingApp.Models
         public string migraineDuration { get; set; }
         [JsonProperty("painIntensity")]
         public string painIntensity { get; set; }
+        [JsonProperty("dateEntered")]
+        public string dateEntered { get; set; }
     }
 }
