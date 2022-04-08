@@ -1,86 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.ShowMigraineDetails">
+             x:Class="MigraineTrackingApp.View.ShowMigraineDetails" BackgroundColor="#003366">
     <ContentPage.Content>
        <ScrollView>
         <StackLayout>
-                <Label x:Name="endD" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+                <Label x:Name="title" Text="Migraine Record" FontSize="Title"   FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+                <Label x:Name="startDateHeading" Text="Start Date" FontSize="Subtitle"  />
+
+                <Label x:Name="startD" Text=""/>
+
+                <Label x:Name="endDateHeading" Text="End Date" FontSize="Subtitle"  />
+
+                <Label x:Name="endD" Text=""/>
+
+                <Label x:Name="startTimeHeading" Text="Start Time" FontSize="Subtitle"  />
+
+                <Label x:Name="startT" Text="" />
+
+                <Label x:Name="endTimeHeading" Text="End Time" FontSize="Subtitle"  />
+
+
+                <Label x:Name="endT" Text="" />
             
+                <Label x:Name="humidityHeading" Text="Humidity (%)" FontSize="Subtitle"  />
+
+
+                <Label x:Name="humd" Text="" />
+
+                <Label x:Name="tempHeading" Text="Temperature (°C)" FontSize="Subtitle"  />
+
+                <Label x:Name="temp" Text=""/>
+
+
+                <Label x:Name="locationHeading" Text="Location" FontSize="Subtitle"  />
+
+                <Label x:Name="loc" Text=""/>
+
+                <Label x:Name="durationHeading" Text="Migraine Duration (H:M:S)" FontSize="Subtitle"  />
+
+
+                <Label x:Name="migraineD" Text="" />
             
-                <Label x:Name="endT" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                <Label x:Name="painIntensityHeading" Text="Pain Intensity" FontSize="Subtitle"  />
+
+                <Label x:Name="painI" Text=""/>
+
+                <Label x:Name="fdHeading" Text="Food Eaten" FontSize="Subtitle"  />
+
+
+                <Label x:Name="food" Text="" />
+
+                <Label x:Name="typeHeading" Text="Migraine Type" FontSize="Subtitle"  />
+
+                <Label x:Name="migraineT" Text=""/>
             
+                <Label x:Name="medHeading" Text="Medication" FontSize="Subtitle"  />
+
+                <Label x:Name="medicationT" Text=""/>
+
+
+                <Label x:Name="painLocHeading" Text="Pain Location" FontSize="Subtitle"  />
+
+
+                <Label x:Name="painLoc" Text="" />
+
+                <Label x:Name="sympHeading" Text="Symptoms" FontSize="Subtitle"  />
+
+
+                <Label x:Name="symptom" Text="" />
             
-                <Label x:Name="humd" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="loc" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="migraineD" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="painI" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="startD" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="startT" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="temp" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="food" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="medicationT" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="migraineT" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="painLoc" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="symptom" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-            
-                <Label x:Name="trigger" Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                <Label x:Name="trigHeading" Text="Triggers" FontSize="Subtitle" />
+
+
+                <Label x:Name="trigger" Text="" BackgroundColor="#024c96"  />
                
             <Button Text="Email Records"
                 VerticalOptions="CenterAndExpand"
+                    BackgroundColor="#53A2F0" 
+                     TextColor="Black" 
+                    CornerRadius="10"
                 HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
             </StackLayout>
