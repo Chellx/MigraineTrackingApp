@@ -28,36 +28,64 @@ namespace MigraineTrackingApp.View
         }
         protected async override void OnAppearing()
         {
-            endD.Text = migraine.endDate;
-            emailMesage += endD.Text + "\n";
+            
             startD.Text = migraine.startDate;
-            emailMesage += startD.Text + "\n";
+            emailMesage += "Start Date: "+ startD.Text + "\n";
+
+            endD.Text = migraine.endDate;
+            emailMesage += "\n" +"End Date: "+endD.Text + "\n";
+
+
             startT.Text = migraine.startTime;
-            emailMesage += startT.Text + "\n";
+            emailMesage += "\n" + "Start Time: " + startT.Text + "\n";
+
+
             endT.Text = migraine.endTime;
-            emailMesage += endT.Text + "\n";
+            emailMesage += "\n" + "End Time: " + endT.Text + "\n";
+
+
             humd.Text = migraine.humidity;
-            emailMesage += humd.Text + "\n";
-            loc.Text = migraine.location;
-            emailMesage += loc.Text + "\n";
-            migraineD.Text = migraine.migraineDuration;
-            emailMesage += migraineD.Text + "\n";
-            painI.Text = migraine.painIntensity;
-            emailMesage += painI.Text + "\n";
+            emailMesage += "\n" + "Humidity: " +humd.Text + "%" + "\n";
+
             temp.Text = migraine.temperature;
-            emailMesage += temp.Text + "\n";
-            string fList = string.Join(", ", migraine.foods);
-            emailMesage += fList + "\n";
-            string migList = string.Join(", ", migraine.migraineType);
-            emailMesage += migList + "\n";
-            string medList = string.Join(", ", migraine.medicationType);
-            emailMesage += medList + "\n";
-            string pList = string.Join(", ", migraine.painLocation);
-            emailMesage += pList + "\n";
-            string sList = string.Join(", ", migraine.symptoms);
-            emailMesage += sList + "\n";
-            string tList = string.Join(", ", migraine.triggers);
-            emailMesage += tList + "\n";
+            emailMesage += "\n" + "Temperature: " +temp.Text + "°C" + "\n";
+
+
+            loc.Text = migraine.location;
+            emailMesage += "\n" + "Location: " + loc.Text + "\n";
+
+
+            migraineD.Text = migraine.migraineDuration;
+            emailMesage += "\n" + "Migraine Duration (H:M:S): " + migraineD.Text + "\n";
+
+
+            painI.Text = migraine.painIntensity;
+            emailMesage += "\n" + "Pain Intensity: " + painI.Text + "\n";
+
+            string fList = string.Join("\n ", migraine.foods);
+            emailMesage += "\n"+ "Food Eaten: " +"\n" + fList + "\n";
+
+
+            string migList = string.Join("\n ", migraine.migraineType);
+            emailMesage += "\n"+ "Migraine Type: "+ migList + "\n";
+
+
+            string medList = string.Join("\n ", migraine.medicationType);
+            emailMesage += "\n" +"Medication: "+  medList + "\n";
+
+
+            string pList = string.Join("\n ", migraine.painLocation);
+            emailMesage += "\n"+ "Pain Location: "+ pList + "\n";
+
+
+            string sList = string.Join("\n ", migraine.symptoms);
+            emailMesage +="\n"+ "Symptoms: " + sList + "\n";
+
+
+            string tList = string.Join("\n ", migraine.triggers);
+            emailMesage += "\n" + "Triggers: " + tList + "\n";
+
+
             food.Text = fList;
             medicationT.Text = medList;
             migraineT.Text = migList;

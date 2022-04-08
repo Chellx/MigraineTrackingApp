@@ -13,18 +13,30 @@
                     <ViewCell>
                         <StackLayout Orientation="Vertical">
                             <Grid Margin="5,20,30,10">
+                                
+                                
+                                
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="0.50*" />
                                     <ColumnDefinition Width="0.50*" />
                                 </Grid.ColumnDefinitions>
+                                
+                                
+                                
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="49" />
                                 </Grid.RowDefinitions>
+                                
+                                
+                                
                                 <Label Grid.Row="0" Grid.Column="0" 
                                    TextColor="Black" 
                                    FontSize="Medium" FontFamily="Arial"  
                                    HorizontalTextAlignment="Center" 
                                    Text="{Binding .}"/>
+                                
+                                
+                                
                                 <Button Grid.Row="0" Grid.Column="1" TextColor="White" 
                                     Text="Select" 
                                     CornerRadius="10" Margin="5, 0,0,5" 
