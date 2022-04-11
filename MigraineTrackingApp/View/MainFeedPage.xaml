@@ -43,7 +43,14 @@
                 VerticalOptions="Center"
                 CornerRadius="50"
                 Clicked="recordsButton_Clicked"/>
-
+            <Button x:Name="showMigraineStats"
+                Text=" Migraine Stats" 
+                BackgroundColor="#53A2F0"
+                Margin="70,20,70,20"
+                TextColor="black"
+                VerticalOptions="Center"
+                CornerRadius="50"
+                Clicked="statsButton_Clicked"/>
 
 
 

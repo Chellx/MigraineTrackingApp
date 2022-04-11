@@ -1,4 +1,6 @@
-﻿using MigraineTrackingApp.View;
+﻿using MigraineTrackingApp.Models;
+using MigraineTrackingApp.View;
+using MigraineTrackingApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,9 @@ namespace MigraineTrackingApp
     {
         string userId = "";
         string email = "";
+        private ShowMigraineRecordsViewModel vm = new ShowMigraineRecordsViewModel();
+        List<Migraine> allRecords;
+        List<string> months = new List<string>();
         public MainFeedPage(string userId,string email)
         {
             InitializeComponent();
@@ -22,14 +27,18 @@ namespace MigraineTrackingApp
             this.email = email;
             
         }
-
+        protected async override void OnAppearing()
+        {
+            //allRecords = await vm.getAllPrevousMigraineRecords(userId);
+            base.OnAppearing();
+        }
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RecordMigraine("y47GLJJZD4ReYJBoWttbi0WVrp62"));
+            await Navigation.PushAsync(new RecordMigraine(userId));
         }
         private async void profileButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProfilePage("y47GLJJZD4ReYJBoWttbi0WVrp62"));
+            await Navigation.PushAsync(new ProfilePage(userId));
         }
         private async void allergenButton_Clicked(object sender, EventArgs e)
         {
@@ -37,7 +46,14 @@ namespace MigraineTrackingApp
         }
         private async void recordsButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new showPreviousRecords("y47GLJJZD4ReYJBoWttbi0WVrp62", "test@email.com"));
+            allRecords = await vm.getAllPrevousMigraineRecords(userId);
+            await Navigation.PushAsync(new showPreviousRecords(userId, email, allRecords));
+        }
+        private async void statsButton_Clicked(object sender, EventArgs e)
+        {
+            allRecords = await vm.getAllPrevousMigraineRecords(userId);
+            months = vm.getListOfMonths(allRecords, months);
+            await Navigation.PushAsync(new SelectMonth(allRecords,months));
         }
     }
 }

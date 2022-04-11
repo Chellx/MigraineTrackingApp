@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MigraineTrackingApp.View.SelectMonth">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Select previous migraine date"
+
+       TextTransform="Uppercase" />
+            <ListView x:Name="listView" ItemsSource="{Binding records}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Grid Margin="5,20,30,10">
+
+
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.50*" />
+                                        <ColumnDefinition Width="0.50*" />
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="49" />
+                                    </Grid.RowDefinitions>
+
+
+
+                                    <Label Grid.Row="0" Grid.Column="0" 
+                                   TextColor="Black" 
+                                   FontSize="Medium" FontFamily="Arial"  
+                                   HorizontalTextAlignment="Center" 
+                                   Text="{Binding .}"/>
+
+
+
+                                    <Button Grid.Row="0" Grid.Column="1" TextColor="White" 
+                                    Text="Select" 
+                                    CornerRadius="10" Margin="5, 0,0,5" 
+                                    FontAttributes="Bold" BackgroundColor="SteelBlue" 
+                                    Clicked="displayRecord" 
+                                    CommandParameter="{Binding .}" />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

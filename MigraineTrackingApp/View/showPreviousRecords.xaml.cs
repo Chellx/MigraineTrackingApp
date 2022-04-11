@@ -20,15 +20,16 @@ namespace MigraineTrackingApp.View
         private string userId;
         Migraine recordAtADate;
         string email = "";
-        public showPreviousRecords(string id,string email)
+        public showPreviousRecords(string id,string email, List<Migraine> mig)
         {
             InitializeComponent();
             userId = id;
             this.email = email;
+            allRecords = mig;
         }
         protected async override void OnAppearing()
         {
-            allRecords = await vm.getAllPrevousMigraineRecords(userId);
+            //allRecords = await vm.getAllPrevousMigraineRecords(userId);
             var records = allRecords.Select(i => i.dateEntered).ToList();
             listView.ItemsSource = records;
             base.OnAppearing();

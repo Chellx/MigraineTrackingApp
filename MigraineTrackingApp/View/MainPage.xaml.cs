@@ -68,7 +68,7 @@ namespace MigraineTrackingApp
 
         private async void googleLoginButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainFeedPage( " ",""));
+            Navigation.PushAsync(new MainFeedPage("y47GLJJZD4ReYJBoWttbi0WVrp62", ""));
         }
 
         private void createAccountButton_Clicked(object sender, EventArgs e)
