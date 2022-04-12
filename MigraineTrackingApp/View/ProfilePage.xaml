@@ -11,6 +11,8 @@
                HeightRequest="250"
                Margin="20,0,10,50"/>
             <Image x:Name="resultImage" HeightRequest="50" WidthRequest="50"/>
+            
+            
             <Entry x:Name="memberFirstName"
                Placeholder="First Name"
                PlaceholderColor="White"
@@ -22,19 +24,24 @@
                PlaceholderColor="White"
                TextColor="White"
                VerticalOptions="Center"/>
+            
+           
+            <Label Text= "Gender"/>
+            <RadioButton Content="Male"
+                          CheckedChanged="getGender"/>
+            <RadioButton Content="Female"
+                          CheckedChanged="getGender"/>
+            <RadioButton Content="Non Binary"
+                          CheckedChanged="getGender"/>
 
-            <Entry x:Name="memberGender"
-               Placeholder="Gender"
-               PlaceholderColor="White"
-               TextColor="White"
-               VerticalOptions="Center"/>
 
-            <Entry x:Name="memberDob"
-               Placeholder="DOB"
-               PlaceholderColor="White"
-               TextColor="White"
-               VerticalOptions="Center"/>
-            <Button Text="Pick Image" Clicked="Button_Clicked" />
+
+            <Label Text="DOB"/>
+            <DatePicker x:Name="memberDob"
+                        Format="D"/>
+
+          
+            
             <Button Text="Update Profile" Clicked="updateInfo" />
 
         </StackLayout>
