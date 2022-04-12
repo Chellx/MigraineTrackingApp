@@ -26,6 +26,11 @@ namespace MigraineTrackingApp.View
                 WeatherData weatherData = await _restService.GetWeatherData(GenerateRequestUri(OpenWeatherMapEndpoint));
                 BindingContext = weatherData;
             }
+
+            else
+            {
+                await DisplayAlert("", "Please Enter A Valid Location", "OK");
+            }
         }
 
         string GenerateRequestUri(string endpoint)
