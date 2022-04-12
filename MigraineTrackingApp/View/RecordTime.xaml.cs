@@ -14,6 +14,8 @@ namespace MigraineTrackingApp.View
         {
             InitializeComponent();
             mvm = migraneVM;
+            start.Time = DateTime.Now.TimeOfDay;
+            end.Time = DateTime.Now.TimeOfDay;
         }
         void OnSwitchToggled(object sender, ToggledEventArgs args)
         {
@@ -23,6 +25,7 @@ namespace MigraineTrackingApp.View
         void Recalculate()
         {
             var startTime = start.Time;
+
             var endTime = end.Time;
             var timeDiff = endTime.Subtract(startTime);
             if (startTime > endTime)

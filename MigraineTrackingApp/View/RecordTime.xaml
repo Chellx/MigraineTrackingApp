@@ -17,7 +17,7 @@
                />
 
         <TimePicker x:Name="start"
-                    Time="11:00:00"
+                    
                     Margin="30, 0, 0, 30"
                     TextColor="White"
                     Format="HH:mm:ss" />
@@ -27,7 +27,6 @@
                />
 
         <TimePicker x:Name="end"
-                    Time="11:00:00"
                     Margin="30, 0, 0, 30"
                     TextColor="White"
                     Format="HH:mm:ss"
