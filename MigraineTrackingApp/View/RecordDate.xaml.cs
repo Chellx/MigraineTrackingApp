@@ -32,6 +32,8 @@ namespace MigraineTrackingApp.View
 
         void Recalculate()
         {
+            //Ref: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/datepicker
+
             TimeSpan timeSpan = endDatePicker.Date - startDatePicker.Date +
                 (includeSwitch.IsToggled ? TimeSpan.FromDays(1) : TimeSpan.Zero);
 
