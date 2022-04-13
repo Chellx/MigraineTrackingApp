@@ -1,37 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.MainPage">
+             x:Class="MigraineTrackingApp.MainPage"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+>
+    <Grid>
 
-    <StackLayout 
-        BackgroundColor="#003366"
-                 >
+    <magic:GradientView VerticalOptions="FillAndExpand">
+        <magic:GradientView.GradientSource>
+            <magic:LinearGradient Angle="180">
+                    <magic:GradientStop Color="#007361" Offset="0" />
+                    <magic:GradientStop Color="#F3F354" Offset="1" />
+            </magic:LinearGradient>
+        </magic:GradientView.GradientSource>
+    </magic:GradientView>
+
+
+
+
+
+
+        <StackLayout Padding="0,50,0,0">
         <Image x:Name="logoImage"
                Aspect="AspectFit"
+               
                HorizontalOptions="FillAndExpand"
                HeightRequest="250"
-               Margin="20,0,30,50"/>
+               Margin="20,0,30,50"
+               />
 
         <Entry x:Name="loginEmail"
                Placeholder="Email"
-               PlaceholderColor="White"
-               TextColor="White"
+               PlaceholderColor="#007361"
+               TextColor="#007361"
                Keyboard="Email"
                VerticalOptions="Center"/>
 
         <Entry x:Name="loginPassWord"
                Placeholder="Password" 
-               PlaceholderColor="White"
-               TextColor="White"
+               PlaceholderColor="#007361"
+               TextColor="#007361"
                IsPassword="True"
                VerticalOptions="Center"/>
         
         
         <Button x:Name="loginButton"
                 Text="LOGIN" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="black"
+                TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="loginButton_Clicked"/>
@@ -39,9 +56,9 @@
 
         <Button x:Name="googleLoginButton"
                 Text="LOGIN WITH GOOGLE" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="black"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="googleLoginButton_Clicked"/>
@@ -49,9 +66,9 @@
 
         <Button x:Name="createAccountButton"
                 Text="CREATE ACCOUNT" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,70"
-                TextColor="black"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="createAccountButton_Clicked"/>
@@ -59,5 +76,6 @@
 
 
     </StackLayout>
+    </Grid>
 
 </ContentPage>
