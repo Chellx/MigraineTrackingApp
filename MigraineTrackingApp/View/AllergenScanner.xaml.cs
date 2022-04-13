@@ -29,7 +29,7 @@ namespace MigraineTrackingApp.View
                 bool isTrue = foodDetails[0].Equals("Could Not Scan Item!");
                 if (isTrue == false)
                 {
-                    scanResultText.Text = "scanned";
+                    scanResultText.Text = "Item Scanned!";
                     allergen = foodDetails[1];
                 }
                 else{

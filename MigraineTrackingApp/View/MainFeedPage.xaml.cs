@@ -23,9 +23,12 @@ namespace MigraineTrackingApp
         public MainFeedPage(string userId,string email)
         {
             InitializeComponent();
+            var assemble = typeof(MainFeedPage);
+
             this.userId = userId;
             this.email = email;
-            
+            logoImage.Source = ImageSource.FromResource("MigraineTrackingApp.Assets.Images.logo.png", assemble);
+
         }
         protected async override void OnAppearing()
         {

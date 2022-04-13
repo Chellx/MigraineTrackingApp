@@ -2,34 +2,55 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.MainFeedPage"
-              BackgroundColor="#003366">
-    <ContentPage.Content>
-        <StackLayout>
-           
+                      xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+>
+
+    <Grid>
+
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.GradientSource>
+                <magic:LinearGradient Angle="180">
+                    <magic:GradientStop Color="#007361" Offset="0" />
+                    <magic:GradientStop Color="#F3F354" Offset="1" />
+                </magic:LinearGradient>
+            </magic:GradientView.GradientSource>
+        </magic:GradientView>
+
+
+
+        <StackLayout Padding="0,50,0,0">
+
+            <Image x:Name="logoImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               HeightRequest="250"
+               Margin="20,0,30,50"
+               />
+
 
             <Button x:Name="profileButton"
                 Text="PROFILE PAGE" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="Black"
+                TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="50"
                 Clicked="profileButton_Clicked"/>
 
             <Button x:Name="statsButton"
                 Text="Allergen Checker" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="black"
+                TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="50"
                 Clicked="allergenButton_Clicked"/>
 
             <Button x:Name="recordMigraine"
                 Text="Record Migraine Attack" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="black"
+                TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="50"
                 Clicked="recordMigraineButton_Clicked"/>
@@ -37,17 +58,18 @@
 
             <Button x:Name="prevMigraineRecords"
                 Text=" Migraine Records" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="black"
+                TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="50"
                 Clicked="recordsButton_Clicked"/>
+           
             <Button x:Name="showMigraineStats"
                 Text=" Migraine Stats" 
-                BackgroundColor="#53A2F0"
+                BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="black"
+                TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="50"
                 Clicked="statsButton_Clicked"/>
@@ -56,5 +78,6 @@
 
 
         </StackLayout>
-    </ContentPage.Content>
+    </Grid>
+
 </ContentPage>
