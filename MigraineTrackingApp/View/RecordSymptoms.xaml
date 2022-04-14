@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordSymptoms" BackgroundColor="#003366">
+             x:Class="MigraineTrackingApp.View.RecordSymptoms" BackgroundColor="#005248">
 
 
     <StackLayout>
@@ -26,7 +26,7 @@
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#53A2F0" 
+                                BackgroundColor="#00905E" 
                                 Text="Add" 
                                 TextColor="Black" 
                                 CornerRadius="10"
@@ -39,21 +39,34 @@
             </ListView>
         </StackLayout>
 
-        <Entry x:Name="addSymptoms"
-               Placeholder="Add Another Symptom"
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.50*" />
+                <ColumnDefinition Width="0.50*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <Entry x:Name="addSymptoms"
+                   Grid.Row="0" Grid.Column="0" 
+               Placeholder="Add Another"
                PlaceholderColor="White"
                TextColor="White"
                VerticalOptions="Center"/>
 
 
-        <Button  
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5" 
-                Grid.Column="0" 
+            <Button  
+               Grid.Row="0" 
+                 Grid.Column="1"
+                BackgroundColor="#00905E" 
                 Text="ADD" 
                 TextColor="Black" 
                 CornerRadius="10"
                 Clicked="addToList"/>
+
+        </Grid>
 
         <StackLayout>
             <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedSymptom}" Margin="20">
@@ -76,7 +89,7 @@
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#53A2F0" 
+                                BackgroundColor="#00905E" 
                                 Text="Remove" 
                                 TextColor="Black" 
                                 CornerRadius="10"
@@ -89,18 +102,10 @@
             </ListView>
         </StackLayout>
 
-        <Button x:Name="backButton" 
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5" 
-                Grid.Column="0" 
-                Margin="70,5,70,5"
-                Text="BACK" 
-                TextColor="Black" 
-                Clicked="returnToMenu"
-                CornerRadius="10" />
+     
 
         <Button x:Name="saveButton" 
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#00AB58" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 

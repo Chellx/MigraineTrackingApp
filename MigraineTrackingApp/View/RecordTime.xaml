@@ -57,21 +57,15 @@
 
 
 
-        <Button x:Name="backButton" 
-                BackgroundColor="#00AB58" 
-                Text="BACK" 
-                TextColor="Black" 
-                Clicked="returnToMenu"
-                Margin="70,20,70,20"
-                VerticalOptions="Center"
-                CornerRadius="10" />
 
         <Button x:Name="saveButton" 
                 BackgroundColor="#00AB58" 
                 Text="SAVE" 
+                  Grid.Row="5"
+                Grid.Column="1" 
                 TextColor="Black" 
                 Clicked="recordButton_Clicked"
-                Margin="70,20,70,20"
+               
                 VerticalOptions="Center"
                 CornerRadius="10" />
 

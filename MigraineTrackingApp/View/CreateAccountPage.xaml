@@ -54,7 +54,9 @@
                 Text="Create Account" 
                 BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="White"
+                TextColor="#005248"
+                    BorderColor="#005248"
+                        BorderWidth="2"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="createAccount"/>

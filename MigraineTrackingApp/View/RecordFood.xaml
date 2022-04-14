@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordFood" BackgroundColor="#003366">
+             x:Class="MigraineTrackingApp.View.RecordFood" BackgroundColor="#005248">
     
     <StackLayout Margin="10">
         <Label Text="Scan Food Items You Have Eaten Today" 
@@ -12,7 +12,7 @@
 
 
         <Button  
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#00905E" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="SCAN FOOD ITEM" 
@@ -30,7 +30,7 @@
 
 
         <Button  
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#00905E" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="ADD" 
@@ -59,9 +59,9 @@
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#53A2F0" 
+                                BackgroundColor="#00905E" 
                                 Text="Remove" 
-                                TextColor="White" 
+                                TextColor="Black" 
                                 CornerRadius="10"
                                 Clicked="removeFromList"
                                 CommandParameter="{Binding .}"/>
@@ -71,17 +71,10 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        <Button x:Name="backButton" 
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5" 
-                Grid.Column="0" 
-                Text="BACK" 
-                TextColor="black" 
-                Clicked="returnToMenu"
-                CornerRadius="10" />
+       
 
     <Button x:Name="saveButton" 
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#00AB58" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 

@@ -1,90 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.ShowMigraineDetails" BackgroundColor="#003366">
-    <ContentPage.Content>
+             x:Class="MigraineTrackingApp.View.ShowMigraineDetails" 
+                        xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients">
+
+
+    <Grid>
+
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:GradientView.GradientSource>
+                <magic:LinearGradient Angle="180">
+                    <magic:GradientStop Color="#00AB58" Offset="0" />
+                    <magic:GradientStop Color="#F3F354" Offset="1" />
+                </magic:LinearGradient>
+            </magic:GradientView.GradientSource>
+        </magic:GradientView>
+        
+        
+        
        <ScrollView>
         <StackLayout>
 
-                <Label x:Name="title" Text="Migraine Record" FontSize="Title"   FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Label x:Name="title" Text="Migraine Record" FontSize="Title"   FontAttributes="Bold" HorizontalTextAlignment="Center"  TextColor="Black" />
 
-                <Label x:Name="startDateHeading" Text="Start Date" FontSize="Subtitle"  />
+                <Label x:Name="startDateHeading" Text="Start Date" FontSize="Subtitle"  FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
-                <Label x:Name="startD" Text=""/>
+                <Label x:Name="startD" Text="" TextColor="Black"/>
 
-                <Label x:Name="endDateHeading" Text="End Date" FontSize="Subtitle"  />
+                <Label x:Name="endDateHeading" Text="End Date" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
-                <Label x:Name="endD" Text=""/>
+                <Label x:Name="endD" Text="" TextColor="Black"/>
 
-                <Label x:Name="startTimeHeading" Text="Start Time" FontSize="Subtitle"  />
+                <Label x:Name="startTimeHeading" Text="Start Time" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
-                <Label x:Name="startT" Text="" />
+                <Label x:Name="startT" Text="" TextColor="Black"/>
 
-                <Label x:Name="endTimeHeading" Text="End Time" FontSize="Subtitle"  />
-
-
-                <Label x:Name="endT" Text="" />
-            
-                <Label x:Name="humidityHeading" Text="Humidity (%)" FontSize="Subtitle"  />
+                <Label x:Name="endTimeHeading" Text="End Time" FontSize="Subtitle"  FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
 
-                <Label x:Name="humd" Text="" />
+                <Label x:Name="endT" Text="" TextColor="Black"/>
 
-                <Label x:Name="tempHeading" Text="Temperature (°C)" FontSize="Subtitle"  />
-
-                <Label x:Name="temp" Text=""/>
+                <Label x:Name="humidityHeading" Text="Humidity (%)" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black" />
 
 
-                <Label x:Name="locationHeading" Text="Location" FontSize="Subtitle"  />
+                <Label x:Name="humd" Text="" TextColor="Black"/>
 
-                <Label x:Name="loc" Text=""/>
+                <Label x:Name="tempHeading" Text="Temperature (°C)" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
-                <Label x:Name="durationHeading" Text="Migraine Duration (H:M:S)" FontSize="Subtitle"  />
-
-
-                <Label x:Name="migraineD" Text="" />
-            
-                <Label x:Name="painIntensityHeading" Text="Pain Intensity" FontSize="Subtitle"  />
-
-                <Label x:Name="painI" Text=""/>
-
-                <Label x:Name="fdHeading" Text="Food Eaten" FontSize="Subtitle"  />
+                <Label x:Name="temp" Text="" TextColor="Black"/>
 
 
-                <Label x:Name="food" Text="" />
+                <Label x:Name="locationHeading" Text="Location" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
-                <Label x:Name="typeHeading" Text="Migraine Type" FontSize="Subtitle"  />
+                <Label x:Name="loc" Text="" TextColor="Black"/>
 
-                <Label x:Name="migraineT" Text=""/>
-            
-                <Label x:Name="medHeading" Text="Medication" FontSize="Subtitle"  />
-
-                <Label x:Name="medicationT" Text=""/>
+                <Label x:Name="durationHeading" Text="Migraine Duration (H:M:S)" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
 
-                <Label x:Name="painLocHeading" Text="Pain Location" FontSize="Subtitle"  />
+                <Label x:Name="migraineD" Text="" TextColor="Black"/>
+
+                <Label x:Name="painIntensityHeading" Text="Pain Intensity" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline"  TextColor="Black"/>
+
+                <Label x:Name="painI" Text="" TextColor="Black"/>
+
+                <Label x:Name="fdHeading" Text="Food Eaten" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
 
 
-                <Label x:Name="painLoc" Text="" />
+                <Label x:Name="food" Text="" TextColor="Black"/>
 
-                <Label x:Name="sympHeading" Text="Symptoms" FontSize="Subtitle"  />
+                <Label x:Name="typeHeading" Text="Migraine Type" FontSize="Subtitle"  FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
+
+                <Label x:Name="migraineT" Text="" TextColor="Black"/>
+
+                <Label x:Name="medHeading" Text="Medication" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
+
+                <Label x:Name="medicationT" Text="" TextColor="Black"/>
 
 
-                <Label x:Name="symptom" Text="" />
-            
-                <Label x:Name="trigHeading" Text="Triggers" FontSize="Subtitle" />
+                <Label x:Name="painLocHeading" Text="Pain Location" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black" />
 
 
-                <Label x:Name="trigger" Text="" BackgroundColor="#024c96"  />
+                <Label x:Name="painLoc" Text="" TextColor="Black"/>
+
+                <Label x:Name="sympHeading" Text="Symptoms" FontSize="Subtitle"  FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
+
+
+                <Label x:Name="symptom" Text="" TextColor="Black"/>
+
+                <Label x:Name="trigHeading" Text="Triggers" FontSize="Subtitle" FontAttributes="Bold" TextDecorations="Underline" TextColor="Black"/>
+
+
+                <Label x:Name="trigger" Text="" TextColor="Black"/>
                
-            <Button Text="Email Records"
+            <Button Text="Email Record"
                 VerticalOptions="CenterAndExpand"
-                    BackgroundColor="#53A2F0" 
-                     TextColor="Black" 
+                    BackgroundColor="#68C551"
+                                        BorderColor="#005248"
+                        BorderWidth="2"
+                     TextColor="#005248" 
                     CornerRadius="10"
                 HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
+            
+            
             </StackLayout>
        </ScrollView>
-    </ContentPage.Content>
+    </Grid>
 </ContentPage>

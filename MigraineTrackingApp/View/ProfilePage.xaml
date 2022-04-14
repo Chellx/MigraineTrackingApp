@@ -81,6 +81,7 @@
                      VerticalOptions="Center"
                      CornerRadius="10"
                     BorderColor="#005248"
+                    TextColor="#005248"
                         BorderWidth="2"
                     Margin="70,20,70,20"
                     />

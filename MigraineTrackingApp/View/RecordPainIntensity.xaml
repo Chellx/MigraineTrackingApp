@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordPainIntensity" BackgroundColor="#003366">
+             x:Class="MigraineTrackingApp.View.RecordPainIntensity" BackgroundColor="#005248">
     <ContentPage.Content>
         <StackLayout  Margin="10" >
            
@@ -42,18 +42,9 @@
                 
             
 
-            <Button x:Name="backButton" 
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5" 
-                Grid.Column="0" 
-                Text="BACK" 
-                TextColor="Black" 
-                Clicked="returnToMenu"
-                    Margin="70,5,70,5"
-                CornerRadius="10" />
 
             <Button x:Name="saveButton" 
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#00AB58" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 
