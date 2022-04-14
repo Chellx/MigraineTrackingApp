@@ -31,15 +31,15 @@
 
         <Entry x:Name="loginEmail"
                Placeholder="Email"
-               PlaceholderColor="#007361"
-               TextColor="#007361"
+               PlaceholderColor="white"
+               TextColor="white"
                Keyboard="Email"
                VerticalOptions="Center"/>
 
         <Entry x:Name="loginPassWord"
                Placeholder="Password" 
-               PlaceholderColor="#007361"
-               TextColor="#007361"
+               PlaceholderColor="white"
+               TextColor="white"
                IsPassword="True"
                VerticalOptions="Center"/>
         
@@ -51,6 +51,8 @@
                 TextColor="White"
                 VerticalOptions="Center"
                 CornerRadius="10"
+                BorderColor="#005248"
+                        BorderWidth="2"
                 Clicked="loginButton_Clicked"/>
 
 
@@ -61,6 +63,8 @@
                 TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
+                BorderColor="#005248"
+                        BorderWidth="2"
                 Clicked="googleLoginButton_Clicked"/>
 
 
@@ -71,6 +75,8 @@
                 TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
+                BorderColor="#005248"
+                        BorderWidth="2"
                 Clicked="createAccountButton_Clicked"/>
 
 

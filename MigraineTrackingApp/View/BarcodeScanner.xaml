@@ -4,9 +4,9 @@
              x:Class="MigraineTrackingApp.View.BarcodeScanner"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
 
-    <StackLayout BackgroundColor="#003366">
+    <StackLayout BackgroundColor="#00905E">
 
-        <Frame BackgroundColor="#003366" Padding="24" CornerRadius="0">
+        <Frame BackgroundColor="#00905E" Padding="24" CornerRadius="0">
             <Label Text="Barcode Scanner!" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
         </Frame>
 
@@ -14,7 +14,7 @@
       
         
         <Button  
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#68C551" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="Add to FOOD List" 

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.MainFeedPage"
-                      xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+                      xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients" 
+             NavigationPage.HasNavigationBar="false"
 >
 
     <Grid>
@@ -17,8 +18,8 @@
         </magic:GradientView>
 
 
-
-        <StackLayout Padding="0,50,0,0">
+        <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout Padding="0,20,0,0">
 
             <Image x:Name="logoImage"
                Aspect="AspectFit"
@@ -28,22 +29,31 @@
                />
 
 
-            <Button x:Name="profileButton"
+
+                <Button x:Name="profileButton"
                 Text="PROFILE PAGE" 
                 BackgroundColor="#00905E"
                 Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"
-                CornerRadius="50"
-                Clicked="profileButton_Clicked"/>
+                CornerRadius="10"
+                Clicked="profileButton_Clicked"
+                        BorderColor="#005248"
+                        BorderWidth="2"/>
 
-            <Button x:Name="statsButton"
+            
+
+
+
+                <Button x:Name="statsButton"
                 Text="Allergen Checker" 
                 BackgroundColor="#00905E"
                 Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"
-                CornerRadius="50"
+                CornerRadius="10"
+                        BorderColor="#005248"
+                        BorderWidth="2"
                 Clicked="allergenButton_Clicked"/>
 
             <Button x:Name="recordMigraine"
@@ -52,7 +62,9 @@
                 Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"
-                CornerRadius="50"
+                CornerRadius="10"
+                    BorderColor="#005248"
+                        BorderWidth="2"
                 Clicked="recordMigraineButton_Clicked"/>
 
 
@@ -62,8 +74,10 @@
                 Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"
-                CornerRadius="50"
-                Clicked="recordsButton_Clicked"/>
+                CornerRadius="10"
+                Clicked="recordsButton_Clicked"
+                    BorderColor="#005248"
+                        BorderWidth="2"/>
            
             <Button x:Name="showMigraineStats"
                 Text=" Migraine Stats" 
@@ -71,13 +85,16 @@
                 Margin="70,20,70,20"
                 TextColor="White"
                 VerticalOptions="Center"
-                CornerRadius="50"
-                Clicked="statsButton_Clicked"/>
+                CornerRadius="10"
+                Clicked="statsButton_Clicked"
+                    BorderColor="#005248"
+                        BorderWidth="2"/>
 
 
 
 
         </StackLayout>
+        </ScrollView>
     </Grid>
 
 </ContentPage>

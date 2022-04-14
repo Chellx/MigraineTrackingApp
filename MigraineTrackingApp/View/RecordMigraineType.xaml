@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.RecordMigraineType"
-             BackgroundColor="#003366">
+             BackgroundColor="#005248">
 
 
         <StackLayout>
         <StackLayout>
-            <ListView x:Name="MigraineTypeListView" ItemsSource="{Binding migraineTypes}" Margin="20" SeparatorVisibility="Default">
+            <ListView x:Name="MigraineTypeListView" ItemsSource="{Binding migraineTypes}" Margin="10" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -27,7 +27,7 @@
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#53A2F0" 
+                                BackgroundColor="#00905E" 
                                 Text="Add" 
                                 TextColor="Black" 
                                 CornerRadius="10"
@@ -40,21 +40,34 @@
             </ListView>
         </StackLayout>
 
-                <Entry x:Name="addMigraineType"
-               Placeholder="Add Another Migraine/Headache Type"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.50*" />
+                <ColumnDefinition Width="0.50*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <Entry x:Name="addMigraineType"
+                   Grid.Row="0" Grid.Column="0" 
+               Placeholder="Add Another"
                PlaceholderColor="White"
                TextColor="White"
                VerticalOptions="Center"/>
 
 
             <Button  
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5" 
-                Grid.Column="0" 
+                 Grid.Row="0" 
+                                Grid.Column="1"
+                BackgroundColor="#00905E" 
+             
                 Text="ADD" 
                 TextColor="Black" 
                 CornerRadius="10"
                 Clicked="addToList"/>
+
+        </Grid>
 
         <StackLayout>
             <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedMigraneTypes}" Margin="20">
@@ -77,7 +90,7 @@
                                 <Button 
                                 Grid.Row="0" 
                                 Grid.Column="1"
-                                BackgroundColor="#53A2F0" 
+                                BackgroundColor="#00905E" 
                                 Text="Remove" 
                                 TextColor="Black" 
                                 CornerRadius="10"
@@ -90,20 +103,13 @@
             </ListView>
         </StackLayout>
 
-        <Button x:Name="backButton" 
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5" 
-                Grid.Column="0" 
-                Text="BACK" 
-                TextColor="Black" 
-                Clicked="returnToMenu"
-                CornerRadius="10" />
+       
 
             <Button x:Name="saveButton" 
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5"
-                Grid.Column="1" 
+                BackgroundColor="#00AB58" 
+          
                 Text="SAVE" 
+                    Margin="70,10,70,10"
                 TextColor="Black" 
                 Clicked="saveTypes"
                 CornerRadius="10" />

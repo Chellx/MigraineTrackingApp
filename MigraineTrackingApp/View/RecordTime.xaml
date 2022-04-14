@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.View.RecordTime" BackgroundColor="#003366">
+             x:Class="MigraineTrackingApp.View.RecordTime" BackgroundColor="#005248">
    
     
     
@@ -13,6 +13,7 @@
                HorizontalTextAlignment="Center"/>
 
         <Label Text="Start Time:" 
+               FontAttributes="Bold"
                TextColor="White"
                />
 
@@ -23,6 +24,7 @@
                     Format="HH:mm:ss" />
 
         <Label Text="End Time:" 
+               FontAttributes="Bold"
                TextColor="White"
                />
 
@@ -36,6 +38,7 @@
                      Margin="0, 0, 0, 30">
             <Label Text="Record Length Of Migraine Attack? "
                    VerticalOptions="Center" 
+                   FontAttributes="Bold"
                    TextColor="White"/>
 
             <Switch x:Name="includeSwitch"
@@ -55,21 +58,21 @@
 
 
         <Button x:Name="backButton" 
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5" 
-                Grid.Column="0" 
+                BackgroundColor="#00AB58" 
                 Text="BACK" 
                 TextColor="Black" 
                 Clicked="returnToMenu"
+                Margin="70,20,70,20"
+                VerticalOptions="Center"
                 CornerRadius="10" />
 
         <Button x:Name="saveButton" 
-                BackgroundColor="#53A2F0" 
-                Grid.Row="5"
-                Grid.Column="1" 
+                BackgroundColor="#00AB58" 
                 Text="SAVE" 
                 TextColor="Black" 
                 Clicked="recordButton_Clicked"
+                Margin="70,20,70,20"
+                VerticalOptions="Center"
                 CornerRadius="10" />
 
 

@@ -37,7 +37,7 @@ namespace MigraineTrackingApp.View
                 {
                     Label = value.Date,
                     ValueLabel = value.PainLevel.ToString(),
-                    Color = SKColor.Parse("#1A66FF")
+                    Color = SKColor.Parse("#00AB58")
                 };
                 chartEntries.Add(chart);
             }

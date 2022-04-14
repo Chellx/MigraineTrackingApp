@@ -7,11 +7,24 @@
     <StackLayout BackgroundColor="#00905E">
 
         <Frame BackgroundColor="#00905E" Padding="24" CornerRadius="0">
-            <Label Text="Allergen Checker - Scan a food item to check if the allergens affect your migraines!" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
+            <Label Text="Allergen Checker - Scan an item to check if the allergens affect your migraines!" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
         </Frame>
 
-        <Label x:Name="scanResultText" TextColor="White" FontSize="25"/>
 
+
+       
+
+
+            <Label x:Name="scanResultText" TextColor="White" FontSize="25"  />
+
+        <Button x:Name="allergin"
+                Text="Check Allergens" 
+                BackgroundColor="#68C551"
+                Margin="70,20,70,20"
+                TextColor="black"
+                VerticalOptions="Center"
+                CornerRadius="10"
+                Clicked="checkAllergens"/>
 
 
 
@@ -22,14 +35,7 @@
             x:Name="scannerOverlay"                                                       
             BottomText="Place the red line over the barcode." />
         </Grid>
-        <Button x:Name="allergin"
-                Text="Check Allergens" 
-                BackgroundColor="#68C551"
-                Margin="70,20,70,20"
-                TextColor="black"
-                VerticalOptions="Center"
-                CornerRadius="10"
-                Clicked="checkAllergens"/>
+       
     </StackLayout>
 
 </ContentPage>

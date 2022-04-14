@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.DisplayPainIntensityChart"
              xmlns:chart="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
-             BackgroundColor="#003366">
+             BackgroundColor="#005248">
     <ScrollView>
         <StackLayout>
-            <Label Text = "Pain Level Chart" TextColor ="white" />
-            <chart:ChartView x:Name="MyLineChart" HeightRequest="505"/>
+            <Label Text = "Pain Level Chart" TextColor ="white" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Frame BorderColor="#005248">
+                <chart:ChartView x:Name="MyLineChart" HeightRequest="505"  />
+            </Frame>
         </StackLayout>
     </ScrollView>
 </ContentPage>

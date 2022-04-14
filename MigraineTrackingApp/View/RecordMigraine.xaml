@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.RecordMigraine"
-             BackgroundColor="#003366">
+             BackgroundColor="#005248">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -15,10 +15,10 @@
             <ColumnDefinition  Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Grid RowSpacing="30" ColumnSpacing="30"></Grid>
+        <Grid RowSpacing="30" ColumnSpacing="30" ></Grid>
 
         <Button x:Name="recordTimeButton"
-                BackgroundColor="#003F7D"
+                BackgroundColor="#007361"
                 Grid.Row="0" 
                 Grid.Column="0" 
                 Text="Time" 
@@ -29,7 +29,7 @@
         
         
         <Button x:Name="recordDateButton" 
-                BackgroundColor="#003F7D" 
+                BackgroundColor="#007361" 
                 Grid.Row="0" 
                 Grid.Column="1" 
                 Text="Date" 
@@ -39,7 +39,7 @@
 
 
         <Button x:Name="recordTypeButton"
-                BackgroundColor="#003F7D" 
+                BackgroundColor="#007361" 
                 Grid.Row="1"
                 Grid.Column="0"
                 Text="Migraine/Headache Type" 
@@ -50,7 +50,7 @@
 
 
         <Button x:Name="recordPainIntensity" 
-                BackgroundColor="#003F7D"
+                BackgroundColor="#007361"
                 Grid.Row="1"
                 Grid.Column="1" 
                 Text="Pain Intensity"
@@ -60,7 +60,7 @@
 
 
         <Button x:Name="recordPainLocationButton" 
-                BackgroundColor="#003F7D" 
+                BackgroundColor="#007361" 
                 Grid.Row="2"
                 Grid.Column="0" 
                 Text="Pain Location"
@@ -70,7 +70,7 @@
 
 
         <Button x:Name="recordMedTypes" 
-                BackgroundColor="#003F7D" 
+                BackgroundColor="#007361" 
                 Grid.Row="2" 
                 Grid.Column="1" 
                 Text="Medication" 
@@ -79,7 +79,7 @@
                 Clicked="recordMedTypeButton_Clicked" />
 
         <Button x:Name="recordSymptoms"  
-                BackgroundColor="#003F7D" 
+                BackgroundColor="#007361" 
                 Grid.Row="3" 
                 Grid.Column="0" 
                 Text="Symptoms" 
@@ -89,7 +89,7 @@
 
 
         <Button x:Name="recordTriggers" 
-                BackgroundColor="#003F7D" 
+                BackgroundColor="#007361" 
                 Grid.Row="3" 
                 Grid.Column="1" 
                 Text="Triggers" 
@@ -99,7 +99,7 @@
 
 
         <Button x:Name="recordFoodButton" 
-                BackgroundColor="#003F7D" 
+                BackgroundColor="#007361" 
                 Grid.Row="4" 
                 Grid.Column="0" 
                 Text="Food Eaten" 
@@ -108,7 +108,7 @@
                 Clicked="recordFoodButton_Clicked"/>
 
         <Button x:Name="recordWeather" 
-                BackgroundColor="#003F7D"
+                BackgroundColor="#007361"
                 Grid.Row="4" 
                 Grid.Column="1" 
                 Text="Weather" 
@@ -117,7 +117,7 @@
                 Clicked="recordWeatherButton_Clicked"/>
 
         <Button x:Name="backButton" 
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#00AB58" 
                 Grid.Row="5" 
                 Grid.Column="0" 
                 Text="BACK" 
@@ -126,7 +126,7 @@
                 Clicked="backButton_Clicked"/>
         
         <Button x:Name="saveButton" 
-                BackgroundColor="#53A2F0" 
+                BackgroundColor="#00AB58" 
                 Grid.Row="5"
                 Grid.Column="1" 
                 Text="SAVE" 
