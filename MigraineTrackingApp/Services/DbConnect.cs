@@ -42,17 +42,15 @@ namespace MigraineTrackingApp.Services
         /// <param name="gender"></param>
         /// <param name="userid"></param>
         /// <returns></returns>
-        public async Task<bool> createProfile(string firstName,string lastName,string dob,string gender,string userid,string profilePicName)
+        public async Task<bool> createProfile(string firstName,string dob,string gender,string userid)
         {
             await firebase
                 .Child("member").Child(userid)
                 .PutAsync(new Member()
                 {
                     FirstName = firstName,
-                    LastName = lastName,
                     Dob = dob,
                     Gender = gender,
-                    Picture = profilePicName
                 });
             return true;
         }

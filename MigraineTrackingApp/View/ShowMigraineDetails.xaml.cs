@@ -1,4 +1,5 @@
 ﻿using MigraineTrackingApp.Models;
+using MigraineTrackingApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace MigraineTrackingApp.View
     public partial class ShowMigraineDetails : ContentPage
     {
         Migraine migraine;
+        RecordMigraneViewModel vm = new RecordMigraneViewModel();
         string foodList = "";
         string migraineTypeList = "";
         string medicationTypeList = "";
@@ -20,11 +22,28 @@ namespace MigraineTrackingApp.View
         string triggersList = "";
         string email = "";
         string emailMesage = "";
-        public ShowMigraineDetails(Migraine record,string email)
+        string userId = "";
+        public ShowMigraineDetails(Migraine record,string email,string id)
         {
             migraine = record;
+            vm.StartDate = migraine.startDate;
+            vm.EndDate = migraine.endDate;
+            vm.StartTimeOfMigraine = migraine.startTime;
+            vm.EndTimeOfMigraine = migraine.endTime;
+            vm.Humidity = migraine.humidity;
+            vm.Location = migraine.location;
+            vm.PainIntensity = migraine.painIntensity;
+            vm.LengthOfMigraineAttack = migraine.migraineDuration;
+            vm.Temperature = migraine.temperature;
+            vm.setMigraneTypes(migraine.migraineType);
+            vm.setTriggers(migraine.triggers);
+            vm.setSymptoms(migraine.symptoms);
+            vm.setFoodEaten(migraine.foods);
+            vm.setPainLocation(migraine.painLocation);
+            vm.setMedicationTypes(migraine.medicationType);
             InitializeComponent();
             this.email = email;
+            userId = id;
         }
         protected async override void OnAppearing()
         {
@@ -99,6 +118,11 @@ namespace MigraineTrackingApp.View
             List<string> recipients = new List<string>();
             recipients.Add(email);
             await sendMigraineRecord(recipients, emailMesage);
+            //await Navigation.PopAsync();
+        }
+        private async void updateClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new RecordMigraine(userId,vm));
             //await Navigation.PopAsync();
         }
         public async Task<bool> sendMigraineRecord(List<string> recipients,string body)

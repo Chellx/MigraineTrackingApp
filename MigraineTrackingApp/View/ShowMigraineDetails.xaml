@@ -95,14 +95,23 @@
             <Button Text="Email Record"
                 VerticalOptions="CenterAndExpand"
                     BackgroundColor="#68C551"
-                                        BorderColor="#005248"
+            BorderColor="#005248"
                         BorderWidth="2"
                      TextColor="#005248" 
                     CornerRadius="10"
                 HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
-            
-            
+                <Button Text="Update Record"
+                VerticalOptions="CenterAndExpand"
+                    BackgroundColor="#68C551"
+            BorderColor="#005248"
+                        BorderWidth="2"
+                     TextColor="#005248" 
+                    CornerRadius="10"
+                HorizontalOptions="Center"
+                Clicked="updateClicked" />
+
+
             </StackLayout>
        </ScrollView>
     </Grid>

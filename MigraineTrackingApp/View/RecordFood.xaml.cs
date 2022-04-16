@@ -41,6 +41,10 @@ namespace MigraineTrackingApp.View
                 }
             }
             migraneVM.resetFoodList();
+            if (migraneVM.getFoodEaten().Count != 0)
+            {
+                showListView.ItemsSource = migraneVM.getFoodEaten();
+            }
         }
         private void addToList(object sender, EventArgs args)
         {

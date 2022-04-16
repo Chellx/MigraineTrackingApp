@@ -14,6 +14,10 @@ namespace MigraineTrackingApp.View
         {
             InitializeComponent();
             mvm = migraneVM;
+            if(migraneVM.PainIntensity != " " && migraneVM.PainIntensity != null)
+            {
+                Intensity.SelectedItem = migraneVM.PainIntensity;
+            }
         }
 
         private async void returnToMenu(object sender, EventArgs args)

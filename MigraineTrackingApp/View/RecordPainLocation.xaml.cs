@@ -25,8 +25,11 @@ namespace MigraineTrackingApp.View
         {
             base.OnAppearing();
             painLocation = new[] { "Right Eye", "Left Eye", "Forehead (Right)", "Forehead (Left)", "Not Sure"};
-
             PainLocationListView.ItemsSource = painLocation;
+            if (migraneVM.getPainLocation().Count != 0)
+            {
+                showListView.ItemsSource = migraneVM.getPainLocation();
+            }                
         }
         /// <summary>
         /// This method adds to a list of pain locations

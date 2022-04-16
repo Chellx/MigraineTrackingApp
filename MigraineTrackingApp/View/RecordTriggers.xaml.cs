@@ -1,9 +1,6 @@
 ﻿using MigraineTrackingApp.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,8 +22,11 @@ namespace MigraineTrackingApp.View
         {
             base.OnAppearing();
             triggers = new[] { "Stress","Lack Of Sleep","Anxiety","Skipped Meal","Caffeine","Dehydration ","Strong Smell","Neck Pain","Not Sure" };
-
             TriggersListView.ItemsSource = triggers;
+            if (migraneVM.getTriggers().Count != 0)
+            {
+                showListView.ItemsSource = migraneVM.getTriggers();
+            }
         }
         /// <summary>
         /// This method adds to a list of triggers

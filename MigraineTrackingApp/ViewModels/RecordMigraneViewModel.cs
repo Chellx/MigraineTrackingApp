@@ -170,6 +170,7 @@ namespace MigraineTrackingApp.ViewModels
             get => migraineDuration;
             set => migraineDuration = value;
         }
+        
         ////////////////////////////////////////////////////////////////////////
         public string StartDate
         {

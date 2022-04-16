@@ -17,6 +17,18 @@ namespace MigraineTrackingApp.View
         {
             InitializeComponent();
             mVm = migraneVM;
+            if(migraneVM.Location != " " && migraneVM.Location != null)
+            {
+                Location.Text = migraneVM.Location;
+            }
+            if (migraneVM.Humidity != " " && migraneVM.Humidity != null)
+            {
+                Humidity.Text = migraneVM.Humidity;
+            }
+            if (migraneVM.Temperature != " " && migraneVM.Temperature != null)
+            {
+                Temperature.Text = migraneVM.Temperature;
+            }
             _restService = new RestService();
         }
         async void OnGetWeatherButtonClicked(object sender, EventArgs e)

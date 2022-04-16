@@ -25,8 +25,11 @@ namespace MigraineTrackingApp.View
         {
             base.OnAppearing();
             medicationType = new[] { "Paracetemol","Ibuprofen","Frovex","Naproxyn","None"  };
-
             MedicationTypeListView.ItemsSource = medicationType;
+            if (migraneVM.getMedicationTypes().Count != 0)
+            {
+                showListView.ItemsSource = migraneVM.getMedicationTypes();
+            }
         }
         /// <summary>
         /// This method adds to a list of medications

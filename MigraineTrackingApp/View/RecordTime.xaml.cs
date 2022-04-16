@@ -14,8 +14,23 @@ namespace MigraineTrackingApp.View
         {
             InitializeComponent();
             mvm = migraneVM;
-            start.Time = DateTime.Now.TimeOfDay;
-            end.Time = DateTime.Now.TimeOfDay;
+            if (migraneVM.StartTimeOfMigraine != " " && migraneVM.StartTimeOfMigraine != null)
+            {
+                start.Time = TimeSpan.Parse(migraneVM.StartTimeOfMigraine);
+            }
+            else
+            {
+                start.Time = DateTime.Now.TimeOfDay;
+            }
+            if (migraneVM.EndTimeOfMigraine != " " && migraneVM.EndTimeOfMigraine != null)
+            {
+
+                start.Time = TimeSpan.Parse(migraneVM.EndTimeOfMigraine);
+            }
+            else
+            {
+                end.Time = DateTime.Now.TimeOfDay;
+            }   
         }
         void OnSwitchToggled(object sender, ToggledEventArgs args)
         {

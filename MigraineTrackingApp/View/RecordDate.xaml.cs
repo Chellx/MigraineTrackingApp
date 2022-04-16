@@ -1,10 +1,6 @@
 ﻿using MigraineTrackingApp.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +14,18 @@ namespace MigraineTrackingApp.View
         {
             InitializeComponent();
             this.migraneVM = migraneVM;
+            if(migraneVM.StartDate != " " && migraneVM.StartDate != null)
+            {
+                DateTime dateTime = DateTime.Parse(migraneVM.StartDate, CultureInfo.CreateSpecificCulture("en-US"));
+                string newStartDate = dateTime.ToString("dd/MM/yyyy");
+                startDatePicker.Date = DateTime.Parse(newStartDate);
+            }
+            if(migraneVM.EndDate != " " && migraneVM.EndDate != null)
+            {
+                DateTime dateTime = DateTime.Parse(migraneVM.EndDate, CultureInfo.CreateSpecificCulture("en-US"));
+                string newEndDate = dateTime.ToString("dd/MM/yyyy");
+                endDatePicker.Date = DateTime.Parse(newEndDate);
+            }
         }
 
         void OnDateSelected(object sender, DateChangedEventArgs args)
@@ -46,14 +54,14 @@ namespace MigraineTrackingApp.View
 
         private async void returnToMenu(object sender, EventArgs args)
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         private async void saveDates(object sender, EventArgs args)
         {
             migraneVM.StartDate = startDatePicker.Date.ToString();
             migraneVM.EndDate = endDatePicker.Date.ToString();
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
     }
 }

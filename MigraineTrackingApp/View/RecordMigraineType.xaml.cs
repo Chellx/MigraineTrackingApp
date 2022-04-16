@@ -23,6 +23,11 @@ namespace MigraineTrackingApp.View
             migraineTypes = new[] { "Migraine", "Tension Headache", "Cluster Headache", "Headache", "Sinus Headache", "Not Sure" };
 
             MigraineTypeListView.ItemsSource = migraineTypes;
+            if (migraneVM.getMigraneTypes().Count != 0)
+            {
+                selectedMigraneTypes.AddRange(migraneVM.getMigraneTypes());
+                showListView.ItemsSource = selectedMigraneTypes;
+            }
         }
         /// <summary>
         /// This method adds to a list of migrane types

@@ -25,8 +25,11 @@ namespace MigraineTrackingApp.View
         {
             base.OnAppearing();
             symptoms = new[] { "Pounding Pain","Throbbing Pain","Nausea","Light Sensitivity", "Noise Sensitivity","Vomiting","None" };
-
             SymptomsListView.ItemsSource = symptoms;
+            if (migraneVM.getSymptoms().Count != 0)
+            {
+                showListView.ItemsSource = migraneVM.getSymptoms();
+            }
         }
         /// <summary>
         /// This method adds to a list of symptoms

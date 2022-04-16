@@ -12,6 +12,7 @@ namespace MigraineTrackingApp.ViewModels
     class ShowMigraineRecordsViewModel
     {
         DbConnect db;
+        string email;
         public ShowMigraineRecordsViewModel()
         {
             db = new DbConnect();
@@ -25,6 +26,11 @@ namespace MigraineTrackingApp.ViewModels
         {
             List <Migraine> value = await db.getMigraineRecords(uid);
             return value;
+        }
+        public string Email
+        {
+            get => email;
+            set => email = value;
         }
         public List<string> getListOfMonths(List<Migraine> objList,List<string> months)
         {
@@ -95,13 +101,10 @@ namespace MigraineTrackingApp.ViewModels
             string monthSelected = months[selectedMonth];
             foreach (Migraine obj in objList)
             {
-                if(monthSelected.Equals(obj.dateEntered.Substring(3, 2)))
+                if(monthSelected.Equals(obj.dateEntered.Substring(3, 2)) && obj.painIntensity != " ")
                 {
                     graphObj = new DisplayGraph();
-                    //removing the time from the date
-                    int firstSpaceIndex = obj.dateEntered.IndexOf(" ");//get first spcae
-                    string firstString = obj.dateEntered.Substring(0, firstSpaceIndex); // get date
-                    graphObj.Date = firstString;//overwrite date
+                    graphObj.Date = obj.dateEntered;//overwrite date
                     //changing the pain intensity from a string to string number
                     graphObj.PainLevel = (float)Convert.ToDouble( obj.painIntensity.Substring(0, 1));//get string number
                     recordsForThatMonth.Add(graphObj);

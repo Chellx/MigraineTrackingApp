@@ -46,7 +46,7 @@ namespace MigraineTrackingApp.View
                     break;
                 }
             }
-            await Navigation.PushModalAsync(new ShowMigraineDetails(recordAtADate, email));
+            await Navigation.PushModalAsync(new ShowMigraineDetails(recordAtADate, email, userId));
         }
     }
 }

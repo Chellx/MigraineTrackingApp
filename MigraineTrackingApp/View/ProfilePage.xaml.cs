@@ -1,9 +1,5 @@
-﻿using MigraineTrackingApp.Models;
+﻿using MigraineTrackingApp.View;
 using MigraineTrackingApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,8 +9,6 @@ namespace MigraineTrackingApp
     public partial class ProfilePage : ContentPage
     {
         MemberViewModel memberVm;
-        Stream stream;
-        string fileName;
         string Id = "";
         private RadioButton button;
         private string gender = "";
@@ -37,40 +31,18 @@ namespace MigraineTrackingApp
             if(member != null)
             {
                 memberFirstName.Text = member.FirstName;
-                memberLastName.Text = member.LastName;
-               // memberDob.Text = member.Dob;
+                gen.Text = member.Gender;
+                memberDob.Text = member.Dob;
             }
         }
-
-        private void getGender(object sender, CheckedChangedEventArgs e)
-        {
-            button = sender as RadioButton;
-            gender = button.Content.ToString();
-        }
-
-
-        /*  async void Button_Clicked(System.Object sender, System.EventArgs e)
-          {
-              var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
-              {
-                  Title = "Please pick a photo"
-              });
-
-              if (result != null)
-              {
-                  stream = await result.OpenReadAsync();
-                  fileName = result.FileName;//returns pic name
-
-                  resultImage.Source = ImageSource.FromStream(() => stream);
-
-                  //Image image = ImageSource.FromStream(() => stream);
-              }
-          }*/
+        /// <summary>
+        /// This button goes to the update page 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void updateInfo(System.Object sender, System.EventArgs e)
         {
-           memberVm.createProfile(memberFirstName.Text, memberLastName.Text, memberDob.Date.ToString(), gender,Id, fileName);
-            
-           // memberVm.uploadPhoto(stream,fileName);
+            await Navigation.PushAsync(new UpdateProfile(memberFirstName.Text, memberDob.Text,gen.Text, Id));
         }
     }
 }

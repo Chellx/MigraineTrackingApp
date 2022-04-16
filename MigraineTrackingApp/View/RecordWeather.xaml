@@ -47,7 +47,8 @@
                    FontAttributes="Bold" 
                    FontSize="Medium" />
 
-            <Label Text="City:" 
+            <Label 
+                   Text="City:" 
                    Grid.Row="1" 
                    VerticalOptions="Center"
                    Style="{StaticResource labelStyle}"

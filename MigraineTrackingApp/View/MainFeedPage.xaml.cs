@@ -3,9 +3,6 @@ using MigraineTrackingApp.View;
 using MigraineTrackingApp.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,7 +13,6 @@ namespace MigraineTrackingApp
     public partial class MainFeedPage : ContentPage
     {
         string userId = "";
-        string email = "";
         private ShowMigraineRecordsViewModel vm = new ShowMigraineRecordsViewModel();
         List<Migraine> allRecords;
         List<string> months = new List<string>();
@@ -26,7 +22,7 @@ namespace MigraineTrackingApp
             var assemble = typeof(MainFeedPage);
 
             this.userId = userId;
-            this.email = email;
+            vm.Email = email;
             logoImage.Source = ImageSource.FromResource("MigraineTrackingApp.Assets.Images.logo.png", assemble);
 
         }
@@ -36,26 +32,26 @@ namespace MigraineTrackingApp
         }
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RecordMigraine(userId));
+            await Navigation.PushModalAsync(new RecordMigraine(userId));
         }
         private async void profileButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProfilePage(userId));
+            await Navigation.PushModalAsync(new ProfilePage(userId));
         }
         private async void allergenButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AllergenScanner(userId));
+            await Navigation.PushModalAsync(new AllergenScanner(userId));
         }
         private async void recordsButton_Clicked(object sender, EventArgs e)
         {
             allRecords = await vm.getAllPrevousMigraineRecords(userId);
-            await Navigation.PushAsync(new showPreviousRecords(userId, email, allRecords));
+            await Navigation.PushModalAsync(new showPreviousRecords(userId, vm.Email, allRecords));
         }
         private async void statsButton_Clicked(object sender, EventArgs e)
         {
             allRecords = await vm.getAllPrevousMigraineRecords(userId);
             months = vm.getListOfMonths(allRecords, months);
-            await Navigation.PushAsync(new SelectMonth(allRecords,months));
+            await Navigation.PushModalAsync(new SelectMonth(allRecords,months));
         }
         protected override bool OnBackButtonPressed() => true;
     }

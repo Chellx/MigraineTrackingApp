@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MigraineTrackingApp.ProfilePage"
-              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
->
-
+             x:Class="MigraineTrackingApp.View.UpdateProfile"
+              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients">
     <Grid>
 
         <magic:GradientView VerticalOptions="FillAndExpand">
@@ -19,47 +17,53 @@
         <ScrollView VerticalScrollBarVisibility="Always">
 
             <StackLayout Padding="0,50,0,0">
-            
-            <Image x:Name="logoImage"
+
+                <Image x:Name="logoImage"
                Aspect="AspectFit"
                HorizontalOptions="FillAndExpand"
                HeightRequest="250"
                Margin="20,0,10,50"/>
-            
-            <Image x:Name="resultImage" HeightRequest="50" WidthRequest="50"/>
+
+                <Image x:Name="resultImage" HeightRequest="50" WidthRequest="50"/>
 
 
 
-            <Label Text="First Name" FontSize="Default" TextColor="white" FontAttributes="Bold"/>
+                <Label Text="First Name" FontSize="Default" TextColor="white" FontAttributes="Bold"/>
 
                 <Entry x:Name="memberFirstName"
                Placeholder="First Name"
                PlaceholderColor="White"
                TextColor="Black"
                VerticalOptions="Center"
-               IsEnabled="false"/>
+               />
+
 
                 <Label Text= "Gender" FontSize="Default" TextColor="white" FontAttributes="Bold"/>
 
 
-            <Entry x:Name="gen"
-               Placeholder="gender"
-               PlaceholderColor="white"
-               TextColor="Black"
-               VerticalOptions="Center"
-               IsEnabled="false"/>
+                <StackLayout Margin="0,0,0,0">
+                    <StackLayout Orientation="Horizontal">
+
+                        <RadioButton Content="Male"
+                          CheckedChanged="getGender"
+                                 TextColor="white"/>
+                        <RadioButton Content="Female"
+                          CheckedChanged="getGender"
+                         TextColor="White"/>
+                        <RadioButton Content="Non Binary"
+                          CheckedChanged="getGender"
+                         TextColor="white"/>
+                    </StackLayout>
+                </StackLayout>
 
                 <Label Text="DOB" FontSize="Default" TextColor="white" FontAttributes="Bold"/>
 
-               <Entry x:Name="memberDob"
-               Placeholder="date"
-               PlaceholderColor="white"
-               TextColor="Black"
-               VerticalOptions="Center"
-               IsEnabled="false"/>
-             
+                <DatePicker x:Name="memberDob"
+                        Format="D"/>
 
-            <Button Text="Update Profile" 
+
+
+                <Button Text="Save Profile" 
                     Clicked="updateInfo" 
                     BackgroundColor="#00905E"
                      VerticalOptions="Center"
@@ -70,8 +74,7 @@
                     Margin="70,20,70,20"
                     />
 
-        </StackLayout>
+            </StackLayout>
         </ScrollView>
     </Grid>
-
 </ContentPage>
