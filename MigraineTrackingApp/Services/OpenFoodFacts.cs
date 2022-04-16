@@ -1,4 +1,9 @@
-﻿using MigraineTrackingApp.Models;
+﻿/*
+ * Student Name: Michelle Bolger
+ * Student Number C00242743
+ */
+
+using MigraineTrackingApp.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

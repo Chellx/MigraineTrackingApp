@@ -1,4 +1,9 @@
-﻿using MigraineTrackingApp.Models;
+﻿/*
+ * Student Name: Michelle Bolger
+ * Student Number C00242743
+ */
+
+using MigraineTrackingApp.Models;
 using MigraineTrackingApp.ViewModels;
 using System;
 using Xamarin.Forms;

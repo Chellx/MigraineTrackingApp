@@ -1,4 +1,9 @@
-﻿using MigraineTrackingApp.ViewModels;
+﻿/*
+ * Student Name: Michelle Bolger
+ * Student Number C00242743
+ */
+
+using MigraineTrackingApp.ViewModels;
 using System;
 using System.Collections.Generic;
 

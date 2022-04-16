@@ -1,4 +1,9 @@
-﻿using Microcharts;
+﻿/*
+ * Student Name: Michelle Bolger
+ * Student Number C00242743
+ */
+
+using Microcharts;
 using MigraineTrackingApp.Models;
 using SkiaSharp;
 using Syncfusion.SfChart.XForms;

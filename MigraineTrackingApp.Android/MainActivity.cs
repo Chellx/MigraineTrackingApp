@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Student Name: Michelle Bolger
+ * Student Number C00242743
+ */
+
+using System;
 
 using Android.App;
 using Android.Content.PM;

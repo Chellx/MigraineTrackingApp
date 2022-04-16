@@ -1,4 +1,9 @@
-﻿using MigraineTrackingApp.Services;
+﻿/*
+ * Student Name: Michelle Bolger
+ * Student Number C00242743
+ */
+
+using MigraineTrackingApp.Services;
 using MigraineTrackingApp.ViewModels;
 using System;
 using System.Linq;
