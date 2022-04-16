@@ -32,7 +32,6 @@ namespace MigraineTrackingApp
         }
         protected async override void OnAppearing()
         {
-            //allRecords = await vm.getAllPrevousMigraineRecords(userId);
             base.OnAppearing();
         }
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
@@ -58,5 +57,6 @@ namespace MigraineTrackingApp
             months = vm.getListOfMonths(allRecords, months);
             await Navigation.PushAsync(new SelectMonth(allRecords,months));
         }
+        protected override bool OnBackButtonPressed() => true;
     }
 }

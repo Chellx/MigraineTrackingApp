@@ -34,11 +34,11 @@
                 Text="PROFILE PAGE" 
                 BackgroundColor="#00905E"
                 Margin="70,20,70,20"
-                TextColor="#005248"
+                TextColor="#F3F354"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="profileButton_Clicked"
-                        BorderColor="#005248"
+                        BorderColor="#F3F354"
                         BorderWidth="2"/>
 
             

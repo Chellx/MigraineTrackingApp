@@ -26,6 +26,11 @@ namespace MigraineTrackingApp
                 e.PrintStackTrace();
                 return "";
             }
+            catch (FirebaseAuthInvalidCredentialsException e)
+            {
+                e.PrintStackTrace();
+                return "";
+            }
         }
 
         public async Task<string> SignupWithEmailPassword(string email, string password)
