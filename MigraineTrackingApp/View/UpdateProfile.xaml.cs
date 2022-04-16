@@ -35,7 +35,10 @@ namespace MigraineTrackingApp.View
         {
             base.OnAppearing();
             memberFirstName.Text = firstName;
-            memberDob.Date = DateTime.Parse(dob);
+            if(dob != " ")
+            {
+                memberDob.Date = DateTime.Parse(dob);
+            }
         }
         /// <summary>
         /// This button gets the gender from the picked radio button
@@ -59,6 +62,7 @@ namespace MigraineTrackingApp.View
             int spacePosition = dateAndTime.IndexOf(" ");
             string dateOnly = dateAndTime.Substring(0,spacePosition);
             memberVm.createProfile(memberFirstName.Text, dateOnly, gender, Id);
+            await Navigation.PopModalAsync();
         }
     }
 }

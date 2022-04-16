@@ -16,24 +16,33 @@ namespace MigraineTrackingApp
         RecordMigraneViewModel migraneVM = new RecordMigraneViewModel();
         DateTime currentDate;
         string id = "";
-        public RecordMigraine(string userId)
+        string email = "";
+        public RecordMigraine(string userId, string email)
         {
             InitializeComponent();
             DateTime now = DateTime.Now;
             currentDate = now;
             id = userId;
+            this.email = email;
         }
-        internal RecordMigraine(string userId,RecordMigraneViewModel vm)
+        internal RecordMigraine(string userId,RecordMigraneViewModel vm,string email)
         {
             InitializeComponent();
             DateTime now = DateTime.Now;
             currentDate = now;
             id = userId;
             migraneVM = vm;
+            this.email = email;
         }
         private async void savePlan(object sender, EventArgs args)
         {
-            if(migraneVM.StartDate != null && migraneVM.StartTimeOfMigraine != null)
+            if(migraneVM.StartDate != " " && migraneVM.StartTimeOfMigraine == " ")
+            {
+                migraneVM.checkIfAllergensAreInDB(id);
+                migraneVM.sendAllergenInfo(id);
+                migraneVM.sendRecordDetailsToDataase(migraneVM.StartDate, id);
+            }
+            else if(migraneVM.StartDate != null && migraneVM.StartTimeOfMigraine != null)
             {
                 int firstSpaceIndex = migraneVM.StartDate.IndexOf(" ");//get first spcae
                 string date = migraneVM.StartDate.Substring(0, firstSpaceIndex);
@@ -48,6 +57,7 @@ namespace MigraineTrackingApp
                 string newDate = currentDate.ToString("dd'/'MM'/'yyyy HH:mm:ss");
 
                 newDate = newDate.Replace("/", "-");
+                migraneVM.StartDate = newDate;
                 migraneVM.checkIfAllergensAreInDB(id);
                 migraneVM.sendAllergenInfo(id);
                 migraneVM.sendRecordDetailsToDataase(newDate, id);
@@ -56,7 +66,7 @@ namespace MigraineTrackingApp
 
         private async void backButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            await Navigation.PushModalAsync(new MainFeedPage(id, email));
         }
 
         private async void recordDateButton_Clicked(object sender, EventArgs e)

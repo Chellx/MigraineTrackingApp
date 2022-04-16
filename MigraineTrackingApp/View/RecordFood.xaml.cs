@@ -84,7 +84,7 @@ namespace MigraineTrackingApp.View
         /// <param name="args"></param>
         private async void returnToMenu(object sender, EventArgs args)
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
         /// <summary>
         /// This method saves the food list to a view model
@@ -96,7 +96,7 @@ namespace MigraineTrackingApp.View
             if (food.Count != 0)
             {
                 migraneVM.setFoodEaten(food);
-                await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
             }
             else
             {

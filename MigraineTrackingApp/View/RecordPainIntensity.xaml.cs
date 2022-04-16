@@ -37,7 +37,7 @@ namespace MigraineTrackingApp.View
             {
                 
                 mvm.PainIntensity= Intensity.SelectedItem.ToString();
-                await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
             }
             else
             {

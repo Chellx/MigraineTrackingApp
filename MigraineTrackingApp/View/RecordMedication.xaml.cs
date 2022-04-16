@@ -85,7 +85,7 @@ namespace MigraineTrackingApp.View
         /// <param name="args"></param>
         private async void returnToMenu(object sender, EventArgs args)
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
         /// <summary>
         /// This method saves the meds list to a view model
@@ -97,7 +97,7 @@ namespace MigraineTrackingApp.View
             if (selectedMedicationType.Count != 0)
             {
                 migraneVM.setMedicationTypes(selectedMedicationType);
-                await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
             }
             else
             {

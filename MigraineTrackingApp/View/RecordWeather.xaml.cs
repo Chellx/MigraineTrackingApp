@@ -67,7 +67,7 @@ namespace MigraineTrackingApp.View
             mVm.Humidity = Humidity.Text;
             mVm.Temperature = Temperature.Text;
 
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
     }
 }

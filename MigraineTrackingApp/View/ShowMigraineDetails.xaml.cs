@@ -127,7 +127,7 @@ namespace MigraineTrackingApp.View
         }
         private async void updateClicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new RecordMigraine(userId,vm));
+            await Navigation.PushModalAsync(new RecordMigraine(userId,vm,email));
             //await Navigation.PopAsync();
         }
         public async Task<bool> sendMigraineRecord(List<string> recipients,string body)

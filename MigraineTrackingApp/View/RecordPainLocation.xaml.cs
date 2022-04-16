@@ -97,7 +97,7 @@ namespace MigraineTrackingApp.View
             if (selectedPainLocation.Count != 0)
             {
                 migraneVM.setPainLocation(selectedPainLocation);
-                await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
             }
             else
             {

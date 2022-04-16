@@ -37,7 +37,7 @@ namespace MigraineTrackingApp
         }
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new RecordMigraine(userId));
+            await Navigation.PushModalAsync(new RecordMigraine(userId,vm.Email));
         }
         private async void profileButton_Clicked(object sender, EventArgs e)
         {

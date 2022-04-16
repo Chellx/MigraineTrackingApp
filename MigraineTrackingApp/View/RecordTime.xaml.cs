@@ -68,7 +68,7 @@ namespace MigraineTrackingApp.View
             mvm.LengthOfMigraineAttack = lengthOfAttack;
             mvm.StartTimeOfMigraine = start.Time.ToString();
             mvm.EndTimeOfMigraine = end.Time.ToString();
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
     }
 }

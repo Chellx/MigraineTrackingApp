@@ -16,7 +16,7 @@ namespace MigraineTrackingApp
         MemberViewModel memberVm;
         string Id = "";
         private RadioButton button;
-        private string gender = "";
+        
         public ProfilePage(string userId)
         {
             InitializeComponent();
@@ -47,7 +47,19 @@ namespace MigraineTrackingApp
         /// <param name="e"></param>
         async void updateInfo(System.Object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new UpdateProfile(memberFirstName.Text, memberDob.Text,gen.Text, Id));
+            if(memberFirstName.Text == null)
+            {
+                memberFirstName.Text = " ";
+            }
+            if(memberDob.Text == null)
+            {
+                memberDob.Text = " ";
+            }
+            if (gen.Text == null)
+            {
+                gen.Text = " ";
+            }
+            await Navigation.PushModalAsync(new UpdateProfile(memberFirstName.Text, memberDob.Text, gen.Text, Id));
         }
     }
 }

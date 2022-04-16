@@ -97,7 +97,7 @@ namespace MigraineTrackingApp.View
             if (selectedSymptoms.Count != 0)
             {
                 migraneVM.setSymptoms(selectedSymptoms);
-                await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
             }
             else
             {
