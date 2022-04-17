@@ -25,12 +25,14 @@ namespace MigraineTrackingApp.View
         private string userId;
         Migraine recordAtADate;
         string email = "";
-        public showPreviousRecords(string id,string email, List<Migraine> mig)
+        IAuth auth;
+        public showPreviousRecords(string id,string email, List<Migraine> mig, IAuth auth)
         {
             InitializeComponent();
             userId = id;
             this.email = email;
             allRecords = mig;
+            this.auth = auth;
         }
         protected async override void OnAppearing()
         {
@@ -51,7 +53,11 @@ namespace MigraineTrackingApp.View
                     break;
                 }
             }
-            await Navigation.PushModalAsync(new ShowMigraineDetails(recordAtADate, email, userId));
+            int spacePos = recordAtADate.startDate.IndexOf(" ");
+            int spacePos2 = recordAtADate.endDate.IndexOf(" ");
+            recordAtADate.startDate = recordAtADate.startDate.Substring(0, spacePos);
+            recordAtADate.endDate = recordAtADate.endDate.Substring(0, spacePos2);
+            await Navigation.PushModalAsync(new ShowMigraineDetails(recordAtADate, email, userId, auth));
         }
     }
 }

@@ -45,7 +45,7 @@ namespace MigraineTrackingApp.View
         private async void checkAllergens(object sender, EventArgs e)
         {
             string allergenResult = "";
-            if (allergen != " ")
+            if (allergen != "")
             {
                 string newAllergen = allergen.Substring(3);
                 string[] allergens = newAllergen.Split(',');
@@ -54,6 +54,10 @@ namespace MigraineTrackingApp.View
 
                scanResultText.Text = allergenResult;
                 allergen = " ";
+            }
+            else
+            {
+                await DisplayAlert("Alert!","Did not find allergens check openfoodfacts.org for more info", "OK");
             }
         }
     }

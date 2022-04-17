@@ -24,14 +24,13 @@ namespace MigraineTrackingApp.View
         List<DisplayGraph> records;
         private List<Microcharts.ChartEntry> chartEntries = new List<Microcharts.ChartEntry>();
         Microcharts.ChartEntry chart;
-        public DisplayPainIntensityChart(List<DisplayGraph> allRecords)
+        public DisplayPainIntensityChart(List<DisplayGraph> allRecords,List<string> meds)
         {
             InitializeComponent();
             records = allRecords;
             populateChart();
             MyLineChart.Chart = new LineChart { Entries = chartEntries };
-            //LineChart.Chart = new LineChart { chartEntries = _entries };
-            //chartView.ItemsSource = allRecords;
+            showListView.ItemsSource = meds;
         }
        
         private void populateChart()

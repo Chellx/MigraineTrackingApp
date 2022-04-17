@@ -17,15 +17,17 @@ namespace MigraineTrackingApp
         DateTime currentDate;
         string id = "";
         string email = "";
-        public RecordMigraine(string userId, string email)
+        IAuth auth;
+        public RecordMigraine(string userId, string email, IAuth auth)
         {
             InitializeComponent();
             DateTime now = DateTime.Now;
             currentDate = now;
             id = userId;
             this.email = email;
+            this.auth = auth;
         }
-        internal RecordMigraine(string userId,RecordMigraneViewModel vm,string email)
+        internal RecordMigraine(string userId,RecordMigraneViewModel vm,string email, IAuth auth)
         {
             InitializeComponent();
             DateTime now = DateTime.Now;
@@ -33,6 +35,7 @@ namespace MigraineTrackingApp
             id = userId;
             migraneVM = vm;
             this.email = email;
+            this.auth = auth;
         }
         private async void savePlan(object sender, EventArgs args)
         {
@@ -66,7 +69,7 @@ namespace MigraineTrackingApp
 
         private async void backButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainFeedPage(id, email));
+            await Navigation.PushModalAsync(new MainFeedPage(id, email, auth));
         }
 
         private async void recordDateButton_Clicked(object sender, EventArgs e)
@@ -118,7 +121,7 @@ namespace MigraineTrackingApp
         {
             await Navigation.PushModalAsync(new View.RecordPainIntensity(migraneVM));
         }
-
+        protected override bool OnBackButtonPressed() => true;
 
     }
 }

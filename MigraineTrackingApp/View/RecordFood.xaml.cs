@@ -64,7 +64,7 @@ namespace MigraineTrackingApp.View
 
         private async void goToScan(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new BarcodeScanner(migraneVM));
+            await Navigation.PushModalAsync(new BarcodeScanner(migraneVM));
         }
 
 

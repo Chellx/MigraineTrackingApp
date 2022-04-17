@@ -53,5 +53,9 @@ namespace MigraineTrackingApp
                 return "";
             }
         }
+        public void Logout()
+        {
+            FirebaseAuth.Instance.SignOut();
+        }
     }
 }

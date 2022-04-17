@@ -50,7 +50,7 @@ namespace MigraineTrackingApp
             //string Token = await auth.LoginWithEmailPassword(loginEmail.Text, loginPassWord.Text); stay here for login
             if (userID != "")
             {
-                await Navigation.PushAsync(new MainFeedPage(userID, loginEmail.Text));
+                await Navigation.PushModalAsync(new MainFeedPage(userID, loginEmail.Text,auth));
             }
             else
             {
@@ -60,7 +60,7 @@ namespace MigraineTrackingApp
 
         private async void googleLoginButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainFeedPage("y47GLJJZD4ReYJBoWttbi0WVrp62", "test@email.com"));
+            Navigation.PushAsync(new MainFeedPage("y47GLJJZD4ReYJBoWttbi0WVrp62", "test@email.com", auth));
         }
 
         private void createAccountButton_Clicked(object sender, EventArgs e)

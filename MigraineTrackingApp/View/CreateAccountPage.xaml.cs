@@ -23,7 +23,7 @@ namespace MigraineTrackingApp
         private async void createAccount(object sender, EventArgs e)
         {
             string uid  = await auth.SignupWithEmailPassword(memberEmail.Text, confirmAccPassWord.Text);
-            await Navigation.PushAsync(new MainFeedPage(uid, memberEmail.Text));
+            await Navigation.PushModalAsync(new MainFeedPage(uid, memberEmail.Text,auth));
         }
     }
 }

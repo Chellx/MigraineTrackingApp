@@ -48,10 +48,13 @@ namespace MigraineTrackingApp.View
         {
             vm.setFoodEaten(foodNames);
             string allergen = foodDetails[1];
-            string newAllergen = allergen.Substring(3);
-            string[] allergens = newAllergen.Split(',');
-            vm.setAllAllergenypes(allergens);
-            await Navigation.PopAsync();
+            if(allergen != "")
+            {
+                string newAllergen = allergen.Substring(3);
+                string[] allergens = newAllergen.Split(',');
+                vm.setAllAllergenypes(allergens);
+            }
+            await Navigation.PopModalAsync();
         }
     }
 }

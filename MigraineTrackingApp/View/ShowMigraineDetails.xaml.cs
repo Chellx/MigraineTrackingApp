@@ -28,7 +28,8 @@ namespace MigraineTrackingApp.View
         string email = "";
         string emailMesage = "";
         string userId = "";
-        public ShowMigraineDetails(Migraine record,string email,string id)
+        IAuth auth;
+        public ShowMigraineDetails(Migraine record,string email,string id, IAuth auth)
         {
             migraine = record;
             vm.StartDate = migraine.startDate;
@@ -49,6 +50,7 @@ namespace MigraineTrackingApp.View
             InitializeComponent();
             this.email = email;
             userId = id;
+            this.auth = auth;
         }
         protected async override void OnAppearing()
         {
@@ -127,7 +129,7 @@ namespace MigraineTrackingApp.View
         }
         private async void updateClicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new RecordMigraine(userId,vm,email));
+            await Navigation.PushModalAsync(new RecordMigraine(userId,vm,email, auth));
             //await Navigation.PopAsync();
         }
         public async Task<bool> sendMigraineRecord(List<string> recipients,string body)

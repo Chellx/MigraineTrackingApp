@@ -86,7 +86,7 @@ namespace MigraineTrackingApp.ViewModels
             monthList = monthList.OrderBy(s => DateTime.ParseExact(s, "MMMM", new CultureInfo("en-US"))).ToList();//https://stackoverflow.com/questions/8539088/sorting-months-in-a-list
             return monthList;
         }
-        public List<DisplayGraph> getRecordsForThatMonth(List<Migraine> objList,string selectedMonth)
+        public List<DisplayGraph> getRecordsForThatMonth(List<Migraine> objList,string selectedMonth,ref List<string> meds)
         {
             Dictionary<string, string> months = new Dictionary<string, string>();
             List<DisplayGraph> recordsForThatMonth = new List<DisplayGraph>();
@@ -106,12 +106,23 @@ namespace MigraineTrackingApp.ViewModels
             string monthSelected = months[selectedMonth];
             foreach (Migraine obj in objList)
             {
-                if(monthSelected.Equals(obj.dateEntered.Substring(3, 2)) && obj.painIntensity != " ")
+                if(monthSelected.Equals(obj.dateEntered.Substring(3, 2)) && obj.painIntensity != " ")//only look at the selected month entries
                 {
+                    if(obj.medicationType.Count != 0)//check if the medication list is empty
+                    {
+                        foreach(string medication in obj.medicationType)//loop through all the mdications 
+                        {
+                            if (!meds.Contains(medication) && medication != " ")//add medications that are not in the list
+                            {
+                                meds.Add(medication);
+                            }
+                        }
+                    }
+                   
                     graphObj = new DisplayGraph();
-                    graphObj.Date = obj.dateEntered;//overwrite date
+                    graphObj.Date = obj.dateEntered; // get the date the migraine was recorded
                     //changing the pain intensity from a string to string number
-                    graphObj.PainLevel = (float)Convert.ToDouble( obj.painIntensity.Substring(0, 1));//get string number
+                    graphObj.PainLevel = (float)Convert.ToDouble( obj.painIntensity.Substring(0, 1));//get pain intensity string number
                     recordsForThatMonth.Add(graphObj);
                 }
             }

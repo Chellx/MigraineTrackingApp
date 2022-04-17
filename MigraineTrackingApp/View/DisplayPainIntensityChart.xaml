@@ -10,6 +10,20 @@
             <Frame BorderColor="#005248">
                 <chart:ChartView x:Name="MyLineChart" HeightRequest="505"  />
             </Frame>
+            <Label TextColor="White" FontSize="Medium" FontFamily="Arial"  HorizontalTextAlignment="Center" Text="Medication"/>
+            <ListView  x:Name="showListView" ItemsSource="{Binding meds}">
+                <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                            <Label
+                                   TextColor="White" 
+                                   FontSize="Medium" FontFamily="Arial"  
+                                   HorizontalTextAlignment="Center" 
+                                   Text="{Binding .}"/>
+                        </ViewCell>
+                </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ScrollView>
 </ContentPage>

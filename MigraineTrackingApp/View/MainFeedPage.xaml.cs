@@ -21,13 +21,15 @@ namespace MigraineTrackingApp
         private ShowMigraineRecordsViewModel vm = new ShowMigraineRecordsViewModel();
         List<Migraine> allRecords;
         List<string> months = new List<string>();
-        public MainFeedPage(string userId,string email)
+        IAuth auth;
+        public MainFeedPage(string userId,string email, IAuth auth)
         {
             InitializeComponent();
             var assemble = typeof(MainFeedPage);
 
             this.userId = userId;
             vm.Email = email;
+            this.auth = auth;
             logoImage.Source = ImageSource.FromResource("MigraineTrackingApp.Assets.Images.logo.png", assemble);
 
         }
@@ -37,7 +39,7 @@ namespace MigraineTrackingApp
         }
         private async void recordMigraineButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new RecordMigraine(userId,vm.Email));
+            await Navigation.PushModalAsync(new RecordMigraine(userId,vm.Email,auth));
         }
         private async void profileButton_Clicked(object sender, EventArgs e)
         {
@@ -50,13 +52,19 @@ namespace MigraineTrackingApp
         private async void recordsButton_Clicked(object sender, EventArgs e)
         {
             allRecords = await vm.getAllPrevousMigraineRecords(userId);
-            await Navigation.PushModalAsync(new showPreviousRecords(userId, vm.Email, allRecords));
+            await Navigation.PushModalAsync(new showPreviousRecords(userId, vm.Email, allRecords,auth));
         }
         private async void statsButton_Clicked(object sender, EventArgs e)
         {
             allRecords = await vm.getAllPrevousMigraineRecords(userId);
             months = vm.getListOfMonths(allRecords, months);
             await Navigation.PushModalAsync(new SelectMonth(allRecords,months));
+        }
+        private async void logout_Clicked(object sender, EventArgs e)
+        {
+            userId = "";
+            auth.Logout();
+            await Navigation.PushModalAsync(new MainPage());
         }
         protected override bool OnBackButtonPressed() => true;
     }

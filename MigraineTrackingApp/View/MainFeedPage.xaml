@@ -89,11 +89,21 @@
                 Clicked="statsButton_Clicked"
                     BorderColor="#005248"
                         BorderWidth="2"/>
+                <Button x:Name="logout"
+                Text="Log out" 
+                BackgroundColor="#00905E"
+                Margin="70,20,70,20"
+                TextColor="#005248"
+                VerticalOptions="Center"
+                CornerRadius="10"
+                Clicked="logout_Clicked"
+                    BorderColor="#005248"
+                        BorderWidth="2"/>
 
 
 
 
-        </StackLayout>
+            </StackLayout>
         </ScrollView>
     </Grid>
 

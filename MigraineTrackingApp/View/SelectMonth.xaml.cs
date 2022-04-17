@@ -22,6 +22,7 @@ namespace MigraineTrackingApp.View
         List<string> months;
         string seletedMonth;
         List<Migraine> allRecords;
+        List<string> medicationForTheMonth =  new List<string>();
         private ShowMigraineRecordsViewModel vm = new ShowMigraineRecordsViewModel();
         public SelectMonth(List<Migraine> allRecords,List<string> months)
         {
@@ -38,9 +39,9 @@ namespace MigraineTrackingApp.View
         {
             Button button = (Button)sender;
             seletedMonth = button.CommandParameter.ToString();
-            List<DisplayGraph>recordsForThatMonth = vm.getRecordsForThatMonth(allRecords,seletedMonth);
+            List<DisplayGraph>recordsForThatMonth = vm.getRecordsForThatMonth(allRecords,seletedMonth,ref medicationForTheMonth);
 
-            await Navigation.PushModalAsync(new DisplayPainIntensityChart(recordsForThatMonth));
+            await Navigation.PushModalAsync(new DisplayPainIntensityChart(recordsForThatMonth, medicationForTheMonth));
         }
     }
 }
