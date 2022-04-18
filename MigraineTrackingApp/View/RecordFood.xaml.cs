@@ -46,8 +46,9 @@ namespace MigraineTrackingApp.View
                 }
             }
             migraneVM.resetFoodList();
-            if (migraneVM.getFoodEaten().Count != 0)
+            if (migraneVM.getFoodEaten().Count != 0 && !migraneVM.getFoodEaten().Contains(" "))
             {
+                food.AddRange(migraneVM.getFoodEaten());
                 showListView.ItemsSource = migraneVM.getFoodEaten();
             }
         }
@@ -95,6 +96,7 @@ namespace MigraineTrackingApp.View
         {
             if (food.Count != 0)
             {
+                migraneVM.getFoodEaten().Clear();
                 migraneVM.setFoodEaten(food);
                 await Navigation.PopModalAsync();
             }

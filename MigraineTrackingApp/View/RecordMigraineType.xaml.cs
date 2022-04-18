@@ -28,7 +28,7 @@ namespace MigraineTrackingApp.View
             migraineTypes = new[] { "Migraine", "Tension Headache", "Cluster Headache", "Headache", "Sinus Headache", "Not Sure" };
 
             MigraineTypeListView.ItemsSource = migraineTypes;
-            if (migraneVM.getMigraneTypes().Count != 0)
+            if (migraneVM.getMigraneTypes().Count != 0 && !migraneVM.getMigraneTypes().Contains(" "))
             {
                 selectedMigraneTypes.AddRange(migraneVM.getMigraneTypes());
                 showListView.ItemsSource = selectedMigraneTypes;
@@ -94,6 +94,7 @@ namespace MigraineTrackingApp.View
         {
             if(selectedMigraneTypes.Count != 0)
             {
+                migraneVM.getMigraneTypes().Clear();
                 migraneVM.setMigraneTypes(selectedMigraneTypes);
                 await Navigation.PopModalAsync();
             }

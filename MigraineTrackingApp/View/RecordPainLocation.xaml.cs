@@ -31,8 +31,9 @@ namespace MigraineTrackingApp.View
             base.OnAppearing();
             painLocation = new[] { "Right Eye", "Left Eye", "Forehead (Right)", "Forehead (Left)", "Not Sure"};
             PainLocationListView.ItemsSource = painLocation;
-            if (migraneVM.getPainLocation().Count != 0)
+            if (migraneVM.getPainLocation().Count != 0 && !migraneVM.getPainLocation().Contains(" "))
             {
+                selectedPainLocation.AddRange(migraneVM.getPainLocation());
                 showListView.ItemsSource = migraneVM.getPainLocation();
             }                
         }
@@ -96,6 +97,7 @@ namespace MigraineTrackingApp.View
         {
             if (selectedPainLocation.Count != 0)
             {
+                migraneVM.getPainLocation().Clear();
                 migraneVM.setPainLocation(selectedPainLocation);
                 await Navigation.PopModalAsync();
             }

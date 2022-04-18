@@ -51,10 +51,10 @@ namespace MigraineTrackingApp.View
                     break;
                 }
             }
-            int spacePos = recordAtADate.startDate.IndexOf(" ");
-            int spacePos2 = recordAtADate.endDate.IndexOf(" ");
-            recordAtADate.startDate = recordAtADate.startDate.Substring(0, spacePos);
-            recordAtADate.endDate = recordAtADate.endDate.Substring(0, spacePos2);
+            //int spacePos = recordAtADate.startDate.IndexOf(" ");
+            //int spacePos2 = recordAtADate.endDate.IndexOf(" ");
+            //recordAtADate.startDate = recordAtADate.startDate.Substring(0, spacePos);
+            //recordAtADate.endDate = recordAtADate.endDate.Substring(0, spacePos2);
             await Navigation.PushModalAsync(new ShowMigraineDetails(recordAtADate, email, userId, auth));
         }
     }

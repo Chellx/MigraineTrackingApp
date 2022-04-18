@@ -31,8 +31,9 @@ namespace MigraineTrackingApp.View
             base.OnAppearing();
             symptoms = new[] { "Pounding Pain","Throbbing Pain","Nausea","Light Sensitivity", "Noise Sensitivity","Vomiting","None" };
             SymptomsListView.ItemsSource = symptoms;
-            if (migraneVM.getSymptoms().Count != 0)
+            if (migraneVM.getSymptoms().Count != 0 && !migraneVM.getSymptoms().Contains(" "))
             {
+                selectedSymptoms.AddRange(migraneVM.getSymptoms());
                 showListView.ItemsSource = migraneVM.getSymptoms();
             }
         }
@@ -96,6 +97,7 @@ namespace MigraineTrackingApp.View
         {
             if (selectedSymptoms.Count != 0)
             {
+                migraneVM.getSymptoms().Clear();
                 migraneVM.setSymptoms(selectedSymptoms);
                 await Navigation.PopModalAsync();
             }

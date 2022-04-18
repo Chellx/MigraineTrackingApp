@@ -31,8 +31,9 @@ namespace MigraineTrackingApp.View
             base.OnAppearing();
             medicationType = new[] { "Paracetemol","Ibuprofen","Frovex","Naproxyn","None"  };
             MedicationTypeListView.ItemsSource = medicationType;
-            if (migraneVM.getMedicationTypes().Count != 0)
+            if (migraneVM.getMedicationTypes().Count != 0 && !migraneVM.getMedicationTypes().Contains(" "))
             {
+                selectedMedicationType.AddRange(migraneVM.getMedicationTypes());
                 showListView.ItemsSource = migraneVM.getMedicationTypes();
             }
         }
@@ -96,6 +97,7 @@ namespace MigraineTrackingApp.View
         {
             if (selectedMedicationType.Count != 0)
             {
+                migraneVM.getMedicationTypes().Clear();
                 migraneVM.setMedicationTypes(selectedMedicationType);
                 await Navigation.PopModalAsync();
             }

@@ -28,6 +28,13 @@ namespace MigraineTrackingApp.View
         string email = "";
         string emailMesage = "";
         string userId = "";
+        string fList = "";
+        string migList = "";
+        string medList = "";
+        string pList = "";
+        string sList = "";
+        string tList = "";
+
         IAuth auth;
         public ShowMigraineDetails(Migraine record,string email,string id, IAuth auth)
         {
@@ -41,12 +48,30 @@ namespace MigraineTrackingApp.View
             vm.PainIntensity = migraine.painIntensity;
             vm.LengthOfMigraineAttack = migraine.migraineDuration;
             vm.Temperature = migraine.temperature;
-            vm.setMigraneTypes(migraine.migraineType);
-            vm.setTriggers(migraine.triggers);
-            vm.setSymptoms(migraine.symptoms);
-            vm.setFoodEaten(migraine.foods);
-            vm.setPainLocation(migraine.painLocation);
-            vm.setMedicationTypes(migraine.medicationType);
+            if(migraine.migraineType != null)
+            {
+                vm.setMigraneTypes(migraine.migraineType);
+            }
+            if (migraine.triggers != null)
+            {
+                vm.setTriggers(migraine.triggers);
+            }
+            if (migraine.symptoms != null)
+            {
+                vm.setSymptoms(migraine.symptoms);
+            }
+            if (migraine.foods != null)
+            {
+                vm.setFoodEaten(migraine.foods);
+            }
+            if (migraine.painLocation != null)
+            {
+                vm.setPainLocation(migraine.painLocation);
+            }
+            if (migraine.medicationType != null)
+            {
+                vm.setMedicationTypes(migraine.medicationType);
+            }
             InitializeComponent();
             this.email = email;
             userId = id;
@@ -88,29 +113,38 @@ namespace MigraineTrackingApp.View
             painI.Text = migraine.painIntensity;
             emailMesage += "\n" + "Pain Intensity: " + painI.Text + "\n";
 
-            string fList = string.Join("\n ", migraine.foods);
-            emailMesage += "\n"+ "Food Eaten: " +"\n" + fList + "\n";
+            if(migraine.foods != null)
+            {
+                fList = string.Join("\n ", migraine.foods);
+                emailMesage += "\n" + "Food Eaten: " + "\n" + fList + "\n";
+            }
 
+            if (migraine.migraineType != null)
+            {
+                migList = string.Join("\n ", migraine.migraineType);
+                emailMesage += "\n" + "Migraine Type: " + migList + "\n";
+            }
 
-            string migList = string.Join("\n ", migraine.migraineType);
-            emailMesage += "\n"+ "Migraine Type: "+ migList + "\n";
-
-
-            string medList = string.Join("\n ", migraine.medicationType);
-            emailMesage += "\n" +"Medication: "+  medList + "\n";
-
-
-            string pList = string.Join("\n ", migraine.painLocation);
-            emailMesage += "\n"+ "Pain Location: "+ pList + "\n";
-
-
-            string sList = string.Join("\n ", migraine.symptoms);
-            emailMesage +="\n"+ "Symptoms: " + sList + "\n";
-
-
-            string tList = string.Join("\n ", migraine.triggers);
-            emailMesage += "\n" + "Triggers: " + tList + "\n";
-
+            if (migraine.medicationType != null)
+            {
+                medList = string.Join("\n ", migraine.medicationType);
+                emailMesage += "\n" + "Medication: " + medList + "\n";
+            }
+            if (migraine.painLocation != null)
+            {
+                pList = string.Join("\n ", migraine.painLocation);
+                emailMesage += "\n" + "Pain Location: " + pList + "\n";
+            }
+            if (migraine.symptoms != null)
+            {
+                sList = string.Join("\n ", migraine.symptoms);
+                emailMesage += "\n" + "Symptoms: " + sList + "\n";
+            }
+            if (migraine.triggers != null)
+            {
+                tList = string.Join("\n ", migraine.triggers);
+                emailMesage += "\n" + "Triggers: " + tList + "\n";
+            }
 
             food.Text = fList;
             medicationT.Text = medList;

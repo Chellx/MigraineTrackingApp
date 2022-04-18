@@ -28,8 +28,9 @@ namespace MigraineTrackingApp.View
             base.OnAppearing();
             triggers = new[] { "Stress","Lack Of Sleep","Anxiety","Skipped Meal","Caffeine","Dehydration ","Strong Smell","Neck Pain","Not Sure" };
             TriggersListView.ItemsSource = triggers;
-            if (migraneVM.getTriggers().Count != 0)
+            if (migraneVM.getTriggers().Count != 0 && !migraneVM.getTriggers().Contains(" "))
             {
+                selectedTriggers.AddRange(migraneVM.getTriggers());
                 showListView.ItemsSource = migraneVM.getTriggers();
             }
         }
@@ -93,6 +94,7 @@ namespace MigraineTrackingApp.View
         {
             if (selectedTriggers.Count != 0)
             {
+                migraneVM.getTriggers().Clear();
                 migraneVM.setTriggers(selectedTriggers);
                 await Navigation.PopModalAsync();
             }

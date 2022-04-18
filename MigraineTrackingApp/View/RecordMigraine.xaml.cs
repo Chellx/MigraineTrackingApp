@@ -47,6 +47,14 @@ namespace MigraineTrackingApp
             }
             else if(migraneVM.StartDate != null && migraneVM.StartTimeOfMigraine != null)
             {
+                string date = migraneVM.StartDate + " " + migraneVM.StartTimeOfMigraine;
+                string newDate = date.Replace("/", "-");
+                migraneVM.checkIfAllergensAreInDB(id);
+                migraneVM.sendAllergenInfo(id);
+                migraneVM.sendRecordDetailsToDataase(newDate, id);
+            }
+            else if (migraneVM.StartDate != null && migraneVM.StartTimeOfMigraine == null)
+            {
                 int firstSpaceIndex = migraneVM.StartDate.IndexOf(" ");//get first spcae
                 string date = migraneVM.StartDate.Substring(0, firstSpaceIndex);
                 date = date + " " + migraneVM.StartTimeOfMigraine;
