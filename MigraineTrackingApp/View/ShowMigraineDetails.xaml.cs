@@ -125,12 +125,10 @@ namespace MigraineTrackingApp.View
             List<string> recipients = new List<string>();
             recipients.Add(email);
             await sendMigraineRecord(recipients, emailMesage);
-            //await Navigation.PopAsync();
         }
         private async void updateClicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new RecordMigraine(userId,vm,email, auth));
-            //await Navigation.PopAsync();
         }
         public async Task<bool> sendMigraineRecord(List<string> recipients,string body)
         {

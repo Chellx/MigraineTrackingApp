@@ -19,7 +19,6 @@ namespace MigraineTrackingApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class showPreviousRecords : ContentPage
     {
-        private ShowMigraineRecordsViewModel vm = new ShowMigraineRecordsViewModel();
         List<Migraine> allRecords;
         string selectedDate;
         private string userId;
@@ -36,7 +35,6 @@ namespace MigraineTrackingApp.View
         }
         protected async override void OnAppearing()
         {
-            //allRecords = await vm.getAllPrevousMigraineRecords(userId);
             var records = allRecords.Select(i => i.dateEntered).ToList();
             listView.ItemsSource = records;
             base.OnAppearing();

@@ -11,11 +11,11 @@ namespace MigraineTrackingApp.ViewModels
 {
     class MemberViewModel
     {
-        DbConnect databaseConnection;
+        DbConnect db;
 
         public MemberViewModel()
         {
-            databaseConnection = new DbConnect(); //connection to DB
+            db = new DbConnect(); //connection to DB
         }
         /// <summary>
         /// Get member
@@ -24,7 +24,7 @@ namespace MigraineTrackingApp.ViewModels
         /// <returns></returns>
         public async Task<Member> getMember(string userId)
         {
-            var result = await databaseConnection.GetMember(userId);
+            var result = await db.GetMember(userId);
             return result;
            
         }
@@ -38,7 +38,7 @@ namespace MigraineTrackingApp.ViewModels
         /// <param name="userid"></param>
         public async void createProfile(string firstName,string dob,string gender,string userid)
         {
-            await databaseConnection.createProfile(firstName, dob, gender, userid);
+            await db.createProfile(firstName, dob, gender, userid);
         }
     }
 }
