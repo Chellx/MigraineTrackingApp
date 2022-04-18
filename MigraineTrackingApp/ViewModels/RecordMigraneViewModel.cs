@@ -29,16 +29,17 @@ namespace MigraineTrackingApp.ViewModels
         string location;
         string humidity;
         string temperature;
-
         string startTime;
         string endTime;
-
         string startdate;
         string enddate;
         string migraineDuration;
-
         string painIntensity;
+
         DbConnect db;
+        /// <summary>
+        /// make connection to database
+        /// </summary>
         public RecordMigraneViewModel()
         {
             db = new DbConnect();
@@ -137,7 +138,7 @@ namespace MigraineTrackingApp.ViewModels
         }
 
         /////////////////////////////////////////////////////////////////////////
-        ///
+       
         public string Location
         {
             get => location;
@@ -157,9 +158,7 @@ namespace MigraineTrackingApp.ViewModels
         }
 
         ///////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// 
-        /// </summary>
+       
         public string StartTimeOfMigraine
         {
             get => startTime;
@@ -187,9 +186,7 @@ namespace MigraineTrackingApp.ViewModels
             get => enddate;
             set => enddate = value;
         }
-        /// <summary>
-        /// /////////////////////////////////////////////////////////////////////////
-        /// </summary>
+       
 
         public string PainIntensity
         {
@@ -197,6 +194,7 @@ namespace MigraineTrackingApp.ViewModels
             set => painIntensity = value;
         }
         ////////////////////////////////////////////////////////////////////////////////
+       
         public void setFoodEaten(List<string> types)
         {
             foods.AddRange(types);
@@ -206,6 +204,7 @@ namespace MigraineTrackingApp.ViewModels
         {
             return foods;
         }
+        
         public void resetFoodList()
         {
             foods.Clear();
@@ -274,13 +273,19 @@ namespace MigraineTrackingApp.ViewModels
         }
 
 
+       /// <summary>
+       /// this method takes user ID and an array of scanned allergens 
+       /// </summary>
+       /// <param name="uid"></param>
+       /// <param name="scannedAllergens"></param>
+       /// <returns></returns>
         public async Task<string> checkScannedItem(string uid,string[] scannedAllergens)
         {
             string allergensFound = " ";
-            result = await getAllergenList(uid);
+            result = await getAllergenList(uid); //gets back allergens from database
             foreach (var allergen in scannedAllergens)
             {
-                if (result.Contains(allergen))
+                if (result.Contains(allergen)) // if allergens are already in database might cause migraine
                 {
                     allergensFound += allergen + " "; 
                 }
@@ -293,11 +298,20 @@ namespace MigraineTrackingApp.ViewModels
             return "This Food Item May Cause A Migraine\n Allergens Found: " + allergensFound + "\n";
         }
 
+       /// <summary>
+       /// this sends the migraine details to database
+       /// </summary>
+       /// <param name="currentDate"></param>
+       /// <param name="uid"></param>
         public async void sendRecordDetailsToDataase(string currentDate,string uid)
         {
             setValuesIfNotFilledIn();
             bool value = await db.createMigraineRecord(uid, getMigraneTypes(), getPainLocation(), getMedicationTypes(), getSymptoms(), getTriggers(), getFoodEaten(), Location, Humidity, Temperature, StartTimeOfMigraine, EndTimeOfMigraine, StartDate, EndDate, LengthOfMigraineAttack, PainIntensity, currentDate);
         }
+
+        /// <summary>
+        /// if values have not been filled in sets initial values to empty variable
+        /// </summary>
 
         public void setValuesIfNotFilledIn()
         {

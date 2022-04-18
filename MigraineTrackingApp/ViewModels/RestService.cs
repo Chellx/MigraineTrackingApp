@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 18/4/2022
  */
 
 using MigraineTrackingApp.Models;
@@ -14,15 +15,26 @@ using System.Threading.Tasks;
 
 namespace MigraineTrackingApp.ViewModels
 {
+    /// <summary>
+    /// accesses openweather API through http request
+    /// </summary>
     public class RestService
     {
         HttpClient _client;
 
+       /// <summary>
+       /// create instance of http client
+       /// </summary>
         public RestService()
         {
             _client = new HttpClient();
         }
 
+        /// <summary>
+        /// query gets back response deserialise JSON response and stores in models
+        /// </summary>
+        /// <param name="query">contains open weather API and location</param>
+        /// <returns></returns>
         public async Task<WeatherData> GetWeatherData(string query)
         {
             WeatherData weatherData = null;

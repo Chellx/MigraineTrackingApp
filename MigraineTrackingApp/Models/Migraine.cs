@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 18/4/2022 
  */
 
 using Newtonsoft.Json;
@@ -8,6 +9,9 @@ using System.Collections.Generic;
 
 namespace MigraineTrackingApp.Models
 {
+    /// <summary>
+    /// gets and sets users migraine data from database
+    /// </summary>
     public class Migraine
     {
         [JsonProperty("migraineType")]

@@ -83,7 +83,7 @@ namespace MigraineTrackingApp.ViewModels
                 }
             }
             List<string> monthList = months.Distinct().ToList();//return no duplicates
-            monthList = monthList.OrderBy(s => DateTime.ParseExact(s, "MMMM", new CultureInfo("en-US"))).ToList();//https://stackoverflow.com/questions/8539088/sorting-months-in-a-list
+            monthList = monthList.OrderBy(s => DateTime.ParseExact(s, "MMMM", new CultureInfo("en-US"))).ToList();//reference: https://stackoverflow.com/questions/8539088/sorting-months-in-a-list
             return monthList;
         }
         public List<DisplayGraph> getRecordsForThatMonth(List<Migraine> objList,string selectedMonth,ref List<string> meds)

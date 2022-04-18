@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
  * Student Number C00242743
+ * Date: 18/4/2022
  */
 
 using Newtonsoft.Json;
@@ -10,6 +11,9 @@ using System.Text;
 
 namespace MigraineTrackingApp.Models
 {
+    /// <summary>
+    /// returns JSON objects from weather API
+    /// </summary>
     public class Weather
     {
         [JsonProperty("id")]

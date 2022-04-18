@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 18/4/2022
  */
 
 using System;
@@ -15,9 +16,12 @@ using MigraineTrackingApp.Models;
 
 namespace MigraineTrackingApp.Services
 {
+    /// <summary>
+    /// these methods connect the application to the firebase database
+    /// </summary>
     class DbConnect
     {
-        //private static FirebaseClient firebase = new FirebaseClient("https://migrainetrackapp-default-rtdb.europe-west1.firebasedatabase.app/");
+        
         FirebaseClient firebase;
         private FirebaseStorage firebaseStorage = new FirebaseStorage("migrainetrackapp.appspot.com");
         private static Member member = new Member();
@@ -39,14 +43,14 @@ namespace MigraineTrackingApp.Services
             }
         }
         /// <summary>
-        /// Create member
+        /// Create member profile add into database
         /// </summary>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
         /// <param name="dob"></param>
         /// <param name="gender"></param>
         /// <param name="userid"></param>
-        /// <returns></returns>
+        /// <returns>user profile info</returns>
         public async Task<bool> createProfile(string firstName,string dob,string gender,string userid)
         {
             await firebase
@@ -62,9 +66,24 @@ namespace MigraineTrackingApp.Services
         /// <summary>
         /// This method saves a record of a users migraine data
         /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="migraineT"></param>
-        /// <returns></returns>
+        /// <param name="uid">user ID</param>
+        /// <param name="migranetypes"></param>
+        /// <param name="painlocation"></param>
+        /// <param name="medicationtype"></param>
+        /// <param name="symm">symptoms</param>
+        /// <param name="trig">triggers</param>
+        /// <param name="food">food eaten</param>
+        /// <param name="loc">location of migraine</param>
+        /// <param name="hum">humidity</param>
+        /// <param name="temp">temperture</param>
+        /// <param name="sTime">start time</param>
+        /// <param name="eTime">end time</param>
+        /// <param name="sdate">start date</param>
+        /// <param name="edate">end date</param>
+        /// <param name="migDuration"></param>
+        /// <param name="painInten">pain intensity</param>
+        /// <param name="todaysDate"></param>
+        /// <returns>bool depending if migraine record succefully created</returns>
         public async Task<bool> createMigraineRecord(string uid,List<string> migranetypes, List<string> painlocation, List<string> medicationtype, List<string> symm, List<string> trig, List<string> food,string loc,string hum,string temp,string sTime,string eTime,string sdate,string edate,string migDuration,string painInten,string todaysDate)
         {
             try
@@ -98,6 +117,11 @@ namespace MigraineTrackingApp.Services
                 return false;
             }
         }
+        /// <summary>
+        /// gets migraine records from database related to user
+        /// </summary>
+        /// <param name="uid"> User ID</param>
+        /// <returns>list of migraine records</returns>
         public async Task<List<Migraine>> getMigraineRecords(string uid)
         {
             try
@@ -151,8 +175,8 @@ namespace MigraineTrackingApp.Services
         /// <summary>
         /// This method returns a list of allergens
         /// </summary>
-        /// <param name="userid"></param>
-        /// <returns></returns>
+        /// <param name="userid">user ID</param>
+        /// <returns>list of strings</returns>
         public async Task<List<string>> getAllergenListFromDb(string userid)
         {
             try
@@ -174,32 +198,7 @@ namespace MigraineTrackingApp.Services
                 return new List<string>();
             }
         }
-        /*public async Task<string> GetPicFromStorage(bool isMocked, string picName)
-        {
-            try
-            {
-                var pic = await firebaseStorage.Child("pics").Child(picName).GetDownloadUrlAsync();
-
-                return "";
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-                return null;
-            }
-        }*/
-        public async Task<bool> savePicToStorage(Stream fileStream,string filename)
-        {
-            try
-            {
-                await firebaseStorage.Child("pics").Child(filename).PutAsync(fileStream);
-                return true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-                return false;
-            }
-        }
+   
+    
     }
 }
