@@ -50,13 +50,12 @@
 
 
 
-                                    <Button Grid.Row="0" Grid.Column="1" TextColor="#005248" 
+                                    <Button Grid.Row="0" Grid.Column="1" 
+                                            TextColor="white" 
                                     Text="Select" 
                                     CornerRadius="10" Margin="5, 0,0,5" 
                                     FontAttributes="Bold" 
-                                        BackgroundColor="#68C551"
-                                        BorderColor="#005248"
-                        BorderWidth="2"
+                                        BackgroundColor="#014941"
                                     Clicked="displayRecord" 
                                     CommandParameter="{Binding .}" />
                             </Grid>

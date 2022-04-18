@@ -57,7 +57,7 @@ namespace MigraineTrackingApp.View
             }
             else
             {
-                await DisplayAlert("Alert!","Did not find allergens check openfoodfacts.org for more info", "OK");
+                await DisplayAlert("Alert!","Did Not Find Allergens, Check openfoodfacts.org For More Information", "OK");
             }
         }
     }

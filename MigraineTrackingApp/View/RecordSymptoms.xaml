@@ -68,6 +68,8 @@
 
         </Grid>
 
+        <Label Text="Symptoms" HorizontalTextAlignment="Center" FontSize="Medium"/>
+
         <StackLayout>
             <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedSymptom}" Margin="20">
                 <ListView.ItemTemplate>

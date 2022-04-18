@@ -9,8 +9,10 @@
             <Label Text = "Pain Level Chart" TextColor ="white" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
             <Frame BorderColor="#005248">
                 <chart:ChartView x:Name="MyLineChart" HeightRequest="505"  />
+               
             </Frame>
-            <Label TextColor="White" FontSize="Medium" FontFamily="Arial"  HorizontalTextAlignment="Center" Text="Medication"/>
+            <Label TextColor="White" FontSize="Medium" FontFamily="Arial"  HorizontalTextAlignment="Center" Text="Medication Taken During The Month"/>
+            
             <ListView  x:Name="showListView" ItemsSource="{Binding meds}">
                 <ListView.ItemTemplate>
                 <DataTemplate>
@@ -18,7 +20,7 @@
                             <Label
                                    TextColor="White" 
                                    FontSize="Medium" FontFamily="Arial"  
-                                   HorizontalTextAlignment="Center" 
+                                   HorizontalTextAlignment="Start" 
                                    Text="{Binding .}"/>
                         </ViewCell>
                 </DataTemplate>

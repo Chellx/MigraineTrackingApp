@@ -32,14 +32,13 @@
 
                 <Button x:Name="profileButton"
                 Text="PROFILE PAGE" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#F3F354"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="profileButton_Clicked"
-                        BorderColor="#F3F354"
-                        BorderWidth="2"/>
+                 />
 
             
 
@@ -47,58 +46,54 @@
 
                 <Button x:Name="statsButton"
                 Text="Allergen Checker" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#005248"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
-                        BorderColor="#005248"
-                        BorderWidth="2"
                 Clicked="allergenButton_Clicked"/>
 
             <Button x:Name="recordMigraine"
                 Text="Record Migraine Attack" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#005248"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
-                    BorderColor="#005248"
-                        BorderWidth="2"
+                
                 Clicked="recordMigraineButton_Clicked"/>
 
 
             <Button x:Name="prevMigraineRecords"
                 Text=" Migraine Records" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#005248"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="recordsButton_Clicked"
-                    BorderColor="#005248"
-                        BorderWidth="2"/>
+               />
            
             <Button x:Name="showMigraineStats"
                 Text=" Migraine Stats" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#005248"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="statsButton_Clicked"
-                    BorderColor="#005248"
-                        BorderWidth="2"/>
-                <Button x:Name="logout"
+                   />
+              
+            <Button x:Name="logout"
                 Text="Log out" 
-                BackgroundColor="#00905E"
-                Margin="70,20,70,20"
-                TextColor="#005248"
+                BackgroundColor="#014941"
+                Margin="70,70,70,70"
+                TextColor="white"
                 VerticalOptions="Center"
+                    HorizontalOptions="Center"
                 CornerRadius="10"
                 Clicked="logout_Clicked"
-                    BorderColor="#005248"
-                        BorderWidth="2"/>
+                   />
 
 
 

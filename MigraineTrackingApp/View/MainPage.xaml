@@ -31,52 +31,49 @@
 
         <Entry x:Name="loginEmail"
                Placeholder="Email"
-               PlaceholderColor="white"
-               TextColor="white"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                Keyboard="Email"
                VerticalOptions="Center"/>
 
         <Entry x:Name="loginPassWord"
                Placeholder="Password" 
-               PlaceholderColor="white"
-               TextColor="white"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                IsPassword="True"
                VerticalOptions="Center"/>
         
         
         <Button x:Name="loginButton"
                 Text="LOGIN" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#005248"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
-                BorderColor="#005248"
-                        BorderWidth="2"
+               
                 Clicked="loginButton_Clicked"/>
 
 
         <Button x:Name="googleLoginButton"
                 Text="LOGIN WITH GOOGLE" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#005248"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
-                BorderColor="#005248"
-                        BorderWidth="2"
+                
                 Clicked="googleLoginButton_Clicked"/>
 
 
         <Button x:Name="createAccountButton"
                 Text="CREATE ACCOUNT" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,70"
-                TextColor="#005248"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
-                BorderColor="#005248"
-                        BorderWidth="2"
+                
                 Clicked="createAccountButton_Clicked"/>
 
 

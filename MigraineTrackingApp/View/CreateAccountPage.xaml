@@ -30,33 +30,31 @@
 
             <Entry x:Name="memberEmail"
                Placeholder="Email"
-               PlaceholderColor="#007361"
-               TextColor="#007361"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                Keyboard="Email"
                VerticalOptions="Center"/>
 
             <Entry x:Name="createAccPassWord"
                Placeholder="Password" 
-               PlaceholderColor="#007361"
-               TextColor="#007361"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                IsPassword="True"
                VerticalOptions="Center"/>
 
 
             <Entry x:Name="confirmAccPassWord"
                Placeholder="Confirm Password" 
-               PlaceholderColor="#007361"
-               TextColor="#007361"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                IsPassword="True"
                VerticalOptions="Center"/>
 
             <Button x:Name="createAccButton"
                 Text="Create Account" 
-                BackgroundColor="#00905E"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="#005248"
-                    BorderColor="#005248"
-                        BorderWidth="2"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="createAccount"/>

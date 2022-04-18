@@ -32,8 +32,8 @@
 
                 <Entry x:Name="memberFirstName"
                Placeholder="First Name"
-               PlaceholderColor="White"
-               TextColor="Black"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                VerticalOptions="Center"
                />
 
@@ -46,31 +46,31 @@
 
                         <RadioButton Content="Male"
                           CheckedChanged="getGender"
-                                 TextColor="white"/>
+                                 TextColor="#014941"/>
                         <RadioButton Content="Female"
                           CheckedChanged="getGender"
-                         TextColor="White"/>
+                         TextColor="#014941"/>
                         <RadioButton Content="Non Binary"
                           CheckedChanged="getGender"
-                         TextColor="white"/>
+                         TextColor="#014941"/>
                     </StackLayout>
                 </StackLayout>
 
                 <Label Text="DOB" FontSize="Default" TextColor="white" FontAttributes="Bold"/>
 
                 <DatePicker x:Name="memberDob"
-                        Format="D"/>
+                        Format="D"
+                            TextColor="#014941"/>
 
 
 
                 <Button Text="Save Profile" 
                     Clicked="updateInfo" 
-                    BackgroundColor="#00905E"
+                    BackgroundColor="#014941"
                      VerticalOptions="Center"
                      CornerRadius="10"
-                    BorderColor="#005248"
-                    TextColor="#005248"
-                        BorderWidth="2"
+                    
+                    TextColor="white"
                     Margin="70,20,70,20"
                     />
 

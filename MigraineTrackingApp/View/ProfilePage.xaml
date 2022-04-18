@@ -34,39 +34,37 @@
 
                 <Entry x:Name="memberFirstName"
                Placeholder="First Name"
-               PlaceholderColor="White"
-               TextColor="Black"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                VerticalOptions="Center"
-               IsEnabled="false"/>
+               IsReadOnly="True"/>
 
                 <Label Text= "Gender" FontSize="Default" TextColor="white" FontAttributes="Bold"/>
 
 
             <Entry x:Name="gen"
-               Placeholder="gender"
-               PlaceholderColor="white"
-               TextColor="Black"
+               Placeholder="Gender"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                VerticalOptions="Center"
-               IsEnabled="false"/>
+               IsReadOnly="True"/>
 
                 <Label Text="DOB" FontSize="Default" TextColor="white" FontAttributes="Bold"/>
 
                <Entry x:Name="memberDob"
-               Placeholder="date"
-               PlaceholderColor="white"
-               TextColor="Black"
+               Placeholder="Date of Birth"
+               PlaceholderColor="#014941"
+               TextColor="#014941"
                VerticalOptions="Center"
-               IsEnabled="false"/>
+               IsReadOnly="True"/>
              
 
             <Button Text="Update Profile" 
                     Clicked="updateInfo" 
-                    BackgroundColor="#00905E"
+                    BackgroundColor="#014941"
                      VerticalOptions="Center"
                      CornerRadius="10"
-                    BorderColor="#005248"
-                    TextColor="#005248"
-                        BorderWidth="2"
+                    TextColor="white"
                     Margin="70,20,70,20"
                     />
 

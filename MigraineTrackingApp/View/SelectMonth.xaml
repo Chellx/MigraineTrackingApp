@@ -55,10 +55,9 @@
                                     Text="Select" 
                                     CornerRadius="10" Margin="5, 0,0,5" 
                                     FontAttributes="Bold" 
-                                            BackgroundColor="#68C551"
-                                        BorderColor="#005248"
-                        BorderWidth="2"
-                     TextColor="#005248" 
+                                            BackgroundColor="#014941"
+                                        
+                     TextColor="white" 
                                     Clicked="displayRecord" 
                                     CommandParameter="{Binding .}" />
                                 </Grid>

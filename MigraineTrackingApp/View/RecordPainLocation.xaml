@@ -69,6 +69,8 @@
 
         </Grid>
 
+        <Label Text="Pain Location" HorizontalTextAlignment="Center" FontSize="Medium"/>
+
         <StackLayout>
             <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedPainLocation}" Margin="20">
                 <ListView.ItemTemplate>

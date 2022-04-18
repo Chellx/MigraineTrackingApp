@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MigraineTrackingApp.View.ShowMigraineDetails" 
-                        xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients">
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients">
 
 
     <Grid>
@@ -93,22 +93,20 @@
                 <Label x:Name="trigger" Text="" TextColor="Black"/>
                
             <Button Text="Email Record"
-                VerticalOptions="CenterAndExpand"
-                    BackgroundColor="#68C551"
-            BorderColor="#005248"
-                        BorderWidth="2"
-                     TextColor="#005248" 
+                    Margin="70,20,70,20"
+                    BackgroundColor="#014941"
+                    VerticalOptions="Center"
+                     TextColor="white" 
                     CornerRadius="10"
-                HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
-                <Button Text="Update Record"
-                VerticalOptions="CenterAndExpand"
-                    BackgroundColor="#68C551"
-            BorderColor="#005248"
-                        BorderWidth="2"
-                     TextColor="#005248" 
+               
+            
+            <Button Text="Update Record"
+                VerticalOptions="Center"
+                   Margin="70,20,70,20"
+                    BackgroundColor="#014941"
+                     TextColor="white" 
                     CornerRadius="10"
-                HorizontalOptions="Center"
                 Clicked="updateClicked" />
 
 

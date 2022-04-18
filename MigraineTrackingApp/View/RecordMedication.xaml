@@ -71,6 +71,8 @@
 
         </Grid>
 
+        <Label Text="Medication Taken" HorizontalTextAlignment="Center" FontSize="Medium"/>
+
         <StackLayout>
             <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedMedicationTypes}" Margin="20">
                 <ListView.ItemTemplate>

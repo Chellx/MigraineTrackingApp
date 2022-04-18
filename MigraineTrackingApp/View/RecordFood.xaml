@@ -38,6 +38,8 @@
                 CornerRadius="10"
                 Clicked="addToList"/>
 
+        <Label Text="Food Eaten" HorizontalTextAlignment="Center" FontSize="Medium"/>
+
         <StackLayout>
             <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedTriggers}" Margin="20">
                 <ListView.ItemTemplate>

@@ -19,9 +19,9 @@
 
         <Button x:Name="allergin"
                 Text="Check Allergens" 
-                BackgroundColor="#68C551"
+                BackgroundColor="#014941"
                 Margin="70,20,70,20"
-                TextColor="black"
+                TextColor="white"
                 VerticalOptions="Center"
                 CornerRadius="10"
                 Clicked="checkAllergens"/>

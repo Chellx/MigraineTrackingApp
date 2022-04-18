@@ -65,7 +65,7 @@ namespace MigraineTrackingApp
 
         private void createAccountButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CreateAccountPage(auth));
+            Navigation.PushModalAsync(new CreateAccountPage(auth));
         }
         protected override bool OnBackButtonPressed() => true;
     }

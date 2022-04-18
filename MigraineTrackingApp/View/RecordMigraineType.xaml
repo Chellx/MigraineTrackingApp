@@ -69,6 +69,8 @@
 
         </Grid>
 
+        <Label Text="Migraine/Headache Type" HorizontalTextAlignment="Center" FontSize="Medium"/>
+
         <StackLayout>
             <ListView  HeightRequest="500" x:Name="showListView" ItemsSource="{Binding selectedMigraneTypes}" Margin="20">
                 <ListView.ItemTemplate>
