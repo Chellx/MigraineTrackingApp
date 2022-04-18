@@ -32,5 +32,10 @@ namespace MigraineTrackingApp.iOS
         {
             throw new NotImplementedException();
         }
+        public void Logout()
+        {
+            Foundation.NSError error;
+            Auth.DefaultInstance.SignOut(out error);
+        }
     }
 }
