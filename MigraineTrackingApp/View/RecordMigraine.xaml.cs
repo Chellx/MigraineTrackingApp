@@ -71,9 +71,12 @@ namespace MigraineTrackingApp
             else
             {
                 string newDate = currentDate.ToString("dd'/'MM'/'yyyy HH:mm:ss");
-
+                int firstSpaceIndex = newDate.IndexOf(" ");//get first spcae
+                string date = newDate.Substring(0, firstSpaceIndex);
+                string time = newDate.Substring(firstSpaceIndex+1);
                 newDate = newDate.Replace("/", "-");
-                migraneVM.StartDate = newDate;
+                migraneVM.StartDate = date;
+                migraneVM.StartTimeOfMigraine = time;
                 migraneVM.checkIfAllergensAreInDB(id);
                 migraneVM.sendAllergenInfo(id);
                 migraneVM.sendRecordDetailsToDataase(newDate, id);
