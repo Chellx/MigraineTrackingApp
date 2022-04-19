@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using System;
@@ -25,17 +26,19 @@ namespace MigraineTrackingApp
             NavigationPage.SetHasNavigationBar(this, false);
 
 
-
-            //Navigation.PushModalAsync(new MainFeedPage("y47GLJJZD4ReYJBoWttbi0WVrp62"));
-
             var assemble = typeof(MainPage);
 
 
-            auth = DependencyService.Get<IAuth>(); // put in create user too
+            auth = DependencyService.Get<IAuth>(); // 
             logoImage.Source = ImageSource.FromResource("MigraineTrackingApp.Assets.Images.logo.png", assemble);
 
         }
 
+        /// <summary>
+        /// logs in user with successful email and password combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void loginButton_Clicked(object sender, EventArgs e)
 
         {
@@ -47,7 +50,7 @@ namespace MigraineTrackingApp
             {
                 userID = await auth.LoginWithEmailPassword(loginEmail.Text, loginPassWord.Text); //put in create user page
             }
-            //string Token = await auth.LoginWithEmailPassword(loginEmail.Text, loginPassWord.Text); stay here for login
+
             if (userID != "")
             {
                 await Navigation.PushModalAsync(new MainFeedPage(userID, loginEmail.Text,auth));
@@ -58,10 +61,11 @@ namespace MigraineTrackingApp
             }
         }
 
-        private async void googleLoginButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MainFeedPage("y47GLJJZD4ReYJBoWttbi0WVrp62", "test@email.com", auth));
-        }
+        /// <summary>
+        /// goes to create account page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void createAccountButton_Clicked(object sender, EventArgs e)
         {

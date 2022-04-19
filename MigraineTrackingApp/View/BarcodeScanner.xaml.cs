@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.Services;
@@ -24,6 +25,11 @@ namespace MigraineTrackingApp.View
             InitializeComponent();
             vm = migraneVM;
         }
+        /// <summary>
+        /// scans iten with ZXing barcode scanner 
+        /// gets barcode from item sends to openfoodfacts
+        /// </summary>
+        /// <param name="result"></param>
         private void ZXingScannerView_OnScanResult(ZXing.Result result)
         {
             Device.BeginInvokeOnMainThread(async () =>
@@ -44,6 +50,11 @@ namespace MigraineTrackingApp.View
                 scanResultText.Text = foodDetails[0];
             });
         }
+       /// <summary>
+       /// button saves allergens that have benn scanned 
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="args"></param>
         private async void returnPrevious(object sender, EventArgs args)
         {
             vm.setFoodEaten(foodNames);

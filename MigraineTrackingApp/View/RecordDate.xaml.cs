@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.ViewModels;
@@ -21,7 +22,7 @@ namespace MigraineTrackingApp.View
             this.migraneVM = migraneVM;
             if(migraneVM.StartDate != " " && migraneVM.StartDate != null)
             {
-                DateTime dateTime = DateTime.Parse(migraneVM.StartDate, CultureInfo.CreateSpecificCulture("en-US"));
+                DateTime dateTime = DateTime.Parse(migraneVM.StartDate, CultureInfo.CreateSpecificCulture("en-US")); //converts date string from database to date time format for date picker
                 string newStartDate = dateTime.ToString("dd/MM/yyyy");
                 startDatePicker.Date = DateTime.Parse(newStartDate);
             }
@@ -43,6 +44,9 @@ namespace MigraineTrackingApp.View
            Recalculate();
         }
 
+        /// <summary>
+        /// calculates amount of days inbetween start and end date
+        /// </summary>
         void Recalculate()
         {
             //Ref: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/datepicker
@@ -57,11 +61,21 @@ namespace MigraineTrackingApp.View
          
         }
 
+        /// <summary>
+        /// return to menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private async void returnToMenu(object sender, EventArgs args)
         {
             await Navigation.PopModalAsync();
         }
 
+       /// <summary>
+       /// saves selected start and end dates
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="args"></param>
         private async void saveDates(object sender, EventArgs args)
         {
             migraneVM.StartDate = startDatePicker.Date.ToString();

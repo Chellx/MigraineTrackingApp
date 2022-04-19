@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.ViewModels;
@@ -41,7 +42,7 @@ namespace MigraineTrackingApp.View
             }
         }
         /// <summary>
-        /// This button gets the gender from the picked radio button
+        /// This button gets the gender from the selected radio button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -52,7 +53,7 @@ namespace MigraineTrackingApp.View
         }
 
         /// <summary>
-        /// This button sends the firstname dob and gender to database
+        /// This button sends the firstname DOB and gender to database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

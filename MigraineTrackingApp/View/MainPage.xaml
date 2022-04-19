@@ -55,16 +55,6 @@
                 Clicked="loginButton_Clicked"/>
 
 
-        <Button x:Name="googleLoginButton"
-                Text="LOGIN WITH GOOGLE" 
-                BackgroundColor="#014941"
-                Margin="70,20,70,20"
-                TextColor="white"
-                VerticalOptions="Center"
-                CornerRadius="10"
-                
-                Clicked="googleLoginButton_Clicked"/>
-
 
         <Button x:Name="createAccountButton"
                 Text="CREATE ACCOUNT" 

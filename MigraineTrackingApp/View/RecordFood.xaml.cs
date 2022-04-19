@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2021
  */
 
 using MigraineTrackingApp.Services;
@@ -23,6 +24,9 @@ namespace MigraineTrackingApp.View
             InitializeComponent();
             this.migraneVM = migraneVM;
         }
+       /// <summary>
+       /// populates list view with list of food items
+       /// </summary>
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -52,6 +56,11 @@ namespace MigraineTrackingApp.View
                 showListView.ItemsSource = migraneVM.getFoodEaten();
             }
         }
+       /// <summary>
+       /// add scan food to list of food items
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="args"></param>
         private void addToList(object sender, EventArgs args)
         {
             if (addFood.Text != null)
@@ -63,6 +72,11 @@ namespace MigraineTrackingApp.View
             }
         }
 
+        /// <summary>
+        /// go to barcode scanner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private async void goToScan(object sender, EventArgs args)
         {
             await Navigation.PushModalAsync(new BarcodeScanner(migraneVM));

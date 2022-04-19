@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.Models;
@@ -25,6 +26,13 @@ namespace MigraineTrackingApp.View
         Migraine recordAtADate;
         string email = "";
         IAuth auth;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="email"></param>
+        /// <param name="mig"></param>
+        /// <param name="auth"></param>
         public showPreviousRecords(string id,string email, List<Migraine> mig, IAuth auth)
         {
             InitializeComponent();
@@ -39,6 +47,12 @@ namespace MigraineTrackingApp.View
             listView.ItemsSource = records;
             base.OnAppearing();
         }
+       /// <summary>
+       /// gets selected date from all records passes to show migraine detail page
+       /// 
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private async void displayRecord(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -51,10 +65,7 @@ namespace MigraineTrackingApp.View
                     break;
                 }
             }
-            //int spacePos = recordAtADate.startDate.IndexOf(" ");
-            //int spacePos2 = recordAtADate.endDate.IndexOf(" ");
-            //recordAtADate.startDate = recordAtADate.startDate.Substring(0, spacePos);
-            //recordAtADate.endDate = recordAtADate.endDate.Substring(0, spacePos2);
+           
             await Navigation.PushModalAsync(new ShowMigraineDetails(recordAtADate, email, userId, auth));
         }
     }

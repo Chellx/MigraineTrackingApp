@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using Microcharts;
@@ -24,6 +25,11 @@ namespace MigraineTrackingApp.View
         List<DisplayGraph> records;
         private List<Microcharts.ChartEntry> chartEntries = new List<Microcharts.ChartEntry>();
         Microcharts.ChartEntry chart;
+       /// <summary>
+       /// populates listview for medication taken for the month
+       /// </summary>
+       /// <param name="allRecords">list of pain intensity and date/time</param>
+       /// <param name="meds">string list of medication taken</param>
         public DisplayPainIntensityChart(List<DisplayGraph> allRecords,List<string> meds)
         {
             InitializeComponent();
@@ -33,6 +39,9 @@ namespace MigraineTrackingApp.View
             showListView.ItemsSource = meds;
         }
        
+        /// <summary>
+        /// populates microchart with pain intensity value and date/time
+        /// </summary>
         private void populateChart()
         {
             foreach (DisplayGraph value in records)

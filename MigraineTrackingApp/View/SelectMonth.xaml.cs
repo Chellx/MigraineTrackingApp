@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.Models;
@@ -35,6 +36,12 @@ namespace MigraineTrackingApp.View
             listView.ItemsSource = months;
             base.OnAppearing();
         }
+        /// <summary>
+        /// when month selected pain intensity info and date/time are stored in a list of display graphs and mediction info stored in a string list
+        /// display chart for pain intensity and medication taken for the month
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void displayRecord(object sender, EventArgs e)
         {
             Button button = (Button)sender;

@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.ViewModels;
@@ -14,7 +15,7 @@ namespace MigraineTrackingApp.View
     public partial class RecordPainIntensity : ContentPage
     {
         RecordMigraneViewModel mvm;
-        //string painLevel = "";
+        
         internal RecordPainIntensity(RecordMigraneViewModel migraneVM)
         {
             InitializeComponent();
@@ -25,11 +26,21 @@ namespace MigraineTrackingApp.View
             }
         }
 
+       /// <summary>
+       /// go to main menu
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="args"></param>
         private async void returnToMenu(object sender, EventArgs args)
         {
             await Navigation.PopAsync();
         }
 
+        /// <summary>
+        /// saves pain intensity 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private async void saveIntensity(object sender, EventArgs args)
         {
            

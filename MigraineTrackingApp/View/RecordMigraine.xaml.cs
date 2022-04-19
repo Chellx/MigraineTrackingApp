@@ -30,13 +30,18 @@ namespace MigraineTrackingApp
         internal RecordMigraine(string userId,RecordMigraneViewModel vm,string email, IAuth auth)
         {
             InitializeComponent();
-            DateTime now = DateTime.Now;
+            DateTime now = DateTime.Now; // set date to current date
             currentDate = now;
             id = userId;
             migraneVM = vm;
             this.email = email;
             this.auth = auth;
         }
+       /// <summary>
+       /// depends on which way record migraine is entered
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="args"></param>
         private async void savePlan(object sender, EventArgs args)
         {
             if(migraneVM.StartDate != " " && migraneVM.StartTimeOfMigraine == " ")
@@ -80,56 +85,107 @@ namespace MigraineTrackingApp
             await Navigation.PushModalAsync(new MainFeedPage(id, email, auth));
         }
 
+       /// <summary>
+       /// go to record date page
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private async void recordDateButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordDate(migraneVM));
         }
 
+       /// <summary>
+       /// go to record type page
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private async void recordTypeButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordMigraineType(migraneVM));
         }
 
+       /// <summary>
+       /// go to record pain location page
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private async void recordpainLocationButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordPainLocation(migraneVM));
         }
 
+        /// <summary>
+        /// go to record medication taken page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void recordMedTypeButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordMedication(migraneVM));
         }
 
+       /// <summary>
+       /// go to record symptom page
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private async void recordSymptomsButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordSymptoms(migraneVM));
         }
 
+      /// <summary>
+      /// go to record triggers page
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
         private async void recordTriggersButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordTriggers(migraneVM));
         }
 
+        /// <summary>
+        /// go to record weather page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void recordWeatherButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordWeather(migraneVM));
         }
 
+      /// <summary>
+      /// go to record time page
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
         private async void recordTimeButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordTime(migraneVM));
         }
 
+       /// <summary>
+       /// go to record food page
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private async void recordFoodButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordFood(migraneVM));
         }
 
+      /// <summary>
+      /// go to record pain intensity page
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
         private async void recordPainIntensityButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new View.RecordPainIntensity(migraneVM));
         }
         protected override bool OnBackButtonPressed() => true;
+        
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.Models;
@@ -52,6 +53,7 @@ namespace MigraineTrackingApp.View
             }
         }
 
+       
         string GenerateRequestUri(string endpoint)
         {
             string requestUri = endpoint;

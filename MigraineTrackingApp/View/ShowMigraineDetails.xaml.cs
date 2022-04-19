@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.Models;
@@ -36,6 +37,13 @@ namespace MigraineTrackingApp.View
         string tList = "";
 
         IAuth auth;
+       /// <summary>
+       /// setting migraine record values
+       /// </summary>
+       /// <param name="record"></param>
+       /// <param name="email"></param>
+       /// <param name="id"></param>
+       /// <param name="auth"></param>
         public ShowMigraineDetails(Migraine record,string email,string id, IAuth auth)
         {
             migraine = record;
@@ -48,6 +56,7 @@ namespace MigraineTrackingApp.View
             vm.PainIntensity = migraine.painIntensity;
             vm.LengthOfMigraineAttack = migraine.migraineDuration;
             vm.Temperature = migraine.temperature;
+            // if null value found in a migraine record detail ignore/ dont fill in 
             if(migraine.migraineType != null)
             {
                 vm.setMigraneTypes(migraine.migraineType);
@@ -77,6 +86,9 @@ namespace MigraineTrackingApp.View
             userId = id;
             this.auth = auth;
         }
+        /// <summary>
+        /// content of email
+        /// </summary>
         protected async override void OnAppearing()
         {
             
@@ -154,16 +166,32 @@ namespace MigraineTrackingApp.View
             trigger.Text = tList;
             base.OnAppearing();
         }
+        /// <summary>
+        /// sends email with migraine record details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnButtonClicked(object sender, EventArgs e)
         {
             List<string> recipients = new List<string>();
             recipients.Add(email);
             await sendMigraineRecord(recipients, emailMesage);
         }
+        /// <summary>
+        /// goes to record migraine page to allow user to update record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void updateClicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new RecordMigraine(userId,vm,email, auth));
         }
+       /// <summary>
+       /// this method send the email using Xamarin Essentails email API
+       /// </summary>
+       /// <param name="recipients"></param>
+       /// <param name="body"></param>
+       /// <returns></returns>
         public async Task<bool> sendMigraineRecord(List<string> recipients,string body)
         {
             try
@@ -177,7 +205,7 @@ namespace MigraineTrackingApp.View
                 await Email.ComposeAsync(message);
                 return true;
             }
-            catch (FeatureNotSupportedException ns)
+            catch (FeatureNotSupportedException ns) //if phone does not support this API
             {
                 var value = ns.StackTrace;
                 Console.WriteLine(value);

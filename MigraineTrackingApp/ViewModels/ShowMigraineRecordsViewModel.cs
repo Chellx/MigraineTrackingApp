@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
  * Student Number C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.Models;
@@ -37,11 +38,17 @@ namespace MigraineTrackingApp.ViewModels
             get => email;
             set => email = value;
         }
+       /// <summary>
+       /// this method loops through a list of migraines using numeric month value to build a list of months with months name
+       /// </summary>
+       /// <param name="objList">list of migraine</param>
+       /// <param name="months">list of strings</param>
+       /// <returns></returns>
         public List<string> getListOfMonths(List<Migraine> objList,List<string> months)
         {
             foreach (Migraine obj in objList)
             {
-                string monthNumber = obj.dateEntered.Substring(3, 2);
+                string monthNumber = obj.dateEntered.Substring(3, 2); // gets month in numeric value 
                 switch (monthNumber)
                 {
                     case "01":
@@ -86,6 +93,13 @@ namespace MigraineTrackingApp.ViewModels
             monthList = monthList.OrderBy(s => DateTime.ParseExact(s, "MMMM", new CultureInfo("en-US"))).ToList();//reference: https://stackoverflow.com/questions/8539088/sorting-months-in-a-list
             return monthList;
         }
+        /// <summary>
+        /// gets the records for the chosen months
+        /// </summary>
+        /// <param name="objList">list of migraine</param>
+        /// <param name="selectedMonth">string</param>
+        /// <param name="meds">list of strings</param>
+        /// <returns></returns>
         public List<DisplayGraph> getRecordsForThatMonth(List<Migraine> objList,string selectedMonth,ref List<string> meds)
         {
             Dictionary<string, string> months = new Dictionary<string, string>();

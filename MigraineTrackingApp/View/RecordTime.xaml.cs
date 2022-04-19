@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.ViewModels;
@@ -42,6 +43,10 @@ namespace MigraineTrackingApp.View
             Recalculate();
         }
 
+        /// <summary>
+        /// calculate lenght of time between start and end date
+        /// Reference: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/timepicker
+        /// </summary>
         void Recalculate()
         {
             var startTime = start.Time;

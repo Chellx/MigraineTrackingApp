@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.Services;
@@ -13,6 +14,7 @@ using Xamarin.Forms.Xaml;
 namespace MigraineTrackingApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    
     public partial class AllergenScanner : ContentPage
     {
         OpenFoodFacts food = new OpenFoodFacts();
@@ -20,12 +22,22 @@ namespace MigraineTrackingApp.View
         string[] foodDetails = new string[2];
         string id = " ";
         string allergen = " ";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userid"></param>
         public AllergenScanner(string userid)
         {
             InitializeComponent();
             id = userid;
             vm = new RecordMigraneViewModel();
         }
+       /// <summary>
+       /// scans iten with ZXing barcode scanner 
+       /// gets barcode from item sends to openfoodfacts
+       /// </summary>
+       /// <param name="result"></param>
         private void ZXingScannerView_OnScanResult(ZXing.Result result)
         {
             Device.BeginInvokeOnMainThread(async () =>
@@ -42,6 +54,11 @@ namespace MigraineTrackingApp.View
                 }
             });
         }
+        /// <summary>
+        /// button when clicked checks allergens from openfoodfacts against the allergens stored in database for the user
+        /// </summary>
+        /// <param name="sender"> </param>
+        /// <param name="e"></param>
         private async void checkAllergens(object sender, EventArgs e)
         {
             string allergenResult = "";

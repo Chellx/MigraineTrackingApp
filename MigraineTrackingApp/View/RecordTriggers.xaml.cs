@@ -1,6 +1,7 @@
 ﻿/*
  * Student Name: Michelle Bolger
- * Student Number C00242743
+ * Student Number: C00242743
+ * Date: 19/4/2022
  */
 
 using MigraineTrackingApp.ViewModels;
@@ -86,7 +87,7 @@ namespace MigraineTrackingApp.View
             await Navigation.PopAsync();
         }
         /// <summary>
-        /// This method saves the pain locations list to a view model
+        /// This method saves the trigger list to a view model
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
