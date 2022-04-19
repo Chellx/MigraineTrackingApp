@@ -22,15 +22,15 @@ namespace MigraineTrackingApp.View
             this.migraneVM = migraneVM;
             if(migraneVM.StartDate != " " && migraneVM.StartDate != null)
             {
-                DateTime dateTime = DateTime.Parse(migraneVM.StartDate, CultureInfo.CreateSpecificCulture("en-US")); //converts date string from database to date time format for date picker
-                string newStartDate = dateTime.ToString("dd/MM/yyyy");
-                startDatePicker.Date = DateTime.Parse(newStartDate);
+                //DateTime dateTime = DateTime.Parse(migraneVM.StartDate, CultureInfo.CreateSpecificCulture("en-US")); //converts date string from database to date time format for date picker
+                //string newStartDate = dateTime.ToString("dd/MM/yyyy");
+                startDatePicker.Date = DateTime.Parse(migraneVM.StartDate);
             }
             if(migraneVM.EndDate != " " && migraneVM.EndDate != null)
             {
-                DateTime dateTime = DateTime.Parse(migraneVM.EndDate, CultureInfo.CreateSpecificCulture("en-US"));
-                string newEndDate = dateTime.ToString("dd/MM/yyyy");
-                endDatePicker.Date = DateTime.Parse(newEndDate);
+                //DateTime dateTime = DateTime.Parse(migraneVM.EndDate, CultureInfo.CreateSpecificCulture("en-US"));
+                //string newEndDate = dateTime.ToString("dd/MM/yyyy");
+                endDatePicker.Date = DateTime.Parse(migraneVM.EndDate);
             }
         }
 
