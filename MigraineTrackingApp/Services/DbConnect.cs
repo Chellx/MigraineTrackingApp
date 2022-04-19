@@ -164,13 +164,21 @@ namespace MigraineTrackingApp.Services
         /// <returns></returns>
         public async Task<bool> addAllergens(string userid,List<string> migranetypes)
         {
-            await firebase
+            try
+            {
+                await firebase
                 .Child("allergyList").Child(userid)
                 .PutAsync(new Allergen()
                 {
                     allergenList = migranetypes
                 });
-            return true;
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                return false;
+            }
         }
         /// <summary>
         /// This method returns a list of allergens
